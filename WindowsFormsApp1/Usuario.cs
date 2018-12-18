@@ -55,45 +55,7 @@ namespace WindowsFormsApp1
                         data.marcaPresenca();                        
             }
 
-        }
-        public String getUsuario(int id)
-        //Outro lugar?
-        {
-            MySql.Data.MySqlClient.MySqlConnection conn;
-            
-            try
-            {                
-                conn = new MySql.Data.MySqlClient.MySqlConnection();
-                conn.ConnectionString = Sql.Conection();
-                conn.Open();
-
-                string sql = "SELECT * FROM new_schema.usuarios WHERE idUser = @id;";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id", id);
-                MySqlDataReader result = cmd.ExecuteReader();
-                if (!result.HasRows)
-                {
-                    return "Nenhum resultado encontrado";
-                }
-
-                string retorno = "";
-                while (result.Read())
-                {
-                    for (int i = 0; i < 5; i++)
-                    {
-                        retorno += (result[i] + " -- ");
-                    }
-                }
-                result.Close();
-                return retorno;
-
-
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                return ex.Message;
-            }
-        }
+        }        
         public List<Usuario> getUsuarios()
         {
             List<Usuario> retorno = new List<Usuario>();

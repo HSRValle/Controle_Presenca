@@ -56,32 +56,5 @@ namespace WindowsFormsApp1
             }
 
         }        
-        public List<Usuario> getUsuarios()
-        {
-            List<Usuario> retorno = new List<Usuario>();
-            MySql.Data.MySqlClient.MySqlConnection conn;
-            try
-            {
-                conn = new MySql.Data.MySqlClient.MySqlConnection();
-                conn.ConnectionString = Sql.Conection();
-                conn.Open();
-
-                string sql = "SELECT * FROM new_schema.usuarios;";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader result = cmd.ExecuteReader();
-                while (result.Read())
-                {
-                    retorno.Add(new Usuario(Int32.Parse(result["idUser"].ToString()), result["nome"].ToString(), result["email"].ToString(), result["senha"].ToString()));   
-                }
-                result.Close();
-                return retorno;
-
-
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                return retorno;
-            }
-        }
     }
 }

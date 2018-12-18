@@ -13,3 +13,4 @@ C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\o
 C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\bin\Debug\ObjectDumper.dll
+C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\obj\Debug\PresencaSpecialisterne.csprojAssemblyReference.cache

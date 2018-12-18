@@ -61,19 +61,17 @@ namespace WindowsFormsApp1
         {
             List<Usuario> retorno = new List<Usuario>();
             MySql.Data.MySqlClient.MySqlConnection conn;
-            String MyConnection = "server=127.0.0.1;uid=root;pwd=admin;database=new_schema";
             try
             {
                 conn = new MySql.Data.MySqlClient.MySqlConnection();
-                conn.ConnectionString = MyConnection;
+                conn.ConnectionString = Sql.Conection();
                 conn.Open();
 
                 string sql = "SELECT * FROM new_schema.usuarios;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader result = cmd.ExecuteReader();
                 while (result.Read())
-                {
-                    Console.WriteLine();
+                {                    
                     retorno.Add(new Usuario(Int32.Parse(result["idUser"].ToString()), result["nome"].ToString(), result["email"].ToString(), result["senha"].ToString(), result["tutor"].ToString() == "1"));
                 }
                 result.Close();
@@ -91,18 +89,16 @@ namespace WindowsFormsApp1
         {
             List<Data> retorno = new List<Data>();
             MySql.Data.MySqlClient.MySqlConnection conn;
-            String MyConnection = "server=127.0.0.1;uid=root;pwd=admin;database=new_schema";
             try
             {
                 conn = new MySql.Data.MySqlClient.MySqlConnection();
-                conn.ConnectionString = MyConnection;
+                conn.ConnectionString = Sql.Conection();
                 conn.Open();
 
                 string sql = "SELECT * FROM new_schema.datas";
                 if (usuarioAtual != null)
                     sql += " WHERE idAluno = " + usuarioAtual.id;
                 sql += " ORDER BY dataEsperada DESC;";
-                Console.WriteLine(sql);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader result = cmd.ExecuteReader();
                 while (result.Read())

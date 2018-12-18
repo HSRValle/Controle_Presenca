@@ -62,10 +62,9 @@ namespace WindowsFormsApp1
             MySql.Data.MySqlClient.MySqlConnection conn;
             
             try
-            {
-                String MyConnection = "server=127.0.0.1;uid=root;pwd=admin;database=new_schema";
+            {                
                 conn = new MySql.Data.MySqlClient.MySqlConnection();
-                conn.ConnectionString = MyConnection;
+                conn.ConnectionString = Sql.Conection();
                 conn.Open();
 
                 string sql = "SELECT * FROM new_schema.usuarios WHERE idUser = @id;";
@@ -99,11 +98,10 @@ namespace WindowsFormsApp1
         {
             List<Usuario> retorno = new List<Usuario>();
             MySql.Data.MySqlClient.MySqlConnection conn;
-            String MyConnection = "server=127.0.0.1;uid=root;pwd=admin;database=new_schema";
             try
             {
                 conn = new MySql.Data.MySqlClient.MySqlConnection();
-                conn.ConnectionString = MyConnection;
+                conn.ConnectionString = Sql.Conection();
                 conn.Open();
 
                 string sql = "SELECT * FROM new_schema.usuarios;";

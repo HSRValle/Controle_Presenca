@@ -5,7 +5,6 @@ C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\b
 C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\bin\Debug\MySql.Data.dll
 C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\bin\Debug\Google.Protobuf.xml
 C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\bin\Debug\MySql.Data.xml
-C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\obj\Debug\PresencaSpecialisterne.csprojAssemblyReference.cache
 C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
 C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
 C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\obj\Debug\PresencaSpecialisterne.csproj.GenerateResource.cache

@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    class Sql
+    static class Sql
     {
-        public String MyConnection = "server=127.0.0.1;uid=root;pwd=admin;database=new_schema";
+        public static String Conection(){
+            return "server=127.0.0.1;uid=root;pwd=admin;database=new_schema";
+        }
     }
 }

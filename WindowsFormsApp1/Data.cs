@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
+
+
 namespace WindowsFormsApp1
 {
     public class Data
@@ -99,12 +101,11 @@ namespace WindowsFormsApp1
         }
         public String SalvaMySql()
         {
-            MySql.Data.MySqlClient.MySqlConnection conn;
-            String MyConnection = "server=127.0.0.1;uid=root;pwd=admin;database=new_schema";
+            MySql.Data.MySqlClient.MySqlConnection conn;           
             try
             {
                 conn = new MySql.Data.MySqlClient.MySqlConnection();
-                conn.ConnectionString = MyConnection;
+                conn.ConnectionString = Sql.Conection();
                 conn.Open();
                 return "Ok";
             }
@@ -117,11 +118,10 @@ namespace WindowsFormsApp1
         public void updateData()
         {           
             MySql.Data.MySqlClient.MySqlConnection conn;
-            String MyConnection = "server=127.0.0.1;uid=root;pwd=admin;database=new_schema";
             try
             {
                 conn = new MySql.Data.MySqlClient.MySqlConnection();
-                conn.ConnectionString = MyConnection;
+                conn.ConnectionString = Sql.Conection();
                 conn.Open();
 
                 string sql = "UPDATE new_schema.datas ";
@@ -149,11 +149,10 @@ namespace WindowsFormsApp1
         public void insertNewData()
         {
             MySql.Data.MySqlClient.MySqlConnection conn;
-            String MyConnection = "server=127.0.0.1;uid=root;pwd=admin;database=new_schema";
             try
             {
                 conn = new MySql.Data.MySqlClient.MySqlConnection();
-                conn.ConnectionString = MyConnection;
+                conn.ConnectionString = Sql.Conection();
                 conn.Open();
 
                 string sql = "INSERT INTO new_schema.datas (dataEsperada, idAluno)";

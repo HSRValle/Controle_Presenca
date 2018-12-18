@@ -69,7 +69,9 @@ namespace WindowsFormsApp1
                 MySqlDataReader result = cmd.ExecuteReader();
                 while (result.Read())
                 {                    
-                    retorno.Add(new Usuario(Int32.Parse(result["idUser"].ToString()), result["nome"].ToString(), result["email"].ToString(), result["senha"].ToString(), result["tutor"].ToString() == "1"));
+                    retorno.Add(
+                        new Usuario(result)
+                        );
                 }
                 result.Close();
                 return retorno;

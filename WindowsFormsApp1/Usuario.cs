@@ -29,6 +29,14 @@ namespace WindowsFormsApp1
             this.senha = senha;
             this.tutor = tutor;
         }
+        public Usuario(MySqlDataReader retornoSql)
+        {
+            this.id = Int32.Parse(retornoSql["idUser"].ToString());
+            this.nome = retornoSql["nome"].ToString();
+            this.email = retornoSql["email"].ToString();
+            this.senha = retornoSql["senha"].ToString();
+            this.tutor= retornoSql["tutor"].ToString() == "1";
+        }
         public String getNome(){
             return this.nome;
         }

@@ -16,9 +16,9 @@ namespace WindowsFormsApp1
         private int id;
         private readonly DateTime dataEsperada;
         private DateTime dataReal;
-        private Boolean presente;
+        public Boolean presente;
         public String justificativa;
-        private Usuario Aluno;
+        public Usuario Aluno;
         public Usuario Tutor;
 
         public Data(DateTime dataEsperada, Usuario Aluno)

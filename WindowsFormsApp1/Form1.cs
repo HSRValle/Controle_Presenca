@@ -33,14 +33,19 @@ namespace WindowsFormsApp1
                 List<Usuario> todosUsuarios = getAllUsuarios();               
 
                 // Marca o usuário atual
-                Usuario usuarioAtual = todosUsuarios[0];
+                Usuario usuarioAtual = todosUsuarios[1];
 
                 //Recupera as datas do banco associadas ao usuario
                 List<Data> todasDatas = getAllDatas(todosUsuarios, usuarioAtual);
 
-                createNextDatas(todasDatas, todosUsuarios);
+                //createNextDatas(todasDatas, todosUsuarios);
 
                 //usuarioAtual.marcaPresenca(todasDatas);   
+                /*
+                 * Exemplo de busca dentro da lista
+                 * List<Data> temp = todasDatas.FindAll(x => x.Aluno.Equals(usuarioAtual) && x.presente);                
+                */
+
 
             }
 

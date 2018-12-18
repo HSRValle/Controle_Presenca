@@ -25,16 +25,7 @@ namespace WindowsFormsApp1
 
                 //Recupera as datas do banco
                 List<Data> todasDatas = getAllDatas(todosUsuarios);
-
-                foreach (Data data in todasDatas)
-                {
-                    using (var writer = new System.IO.StringWriter())
-                    {
-                        ObjectDumper.Dumper.Dump(data, "Object Dumper", writer);
-                        Console.Write(writer.ToString());
-                    };
-                    Console.WriteLine("________________________________________________________");
-                }
+                
             }
             else //se o usuário logado é aluno
             {
@@ -147,11 +138,8 @@ namespace WindowsFormsApp1
                         // Else com horários para tutores?
                     }
                 }
-                else
-                    Console.WriteLine("Sem Aula           (" + novaData.DayOfWeek + ")");
 
             }
-            Console.WriteLine("-----------------------------------------------------");
             foreach (Data d in novasDatas) {
                 d.DebugData();
             }

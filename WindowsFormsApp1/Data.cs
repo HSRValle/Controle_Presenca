@@ -136,7 +136,6 @@ namespace WindowsFormsApp1
                 sql += " idAluno = " + this.Aluno.id;
 
                 sql += " WHERE iddata = " + this.id;
-                Console.WriteLine(sql);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
 
@@ -158,7 +157,6 @@ namespace WindowsFormsApp1
                 string sql = "INSERT INTO new_schema.datas (dataEsperada, idAluno)";
                 sql += " Values ('" + this.dataEsperada.ToString("yyyy-MM-dd HH:mm:ss") + "',";
                 sql += " " + this.Aluno.id + ");";
-                Console.Write(sql);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
             }

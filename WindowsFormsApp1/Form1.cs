@@ -30,8 +30,7 @@ namespace WindowsFormsApp1
             else //se o usuário logado é aluno
             {
                 // Recupera os usuários do banco            
-                List<Usuario> todosUsuarios = getAllUsuarios();
-                createNextDatas(todosUsuarios);
+                List<Usuario> todosUsuarios = getAllUsuarios();               
 
                 // Marca o usuário atual
                 Usuario usuarioAtual = todosUsuarios[0];
@@ -39,7 +38,9 @@ namespace WindowsFormsApp1
                 //Recupera as datas do banco associadas ao usuario
                 List<Data> todasDatas = getAllDatas(todosUsuarios, usuarioAtual);
 
-                usuarioAtual.marcaPresenca(todasDatas);
+                createNextDatas(todasDatas, todosUsuarios);
+
+                //usuarioAtual.marcaPresenca(todasDatas);   
 
             }
 
@@ -107,7 +108,7 @@ namespace WindowsFormsApp1
                 return retorno;
             }
         }
-        public Boolean createNextDatas(List<Usuario> listaUsuarios, int dias = 7)
+        public Boolean createNextDatas(List<Data> listaData, List<Usuario> listaUsuarios, int dias = 7)
         {
             List<Data> novasDatas = new List<Data>();
 
@@ -131,6 +132,9 @@ namespace WindowsFormsApp1
                             {
                                 insert = new Data(novaData.Date + tarde, usuario);
                                 insert.insertNewData();
+                                listaData.Add(insert);
+
+
                             }
 
                         }

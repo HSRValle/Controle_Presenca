@@ -120,8 +120,7 @@ namespace WindowsFormsApp1
                 DateTime novaData = hoje.AddDays(i);
                 novaData = novaData.Date + manha;
                 if (novaData.DayOfWeek != DayOfWeek.Saturday && novaData.DayOfWeek != DayOfWeek.Sunday)
-                {
-                    Console.WriteLine(novaData + "     (" + novaData.DayOfWeek + ")");
+                {                    
                     foreach (Usuario usuario in listaUsuarios)
                     {
                         if (!usuario.tutor) {

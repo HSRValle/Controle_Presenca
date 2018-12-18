@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             this.justificativa = justificativa;
             this.Tutor = Tutor;
         }
-        public Data(MySqlDataReader retornoSql, List<Usuario> listaUsuarios, Usuario aluno = null)
+        public Data(MySqlDataReader retornoSql, List<Usuario> listaUsuarios)
         {
             this.id = Int32.Parse(retornoSql["iddata"].ToString());
 
@@ -49,11 +49,7 @@ namespace WindowsFormsApp1
                     this.presente = true;
                 else if (retornoSql["presente"].ToString() == "0")
                     this.presente = false;
-            if (aluno != null)
-            {
-                this.Aluno = aluno;
-            }       
-            else if (!Convert.IsDBNull(retornoSql["idAluno"]))
+            if (!Convert.IsDBNull(retornoSql["idAluno"]))
             {
                 this.Aluno = listaUsuarios.Find(x => x.id == Int32.Parse(retornoSql["idAluno"].ToString()));
             }

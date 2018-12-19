@@ -165,11 +165,12 @@ namespace WindowsFormsApp1
         {
             
             MySqlConnection sqlcon = new MySqlConnection(Sql.Conection());
-            string query = "Select * from new_schema.usuarios where nome= '" + txtNome.Text.Trim() + "' and senha = '" + txtSenha.Text.Trim() + "'";
+            string query = "Select * from new_schema.usuarios where nome= '" + txtNome.Text.Trim() + "' and senha = '" + txtSenha.Text.Trim() + "' and tutor=@tutor";
             MySqlDataAdapter sda = new MySqlDataAdapter(query, sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
-            if(dtbl.Rows.Count==1)
+            string tutor = "Select * from new_schema.usuarios where tutor=@tutor";
+            if (dtbl.Rows.Count==1)
             {
                 MessageBox.Show("Sucesso!");
                 this.Hide();
@@ -179,7 +180,12 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Senha ou nome incorretos!");            
             }
-        
+            if (tutor=="1") 
+            {
+                frmTutor frmTutor = new frmTutor();
+                frmTutor.Show();
+                
+            }        
 
                                 
         }

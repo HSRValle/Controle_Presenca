@@ -9,7 +9,7 @@ namespace WindowsFormsApp1
     static class Sql
     {
         public static String Conection(){
-            return "server=127.0.0.1;uid=root;pwd=admin;database=new_schema";
+            return "server=127.0.0.1:3307;uid=root;pwd=admin;database=new_schema";
         }
     }
 }

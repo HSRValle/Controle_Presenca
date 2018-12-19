@@ -14,3 +14,19 @@ C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\o
 C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\bin\Debug\ObjectDumper.dll
 C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\obj\Debug\PresencaSpecialisterne.csprojAssemblyReference.cache
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\bin\Debug\Google.Protobuf.dll
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\bin\Debug\MySql.Data.dll
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\bin\Debug\ObjectDumper.dll
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\bin\Debug\Google.Protobuf.xml
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\bin\Debug\MySql.Data.xml
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\obj\Debug\PresencaSpecialisterne.csprojAssemblyReference.cache
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\obj\Debug\PresencaSpecialisterne.csproj.GenerateResource.cache
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\obj\Debug\PresencaSpecialisterne.csproj.CoreCompileInputs.cache
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\obj\Debug\PresencaSpecialisterne.csproj.CopyComplete
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmLogin.resources

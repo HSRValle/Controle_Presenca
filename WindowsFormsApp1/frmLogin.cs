@@ -18,10 +18,15 @@ namespace WindowsFormsApp1
         public frmLogin()
         {
             InitializeComponent();
-            return;
-            if (false) //se o usuário logado é tutor
+            
+
+            if (true) //se o usuário logado é tutor
             {   // Recupera os usuários do banco            
                 List<Usuario> todosUsuarios = getAllUsuarios();
+                foreach (Usuario u in  todosUsuarios)
+                {
+                    u.DebugUsuario();
+                }
 
                 //Recupera as datas do banco
                 List<Data> todasDatas = getAllDatas(todosUsuarios);
@@ -163,14 +168,15 @@ namespace WindowsFormsApp1
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            
             MySqlConnection sqlcon = new MySqlConnection(Sql.Conection());
-            string query = "Select * from new_schema.usuarios where nome= '" + txtNome.Text.Trim() + "' and senha = '" + txtSenha.Text.Trim() + "' and tutor=@tutor";
+            string query = "Select * from new_schema.usuarios where nome= '" + txtNome.Text.Trim() + "' and senha = '" + txtSenha.Text.Trim() + "'";
             MySqlDataAdapter sda = new MySqlDataAdapter(query, sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
-            string tutor = "Select * from new_schema.usuarios where tutor=@tutor";
-            if (dtbl.Rows.Count==1)
+            string qtutor = "Select * from new_schema.usuarios where tutor=@tutor";
+            MySqlDataAdapter sda2 = new MySqlDataAdapter(qtutor, sqlcon);
+            bool tutor = Convert.ToBoolean("true");
+            if (dtbl.Rows.Count == 1)
             {
                 MessageBox.Show("Sucesso!");
                 this.Hide();
@@ -178,16 +184,22 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Senha ou nome incorretos!");            
+                MessageBox.Show("Senha ou nome incorretos!");
             }
-            if (tutor=="1") 
+            if (tutor == true)
             {
                 frmTutor frmTutor = new frmTutor();
                 frmTutor.Show();
-                
-            }        
+            }
+            else
+                MessageBox.Show("Git gud");
 
                                 
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

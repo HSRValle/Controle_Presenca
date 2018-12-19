@@ -30,4 +30,4 @@ C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\obj
 C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmLogin.resources
-C:\Users\Alunos G9\Desktop\Henrique\C#\PresencaSpecialisterne\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmLogin.resources
+C:\Users\Juntos na TI\source\repos\Controle_Presenca-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmTutor.resources

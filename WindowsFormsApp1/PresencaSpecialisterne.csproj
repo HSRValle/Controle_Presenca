@@ -71,25 +71,19 @@
     <Compile Include="frmTutor.Designer.cs">
       <DependentUpon>frmTutor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sql.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="Usuario.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sql.cs" />
-    <Compile Include="Data.cs" />
-    <Compile Include="Usuario.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmTutor.resx">
+      <DependentUpon>frmTutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

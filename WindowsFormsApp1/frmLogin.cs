@@ -17,8 +17,8 @@ namespace WindowsFormsApp1
     {
         public frmLogin()
         {
-            //InitializeComponent();
-
+            InitializeComponent();
+            return;
             if (false) //se o usuário logado é tutor
             {   // Recupera os usuários do banco            
                 List<Usuario> todosUsuarios = getAllUsuarios();
@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
                 List<Usuario> todosUsuarios = getAllUsuarios();               
 
                 // Marca o usuário atual
-                Usuario usuarioAtual = todosUsuarios[1];
+                Usuario usuarioAtual = todosUsuarios[0];
 
                 //Recupera as datas do banco associadas ao usuario
                 List<Data> todasDatas = getAllDatas(todosUsuarios, usuarioAtual);
@@ -163,8 +163,9 @@ namespace WindowsFormsApp1
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            MySqlConnection sqlcon = new MySqlConnection(@"MySql.Data.MySqlClient.MySqlConnection conn");
-            string query = "Select * from nome where nome= '" + txtNome.Text.Trim() + "' and senha = '" + txtSenha.Text.Trim() + "'";
+            
+            MySqlConnection sqlcon = new MySqlConnection(Sql.Conection());
+            string query = "Select * from new_schema.usuarios where nome= '" + txtNome.Text.Trim() + "' and senha = '" + txtSenha.Text.Trim() + "'";
             MySqlDataAdapter sda = new MySqlDataAdapter(query, sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);

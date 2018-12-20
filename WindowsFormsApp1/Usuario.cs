@@ -21,9 +21,8 @@ namespace WindowsFormsApp1
             this.id = id;
         }
 
-        public Usuario(int id, string nome, string email, string senha, Boolean tutor = false)
+        public Usuario(string nome, string email, string senha, Boolean tutor = false)
         {
-            this.id = id;
             this.nome = nome;
             this.email = email;
             this.senha = senha;
@@ -63,6 +62,70 @@ namespace WindowsFormsApp1
                         data.marcaPresenca();                        
             }
 
-        }        
+        }
+        public void updateUsuario(String nome, String email, Boolean tutor)
+        {
+            this.nome = nome;
+            this.email = email;
+            this.tutor = tutor;
+            MySql.Data.MySqlClient.MySqlConnection conn;
+            try
+            {
+                conn = new MySql.Data.MySqlClient.MySqlConnection();
+                conn.ConnectionString = Sql.Conection();
+                conn.Open();
+
+                string sql = "UPDATE new_schema.usuarios ";
+
+                sql += " SET nome = '" + this.nome + "',";
+                sql += " email = '" + this.email + "',";
+                if (this.tutor)
+                    sql += " tutor = 1,";
+                else
+                    sql += " tutor = 0,";
+                sql += " senha = '" + this.senha + "'";
+
+                sql += " WHERE idUser = " + this.id;
+               
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+        public void insertNewUsuario()
+        {
+            /*if(this.id != null) { 
+             * se usuario já existe, gera uma mensagem de erro
+            }*/
+            MySql.Data.MySqlClient.MySqlConnection conn;
+            try
+            {
+                conn = new MySql.Data.MySqlClient.MySqlConnection();
+                conn.ConnectionString = Sql.Conection();
+                conn.Open();
+
+                string sql = "INSERT INTO new_schema.usuarios (nome, email, senha, tutor)";
+                sql += " Values ('" + this.nome + "',";
+                sql += " '" + this.email + "', ";
+                sql += " '" + this.senha +"', ";
+                if(this.tutor)
+                    sql += " 1 ";
+                else
+                    sql += " 0 ";
+                sql += ");";                
+                
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();                
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
     }
 }

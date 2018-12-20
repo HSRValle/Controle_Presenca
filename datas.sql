@@ -3,7 +3,8 @@ CREATE TABLE `datas` (
   `dataEsperada` datetime NOT NULL,
   `dataReal` datetime DEFAULT NULL,
   `idAluno` int(11) NOT NULL,
-  `presente` tinyint(4) DEFAULT NULL,
+  `noHorario` tinyint(4) DEFAULT NULL,
+  `presente` tinyint(4) DEFAULT '0',
   `justificativa` varchar(64) NOT NULL DEFAULT '',
   `idTutor` int(11) DEFAULT NULL,
   PRIMARY KEY (`iddata`),
@@ -13,4 +14,4 @@ CREATE TABLE `datas` (
   KEY `fk_tutor_idx` (`idTutor`),
   CONSTRAINT `fk_aluno` FOREIGN KEY (`idAluno`) REFERENCES `usuarios` (`idUser`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tutor` FOREIGN KEY (`idTutor`) REFERENCES `usuarios` (`idUser`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

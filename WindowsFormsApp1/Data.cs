@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
                 if (retornoSql["noHorario"].ToString() == "1")
                     this.noHorario = true;
                 else if (retornoSql["noHorario"].ToString() == "0")
-                    this.noHorario =false
+                    this.noHorario = false;
             if (!Convert.IsDBNull(retornoSql["presente"]))
                 if (retornoSql["presente"].ToString() == "1")
                     this.presente = true;

@@ -13,8 +13,8 @@ namespace WindowsFormsApp1
 {
     public class Data
     {
-        private int id;
-        private readonly DateTime dataEsperada;
+        private readonly int id;
+        private DateTime dataEsperada;
         private DateTime dataReal;
         public Boolean presente;
         public String justificativa;
@@ -60,9 +60,10 @@ namespace WindowsFormsApp1
             }
         }
 
-        public void adicionaJustificativa(string mensagem, Usuario responsavel) {
+        public void adicionaJustificativa(string mensagem, Usuario responsavel, DateTime novadata ) {
             this.justificativa = mensagem;
             this.Tutor = responsavel;
+            this.dataEsperada = novadata;
         }
         public DateTime getDataEsperada()
         {

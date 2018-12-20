@@ -63,11 +63,12 @@ namespace WindowsFormsApp1
             }
 
         }
-        public void updateUsuario(String nome, String email, Boolean tutor)
+        public void updateUsuario(String nome, String email, String senha, Boolean tutor)
         {
             this.nome = nome;
             this.email = email;
             this.tutor = tutor;
+            this.senha = senha;
             MySql.Data.MySqlClient.MySqlConnection conn;
             try
             {

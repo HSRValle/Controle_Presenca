@@ -168,39 +168,43 @@ namespace WindowsFormsApp1
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
-        {
+        {         
             MySqlConnection sqlcon = new MySqlConnection(Sql.Conection());
+            //busca nome e senha no db e guarda informação em uma tabela 
             string query = "Select * from new_schema.usuarios where nome= '" + txtNome.Text.Trim() + "' and senha = '" + txtSenha.Text.Trim() + "'";
-            MySqlDataAdapter sda = new MySqlDataAdapter(query, sqlcon);
+            MySqlDataAdapter sda = new MySqlDataAdapter(query, sqlcon);           
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
-            string qtutor = "Select * from new_schema.usuarios where tutor=@tutor";
-            MySqlDataAdapter sda2 = new MySqlDataAdapter(qtutor, sqlcon);
-            bool tutor = Convert.ToBoolean("true");
+            //se a tabela for preenchida a informação é considerada valida
             if (dtbl.Rows.Count == 1)
             {
-                MessageBox.Show("Sucesso!");
-                this.Hide();
+                MessageBox.Show("Presença confirmada!\n"+DateTime.Now.ToString());
+                string qtutor = "Select * from new_schema.usuarios where nome= '" + txtNome.Text.Trim() + "' and tutor= '1'";
+                MySqlDataAdapter sda2 = new MySqlDataAdapter(qtutor, sqlcon);
+                DataTable dtbl2 = new DataTable();
+                sda2.Fill(dtbl2);
+                if (dtbl2.Rows.Count==1)
+                {
+                    //abre dash dos tutores se o usuario for tutor(a).
+                    frmTutor frmTutor = new frmTutor();
+                    frmTutor.Show();
+                }
+                else
+                {
+                    MessageBox.Show("teste");
+                }
 
             }
             else
             {
                 MessageBox.Show("Senha ou nome incorretos!");
             }
-            if (tutor == true)
-            {
-                frmTutor frmTutor = new frmTutor();
-                frmTutor.Show();
-            }
-            else
-                MessageBox.Show("Git gud");
-
-                                
+                                                 
         }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            this.Close();
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

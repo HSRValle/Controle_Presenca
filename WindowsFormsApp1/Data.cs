@@ -13,10 +13,9 @@ namespace WindowsFormsApp1
 {
     public class Data
     {
-        private readonly int id;
-        private DateTime dataEsperada;
+        private int id;
+        private readonly DateTime dataEsperada;
         private DateTime dataReal;
-        public Nullable<Boolean> noHorario;
         public Boolean presente;
         public String justificativa;
         public Usuario Aluno;
@@ -45,17 +44,11 @@ namespace WindowsFormsApp1
             if (!Convert.IsDBNull(retornoSql["dataReal"]))
                 this.dataReal = DateTime.Parse(retornoSql["dataReal"].ToString());
 
-            if (!Convert.IsDBNull(retornoSql["noHorario"]))
-                if (retornoSql["noHorario"].ToString() == "1")
-                    this.noHorario = true;
-                else if (retornoSql["noHorario"].ToString() == "0")
-                    this.noHorario = false;
             if (!Convert.IsDBNull(retornoSql["presente"]))
                 if (retornoSql["presente"].ToString() == "1")
                     this.presente = true;
                 else if (retornoSql["presente"].ToString() == "0")
                     this.presente = false;
-
             if (!Convert.IsDBNull(retornoSql["idAluno"]))
             {
                 this.Aluno = listaUsuarios.Find(x => x.id == Int32.Parse(retornoSql["idAluno"].ToString()));
@@ -67,10 +60,9 @@ namespace WindowsFormsApp1
             }
         }
 
-        public void adicionaJustificativa(string mensagem, Usuario responsavel, DateTime novadata ) {
+        public void adicionaJustificativa(string mensagem, Usuario responsavel) {
             this.justificativa = mensagem;
             this.Tutor = responsavel;
-            this.dataEsperada = novadata;
         }
         public DateTime getDataEsperada()
         {
@@ -83,15 +75,14 @@ namespace WindowsFormsApp1
         public void marcaPresenca()
         // Chamada quando o usuário loga. Compara a hora atual com a hora esperada e marca presença como true ou false
         {
-            this.presente = true;
             dataReal = DateTime.Now;
             if (dataReal < dataEsperada.AddMinutes(15))
             {
-                this.noHorario = true;
+                this.presente = true;
             }
             else
             {
-                this.noHorario = false;
+                this.presente = false;
             }
             updateData();
         }
@@ -135,7 +126,6 @@ namespace WindowsFormsApp1
                 if (this.isRealSet())
                     sql += " dataReal = '" + this.dataReal.ToString("yyyy-MM-dd HH:mm:ss") + "',";
                 sql += " presente = " + this.presente + ",";
-                sql += " noHorario = " + this.noHorario + ",";
                 sql += " justificativa = '" + this.justificativa + "',";
                 if (this.Tutor != null)
                     sql += " idTutor = " + this.Tutor.id + ",";

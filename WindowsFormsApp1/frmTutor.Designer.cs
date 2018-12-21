@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTutor));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.presençaDosAlunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.presençaDoAlunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDosAlunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procurarCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,15 +41,21 @@
             this.checarCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarCadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.presençaDosAlunosToolStripMenuItem,
+            this.presençaDoAlunosToolStripMenuItem,
             this.cadastroDosAlunosToolStripMenuItem,
-            this.menuPessoalToolStripMenuItem});
+            this.menuPessoalToolStripMenuItem,
+            this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(807, 24);
@@ -58,8 +65,13 @@
             // presençaDosAlunosToolStripMenuItem
             // 
             this.presençaDosAlunosToolStripMenuItem.Name = "presençaDosAlunosToolStripMenuItem";
-            this.presençaDosAlunosToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
-            this.presençaDosAlunosToolStripMenuItem.Text = "Presença dos Alunos";
+            this.presençaDosAlunosToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
+            // 
+            // presençaDoAlunosToolStripMenuItem
+            // 
+            this.presençaDoAlunosToolStripMenuItem.Name = "presençaDoAlunosToolStripMenuItem";
+            this.presençaDoAlunosToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
+            this.presençaDoAlunosToolStripMenuItem.Text = "Presença do Alunos";
             // 
             // cadastroDosAlunosToolStripMenuItem
             // 
@@ -77,6 +89,7 @@
             this.procurarCadastroToolStripMenuItem.Name = "procurarCadastroToolStripMenuItem";
             this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.procurarCadastroToolStripMenuItem.Text = "Procurar Cadastro";
+            this.procurarCadastroToolStripMenuItem.Click += new System.EventHandler(this.procurarCadastroToolStripMenuItem_Click);
             // 
             // novoCadastroToolStripMenuItem
             // 
@@ -124,11 +137,35 @@
             this.editarSenhaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.editarSenhaToolStripMenuItem.Text = "Editar Senha";
             // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(807, 232);
+            this.panel1.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 13);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
+            // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 215);
+            this.ClientSize = new System.Drawing.Size(807, 256);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -138,6 +175,8 @@
             this.Load += new System.EventHandler(this.frmTutor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +195,9 @@
         private System.Windows.Forms.ToolStripMenuItem checarCadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarCadastroToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editarSenhaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem presençaDoAlunosToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

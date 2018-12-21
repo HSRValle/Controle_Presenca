@@ -34,12 +34,13 @@ namespace WindowsFormsApp1
             this.nome = retornoSql["nome"].ToString();
             this.email = retornoSql["email"].ToString();
             this.senha = retornoSql["senha"].ToString();
-            this.tutor= retornoSql["tutor"].ToString() == "1";
+            this.tutor = retornoSql["tutor"].ToString() == "1";
         }
-        public String getNome(){
+        public String getNome()
+        {
             return this.nome;
         }
-        
+
         public string DebugUsuario()
         {
             using (var writer = new System.IO.StringWriter())
@@ -54,21 +55,20 @@ namespace WindowsFormsApp1
         {
             DateTime dataAtual = DateTime.Now;
 
-            foreach(Data data in listaDatas)
+            foreach (Data data in listaDatas)
             {
                 if (dataAtual > data.getDataEsperada().AddMinutes(-10) && dataAtual < data.getDataEsperada().AddHours(3))
                     // Se o item da lista é a data mais próxima da data atual
                     if (!data.isRealSet())
-                        data.marcaPresenca();                        
+                        data.marcaPresenca();
             }
 
         }
-        public void updateUsuario(String nome, String email, String senha, Boolean tutor)
+        public void updateUsuario(String nome, String email, Boolean tutor)
         {
             this.nome = nome;
             this.email = email;
             this.tutor = tutor;
-            this.senha = senha;
             MySql.Data.MySqlClient.MySqlConnection conn;
             try
             {
@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
                 sql += " senha = '" + this.senha + "'";
 
                 sql += " WHERE idUser = " + this.id;
-               
+
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
@@ -113,15 +113,15 @@ namespace WindowsFormsApp1
                 string sql = "INSERT INTO new_schema.usuarios (nome, email, senha, tutor)";
                 sql += " Values ('" + this.nome + "',";
                 sql += " '" + this.email + "', ";
-                sql += " '" + this.senha +"', ";
-                if(this.tutor)
+                sql += " '" + this.senha + "', ";
+                if (this.tutor)
                     sql += " 1 ";
                 else
                     sql += " 0 ";
-                sql += ");";                
-                
+                sql += ");";
+
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.ExecuteNonQuery();                
+                cmd.ExecuteNonQuery();
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {

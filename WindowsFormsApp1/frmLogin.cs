@@ -20,28 +20,25 @@ namespace WindowsFormsApp1
             InitializeComponent();
             
 
-            if (true) //se o usuário logado é tutor
+            if (false) //se o usuário logado é tutor
             {   // Recupera os usuários do banco            
-                List<Usuario> todosUsuarios = getAllUsuarios();
-                foreach (Usuario u in  todosUsuarios)
-                {
-                    u.DebugUsuario();
-                }
+                List<Usuario> todosUsuarios = getUsuarios();
 
                 //Recupera as datas do banco
-                List<Data> todasDatas = getAllDatas(todosUsuarios);
+                List<Data> todasDatas = getDatas(todosUsuarios);
                 
             }
             else //se o usuário logado é aluno
             {
-                // Recupera os usuários do banco            
-                List<Usuario> todosUsuarios = getAllUsuarios();               
+                // Não precisa obter os outros alunos. Apenas o aluno e os tutores serão utilizados:
+                
+                List<Usuario> usuariosNaMemoria = getUsuarios(true); //obtém os tutores do banco
 
-                // Marca o usuário atual
-                Usuario usuarioAtual = todosUsuarios[0];
+                //usuariosNaMemoria.Add();  Adiciona o usuário atual na lista.                                 
+                Usuario usuarioAtual = usuariosNaMemoria[0]; //remover quando a linha acima for concluída
 
                 //Recupera as datas do banco associadas ao usuario
-                List<Data> todasDatas = getAllDatas(todosUsuarios, usuarioAtual);
+                List<Data> todasDatas = getDatas(usuariosNaMemoria, usuarioAtual);
 
                 //createNextDatas(todasDatas, todosUsuarios);
 
@@ -51,7 +48,6 @@ namespace WindowsFormsApp1
                  * List<Data> temp = todasDatas.FindAll(x => x.Aluno.Equals(usuarioAtual) && x.presente);                
                 */
 
-
             }
 
 
@@ -59,7 +55,7 @@ namespace WindowsFormsApp1
         }
 
         // Funções
-        public List<Usuario> getAllUsuarios()
+        public List<Usuario> getUsuarios(Boolean tutores = false)
         {
             List<Usuario> retorno = new List<Usuario>();
             MySql.Data.MySqlClient.MySqlConnection conn;
@@ -69,7 +65,12 @@ namespace WindowsFormsApp1
                 conn.ConnectionString = Sql.Conection();
                 conn.Open();
 
-                string sql = "SELECT * FROM new_schema.usuarios;";
+                string sql = "SELECT * FROM new_schema.usuarios ";
+                if (tutores)
+                {
+                    sql += "WHERE tutor = 1";
+                }
+                sql += ";";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader result = cmd.ExecuteReader();
                 while (result.Read())
@@ -89,7 +90,7 @@ namespace WindowsFormsApp1
                 return retorno;
             }
         }
-        public List<Data> getAllDatas(List<Usuario> listaUsuarios, Usuario usuarioAtual = null)
+        public List<Data> getDatas(List<Usuario> listaUsuarios, Usuario usuarioAtual = null)
         {
             List<Data> retorno = new List<Data>();
             MySql.Data.MySqlClient.MySqlConnection conn;

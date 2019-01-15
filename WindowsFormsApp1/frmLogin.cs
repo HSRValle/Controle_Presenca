@@ -202,34 +202,36 @@ namespace WindowsFormsApp1
         {         
             MySqlConnection sqlcon = new MySqlConnection(Sql.Conection());
             Usuario usuario = getUsuario(txtNome.Text.Trim());
-
-            return;
-            //busca nome e senha no db e guarda informação em uma tabela 
-            string query = "Select * from new_schema.usuarios where nome= '" + txtNome.Text.Trim() + "' and senha = '" + txtSenha.Text.Trim() + "'";            
-            MySqlDataAdapter sda = new MySqlDataAdapter(query, sqlcon);           
-            DataTable dtbl = new DataTable();
-            sda.Fill(dtbl);
-            //se a tabela for preenchida a informação é considerada valida
-            if (dtbl.Rows.Count == 1)
+            if (usuario != null && usuario.comparaSenha(txtSenha.Text.Trim()))
             {
-                MessageBox.Show("Presença confirmada!\n"+DateTime.Now.ToString());
-                Console.Write(dtbl.Rows[0][0]);                
-                string qtutor = "Select * from new_schema.usuarios where nome= '" + txtNome.Text.Trim() + "' and tutor= '1'";
-                MySqlDataAdapter sda2 = new MySqlDataAdapter(qtutor, sqlcon);
-                DataTable dtbl2 = new DataTable();
-                sda2.Fill(dtbl2);
-                if (dtbl2.Rows.Count==1)
+                
+                if (usuario.tutor)
                 {
                     //abre dash dos tutores se o usuario for tutor(a).
                     frmTutor frmTutor = new frmTutor();
                     frmTutor.Show();
                 }
+                else {
+                    List<Usuario> usuariosNaMemoria = getUsuarios(true);
+                    usuariosNaMemoria.Add(usuario);
+                    List<Data> datas = getDatas(usuariosNaMemoria, usuario);
+                    if (usuario.marcaPresenca(datas))
+                    {
+                        MessageBox.Show("Presença confirmada!\n" + DateTime.Now.ToString());
+                    }                    
+                    //exibe lista de datas
+                    foreach (Data data in datas)
+                        data.DebugData();
+                    
+
+
+                }
+            }
+            else{
+                MessageBox.Show("Usuário ou senha inválidos");
 
             }
-            else
-            {
-                MessageBox.Show("Senha ou nome incorretos!");
-            }
+            return;            
                                                  
         }
 

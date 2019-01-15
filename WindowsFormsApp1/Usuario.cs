@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 using MySql.Data;
 using MySql.Data.MySqlClient;
@@ -40,6 +41,10 @@ namespace WindowsFormsApp1
         {
             return this.nome;
         }
+        public Boolean comparaSenha(String senha)
+        {
+            return senha.Equals(this.senha) ;
+        }
 
         public string DebugUsuario()
         {
@@ -51,7 +56,7 @@ namespace WindowsFormsApp1
             };
 
         }
-        public void marcaPresenca(List<Data> listaDatas)
+        public Boolean marcaPresenca(List<Data> listaDatas)
         {
             DateTime dataAtual = DateTime.Now;
 
@@ -59,9 +64,17 @@ namespace WindowsFormsApp1
             {
                 if (dataAtual > data.getDataEsperada().AddMinutes(-10) && dataAtual < data.getDataEsperada().AddHours(3))
                     // Se o item da lista é a data mais próxima da data atual
-                    if (!data.isRealSet())
-                        data.marcaPresenca();
+                    if (data.isRealSet())
+                    {
+                        MessageBox.Show("Presença já marcada anteriormente, em " + data.getDataReal());
+                        return false;
+                    }                        
+                    else
+                        return data.marcaPresenca();
+
             }
+            // O que fazer quando nao encontra data?
+            return false;
 
         }
         public void updateUsuario(String nome, String email, Boolean tutor)

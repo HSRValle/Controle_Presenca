@@ -72,7 +72,7 @@ namespace WindowsFormsApp1
         {
             return dataReal;
         }
-        public void marcaPresenca()
+        public Boolean marcaPresenca()
         // Chamada quando o usuário loga. Compara a hora atual com a hora esperada e marca presença como true ou false
         {
             dataReal = DateTime.Now;
@@ -84,7 +84,7 @@ namespace WindowsFormsApp1
             {
                 this.presente = false;
             }
-            updateData();
+            return updateData();
         }
         public String DebugData()
         {
@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
             }
 
         }        
-        public void updateData()
+        public Boolean updateData()
         {           
             MySql.Data.MySqlClient.MySqlConnection conn;
             try
@@ -134,11 +134,13 @@ namespace WindowsFormsApp1
                 sql += " WHERE iddata = " + this.id;
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
+                return true;
 
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
                 Console.WriteLine(ex);
+                return false;
             }
         }
         public void insertNewData()

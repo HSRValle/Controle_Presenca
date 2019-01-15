@@ -55,6 +55,37 @@ namespace WindowsFormsApp1
         }
 
         // Funções
+        public Usuario getUsuario(string nome)
+        {
+            Usuario retorno = null;
+            MySql.Data.MySqlClient.MySqlConnection conn;
+            try
+            {
+                conn = new MySql.Data.MySqlClient.MySqlConnection();
+                conn.ConnectionString = Sql.Conection();
+                conn.Open();
+
+                string sql = "SELECT * FROM new_schema.usuarios ";
+                sql += "WHERE nome = '" + nome + "'";
+                sql += ";";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader result = cmd.ExecuteReader();
+                while (result.Read())
+                {
+                    retorno = new Usuario(result);
+                    retorno.DebugUsuario();
+                }
+                result.Close();
+                return retorno;
+
+
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                Console.Write(ex);
+                return retorno;
+            }
+        }
         public List<Usuario> getUsuarios(Boolean tutores = false)
         {
             List<Usuario> retorno = new List<Usuario>();
@@ -170,8 +201,11 @@ namespace WindowsFormsApp1
         private void btnEntrar_Click(object sender, EventArgs e)
         {         
             MySqlConnection sqlcon = new MySqlConnection(Sql.Conection());
+            Usuario usuario = getUsuario(txtNome.Text.Trim());
+
+            return;
             //busca nome e senha no db e guarda informação em uma tabela 
-            string query = "Select * from new_schema.usuarios where nome= '" + txtNome.Text.Trim() + "' and senha = '" + txtSenha.Text.Trim() + "'";
+            string query = "Select * from new_schema.usuarios where nome= '" + txtNome.Text.Trim() + "' and senha = '" + txtSenha.Text.Trim() + "'";            
             MySqlDataAdapter sda = new MySqlDataAdapter(query, sqlcon);           
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
@@ -179,6 +213,7 @@ namespace WindowsFormsApp1
             if (dtbl.Rows.Count == 1)
             {
                 MessageBox.Show("Presença confirmada!\n"+DateTime.Now.ToString());
+                Console.Write(dtbl.Rows[0][0]);                
                 string qtutor = "Select * from new_schema.usuarios where nome= '" + txtNome.Text.Trim() + "' and tutor= '1'";
                 MySqlDataAdapter sda2 = new MySqlDataAdapter(qtutor, sqlcon);
                 DataTable dtbl2 = new DataTable();
@@ -188,10 +223,6 @@ namespace WindowsFormsApp1
                     //abre dash dos tutores se o usuario for tutor(a).
                     frmTutor frmTutor = new frmTutor();
                     frmTutor.Show();
-                }
-                else
-                {
-                    MessageBox.Show("teste");
                 }
 
             }

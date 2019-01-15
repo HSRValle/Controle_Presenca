@@ -17,6 +17,8 @@ namespace WindowsFormsApp1
 {
     public partial class frmTutor : Form
     {
+        private List<Usuario> TodosUsuarios;
+        private List<Data> TodasDatas;
         private void RefreshForm()
         {
             this.Controls.Clear();
@@ -25,6 +27,8 @@ namespace WindowsFormsApp1
 
         public frmTutor()
         {
+            this.TodosUsuarios = Consulta.getUsuarios();
+            this.TodasDatas = Consulta.getDatas(this.TodosUsuarios);
             InitializeComponent();
             panel1.Hide();
         

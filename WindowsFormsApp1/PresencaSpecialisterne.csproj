@@ -71,6 +71,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consulta.cs" />
     <Compile Include="frmTutor.cs">
       <SubType>Form</SubType>
     </Compile>

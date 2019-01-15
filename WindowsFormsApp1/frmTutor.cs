@@ -30,10 +30,20 @@ namespace WindowsFormsApp1
             this.TodosUsuarios = Consulta.getUsuarios();
             this.TodasDatas = Consulta.getDatas(this.TodosUsuarios);
             InitializeComponent();
+     
 
+            //Filtra apenas as datas passadas
+            List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);
+
+            preencherDataGridView(filtro);
+            //panel1.Hide();
+
+        }
+        private void preencherDataGridView(List<Data> listaDatas)
+        {
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dataGridView.ColumnCount = 4;
+            dataGridView.ColumnCount = 6;
 
             dataGridView.Columns[0].Name = "Data";
             dataGridView.Columns[0].ValueType = typeof(DateTime);
@@ -44,11 +54,12 @@ namespace WindowsFormsApp1
 
             dataGridView.Columns[3].Name = "No horário?";
 
-            //Filtra apenas as datas passadas
-            List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);
+            dataGridView.Columns[4].Name = "Justificativa";
 
-            foreach (Data data in filtro)
-            {                
+            dataGridView.Columns[5].Name = "Tutor";
+
+            foreach (Data data in listaDatas)
+            {
                 int index = dataGridView.Rows.Add();
                 dataGridView.Rows[index].Cells[0].Value = data.getDataEsperada();
                 dataGridView.Rows[index].Cells[1].Value = data.Aluno.getNome();
@@ -62,21 +73,28 @@ namespace WindowsFormsApp1
                 {
                     dataGridView.Rows[index].Cells[2].Value = "Não";
                     dataGridView.Rows[index].Cells[2].Style.BackColor = Color.IndianRed;
-                }                    
+                }
 
                 if (data.noHorario)
                 {
                     dataGridView.Rows[index].Cells[3].Value = "Sim";
                     dataGridView.Rows[index].Cells[3].Style.BackColor = Color.ForestGreen;
-                }                   
+                }
                 else
                 {
                     dataGridView.Rows[index].Cells[3].Value = "Não";
                     dataGridView.Rows[index].Cells[3].Style.BackColor = Color.IndianRed;
-                }                    
-            }
-            //panel1.Hide();
+                }
+                if (data.justificativa.Length > 0)
+                {
+                    dataGridView.Rows[index].Cells[4].Value = data.justificativa;
+                }
 
+                if (data.Tutor != null)
+                {
+                    dataGridView.Rows[index].Cells[5].Value = data.Tutor.getNome();
+                }
+            }
         }
 
         private void frmTutor_Load(object sender, EventArgs e)

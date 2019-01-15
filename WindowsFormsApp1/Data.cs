@@ -50,6 +50,13 @@ namespace WindowsFormsApp1
                     this.presente = true;
                 else if (retornoSql["presente"].ToString() == "0")
                     this.presente = false;
+
+            if (!Convert.IsDBNull(retornoSql["noHorario"]))
+                if (retornoSql["noHorario"].ToString() == "1")
+                    this.noHorario = true;
+                else if (retornoSql["noHorario"].ToString() == "0")
+                    this.noHorario = false;
+
             if (!Convert.IsDBNull(retornoSql["idAluno"]))
             {
                 this.Aluno = listaUsuarios.Find(x => x.id == Int32.Parse(retornoSql["idAluno"].ToString()));

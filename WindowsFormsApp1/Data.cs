@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         private readonly DateTime dataEsperada;
         private DateTime dataReal;
         public Boolean presente;
+        public Boolean noHorario;
         public String justificativa;
         public Usuario Aluno;
         public Usuario Tutor;
@@ -76,13 +77,14 @@ namespace WindowsFormsApp1
         // Chamada quando o usuário loga. Compara a hora atual com a hora esperada e marca presença como true ou false
         {
             dataReal = DateTime.Now;
+            this.presente = true;
             if (dataReal < dataEsperada.AddMinutes(15))
             {
-                this.presente = true;
+                this.noHorario = true;
             }
             else
             {
-                this.presente = false;
+                this.noHorario = false;
             }
             return updateData();
         }
@@ -126,6 +128,7 @@ namespace WindowsFormsApp1
                 if (this.isRealSet())
                     sql += " dataReal = '" + this.dataReal.ToString("yyyy-MM-dd HH:mm:ss") + "',";
                 sql += " presente = " + this.presente + ",";
+                sql += " noHorario = " + this.noHorario + ",";
                 sql += " justificativa = '" + this.justificativa + "',";
                 if (this.Tutor != null)
                     sql += " idTutor = " + this.Tutor.id + ",";

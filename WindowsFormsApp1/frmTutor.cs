@@ -31,6 +31,8 @@ namespace WindowsFormsApp1
             this.TodasDatas = Consulta.getDatas(this.TodosUsuarios);
             InitializeComponent();
 
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             dataGridView.ColumnCount = 4;
 
             dataGridView.Columns[0].Name = "Data";
@@ -42,15 +44,36 @@ namespace WindowsFormsApp1
 
             dataGridView.Columns[3].Name = "No horário?";
 
-            foreach (Data data in TodasDatas)
+            //Filtra apenas as datas passadas
+            List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);
+
+            foreach (Data data in filtro)
             {                
                 int index = dataGridView.Rows.Add();
                 dataGridView.Rows[index].Cells[0].Value = data.getDataEsperada();
                 dataGridView.Rows[index].Cells[1].Value = data.Aluno.getNome();
-                dataGridView.Rows[index].Cells[2].Value = data.presente;
-                dataGridView.Rows[index].Cells[3].Value = data.noHorario;
 
+                if (data.presente)
+                {
+                    dataGridView.Rows[index].Cells[2].Value = "Sim";
+                    dataGridView.Rows[index].Cells[2].Style.BackColor = Color.ForestGreen;
+                }
+                else
+                {
+                    dataGridView.Rows[index].Cells[2].Value = "Não";
+                    dataGridView.Rows[index].Cells[2].Style.BackColor = Color.IndianRed;
+                }                    
 
+                if (data.noHorario)
+                {
+                    dataGridView.Rows[index].Cells[3].Value = "Sim";
+                    dataGridView.Rows[index].Cells[3].Style.BackColor = Color.ForestGreen;
+                }                   
+                else
+                {
+                    dataGridView.Rows[index].Cells[3].Value = "Não";
+                    dataGridView.Rows[index].Cells[3].Style.BackColor = Color.IndianRed;
+                }                    
             }
             //panel1.Hide();
 

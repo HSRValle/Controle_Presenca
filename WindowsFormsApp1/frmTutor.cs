@@ -30,30 +30,8 @@ namespace WindowsFormsApp1
             this.TodosUsuarios = Consulta.getUsuarios();
             this.TodasDatas = Consulta.getDatas(this.TodosUsuarios);
             InitializeComponent();
-
-            dataGridView.ColumnCount = 4;
-
-            dataGridView.Columns[0].Name = "Data";
-            dataGridView.Columns[0].ValueType = typeof(DateTime);
-
-            dataGridView.Columns[1].Name = "Aluno";
-
-            dataGridView.Columns[2].Name = "Presente?";
-
-            dataGridView.Columns[3].Name = "No horário?";
-
-            foreach (Data data in TodasDatas)
-            {                
-                int index = dataGridView.Rows.Add();
-                dataGridView.Rows[index].Cells[0].Value = data.getDataEsperada();
-                dataGridView.Rows[index].Cells[1].Value = data.Aluno.getNome();
-                dataGridView.Rows[index].Cells[2].Value = data.presente;
-                dataGridView.Rows[index].Cells[3].Value = data.noHorario;
-
-
-            }
-            //panel1.Hide();
-
+            panel1.Hide();
+        
         }
 
         private void frmTutor_Load(object sender, EventArgs e)

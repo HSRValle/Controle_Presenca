@@ -44,6 +44,8 @@
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.datasPassadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.datasFuturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -70,6 +72,9 @@
             // 
             // presençaDoAlunosToolStripMenuItem
             // 
+            this.presençaDoAlunosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.datasPassadasToolStripMenuItem,
+            this.datasFuturasToolStripMenuItem});
             this.presençaDoAlunosToolStripMenuItem.Name = "presençaDoAlunosToolStripMenuItem";
             this.presençaDoAlunosToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
             this.presençaDoAlunosToolStripMenuItem.Text = "Presença do Alunos";
@@ -88,26 +93,26 @@
             // procurarCadastroToolStripMenuItem
             // 
             this.procurarCadastroToolStripMenuItem.Name = "procurarCadastroToolStripMenuItem";
-            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.procurarCadastroToolStripMenuItem.Text = "Procurar Cadastro";
             this.procurarCadastroToolStripMenuItem.Click += new System.EventHandler(this.procurarCadastroToolStripMenuItem_Click);
             // 
             // novoCadastroToolStripMenuItem
             // 
             this.novoCadastroToolStripMenuItem.Name = "novoCadastroToolStripMenuItem";
-            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoCadastroToolStripMenuItem.Text = "Novo Cadastro";
             // 
             // editarCadastroToolStripMenuItem
             // 
             this.editarCadastroToolStripMenuItem.Name = "editarCadastroToolStripMenuItem";
-            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editarCadastroToolStripMenuItem.Text = "Editar Cadastro";
             // 
             // excluirCadastroToolStripMenuItem
             // 
             this.excluirCadastroToolStripMenuItem.Name = "excluirCadastroToolStripMenuItem";
-            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.excluirCadastroToolStripMenuItem.Text = "Excluir Cadastro";
             // 
             // menuPessoalToolStripMenuItem
@@ -123,19 +128,19 @@
             // checarCadastroToolStripMenuItem
             // 
             this.checarCadastroToolStripMenuItem.Name = "checarCadastroToolStripMenuItem";
-            this.checarCadastroToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.checarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checarCadastroToolStripMenuItem.Text = "Checar Cadastro";
             // 
             // editarCadastroToolStripMenuItem1
             // 
             this.editarCadastroToolStripMenuItem1.Name = "editarCadastroToolStripMenuItem1";
-            this.editarCadastroToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
+            this.editarCadastroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.editarCadastroToolStripMenuItem1.Text = "Editar Cadastro";
             // 
             // editarSenhaToolStripMenuItem
             // 
             this.editarSenhaToolStripMenuItem.Name = "editarSenhaToolStripMenuItem";
-            this.editarSenhaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.editarSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editarSenhaToolStripMenuItem.Text = "Editar Senha";
             // 
             // sairToolStripMenuItem
@@ -161,6 +166,20 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(643, 437);
             this.dataGridView.TabIndex = 1;
+            // 
+            // datasPassadasToolStripMenuItem
+            // 
+            this.datasPassadasToolStripMenuItem.Name = "datasPassadasToolStripMenuItem";
+            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datasPassadasToolStripMenuItem.Text = "Datas Passadas";
+            this.datasPassadasToolStripMenuItem.Click += new System.EventHandler(this.datasPassadasToolStripMenuItem_Click);
+            // 
+            // datasFuturasToolStripMenuItem
+            // 
+            this.datasFuturasToolStripMenuItem.Name = "datasFuturasToolStripMenuItem";
+            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datasFuturasToolStripMenuItem.Text = "Datas Futuras";
+            this.datasFuturasToolStripMenuItem.Click += new System.EventHandler(this.datasFuturasToolStripMenuItem_Click);
             // 
             // frmTutor
             // 
@@ -201,5 +220,7 @@
         private System.Windows.Forms.ToolStripMenuItem presençaDoAlunosToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.ToolStripMenuItem datasPassadasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem datasFuturasToolStripMenuItem;
     }
 }

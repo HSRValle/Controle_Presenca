@@ -30,17 +30,14 @@ namespace WindowsFormsApp1
             this.TodosUsuarios = Consulta.getUsuarios();
             this.TodasDatas = Consulta.getDatas(this.TodosUsuarios);
             InitializeComponent();
-     
 
-            //Filtra apenas as datas passadas
-            List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);
-
-            preencherDataGridView(filtro);
-            //panel1.Hide();
+            datasPassadasToolStripMenuItem_Click();
 
         }
         private void preencherDataGridView(List<Data> listaDatas)
         {
+            dataGridView.Rows.Clear();
+            dataGridView.Refresh();
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dataGridView.ColumnCount = 6;
@@ -125,6 +122,18 @@ namespace WindowsFormsApp1
         private void procurarCadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RefreshForm();
+        }
+
+        private void datasFuturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) > 0);
+            preencherDataGridView(filtro);
+        }
+
+        private void datasPassadasToolStripMenuItem_Click(object sender = null, EventArgs e = null)
+        {
+            List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);        
+            preencherDataGridView(filtro);
         }
     }
 }

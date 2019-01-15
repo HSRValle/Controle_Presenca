@@ -17,41 +17,7 @@ namespace WindowsFormsApp1
     {
         public frmLogin()
         {
-            InitializeComponent();
-            
-
-            if (false) //se o usuário logado é tutor
-            {   // Recupera os usuários do banco            
-                List<Usuario> todosUsuarios = getUsuarios();
-
-                //Recupera as datas do banco
-                List<Data> todasDatas = getDatas(todosUsuarios);
-                
-            }
-            else //se o usuário logado é aluno
-            {
-                // Não precisa obter os outros alunos. Apenas o aluno e os tutores serão utilizados:
-                
-                List<Usuario> usuariosNaMemoria = getUsuarios(true); //obtém os tutores do banco
-
-                //usuariosNaMemoria.Add();  Adiciona o usuário atual na lista.                                 
-                Usuario usuarioAtual = usuariosNaMemoria[0]; //remover quando a linha acima for concluída
-
-                //Recupera as datas do banco associadas ao usuario
-                List<Data> todasDatas = getDatas(usuariosNaMemoria, usuarioAtual);
-
-                //createNextDatas(todasDatas, todosUsuarios);
-
-                //usuarioAtual.marcaPresenca(todasDatas);   
-                /*
-                 * Exemplo de busca dentro da lista
-                 * List<Data> temp = todasDatas.FindAll(x => x.Aluno.Equals(usuarioAtual) && x.presente);                
-                */
-
-            }
-
-
-
+            InitializeComponent();                       
         }
 
         // Funções

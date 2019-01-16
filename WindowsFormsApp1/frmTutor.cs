@@ -40,39 +40,35 @@ namespace WindowsFormsApp1
             dataGridView.Refresh();
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dataGridView.ColumnCount = 6;
+            dataGridView.ColumnCount = 7;
 
-            dataGridView.Columns[0].Name = "Data";
-            dataGridView.Columns[0].ValueType = typeof(DateTime);
+            dataGridView.Columns[0].Name = "Id";
+            dataGridView.Columns[0].Visible = false;
+            dataGridView.Columns[1].ValueType = typeof(int);
 
-            dataGridView.Columns[1].Name = "Aluno";
+            dataGridView.Columns[1].Name = "Data";
+            dataGridView.Columns[1].ValueType = typeof(DateTime);
 
-            dataGridView.Columns[2].Name = "Presente?";
+            dataGridView.Columns[2].Name = "Aluno";
 
-            dataGridView.Columns[3].Name = "No horário?";
+            dataGridView.Columns[3].Name = "Presente?";
 
-            dataGridView.Columns[4].Name = "Justificativa";
+            dataGridView.Columns[4].Name = "No horário?";
 
-            dataGridView.Columns[5].Name = "Tutor";
+            dataGridView.Columns[5].Name = "Justificativa";
+
+            dataGridView.Columns[6].Name = "Tutor";
 
             foreach (Data data in listaDatas)
             {
                 int index = dataGridView.Rows.Add();
-                dataGridView.Rows[index].Cells[0].Value = data.getDataEsperada();
-                dataGridView.Rows[index].Cells[1].Value = data.Aluno.getNome();
+
+                dataGridView.Rows[index].Cells[0].Value = data.getId();
+
+                dataGridView.Rows[index].Cells[1].Value = data.getDataEsperada();
+                dataGridView.Rows[index].Cells[2].Value = data.Aluno.getNome();
 
                 if (data.presente)
-                {
-                    dataGridView.Rows[index].Cells[2].Value = "Sim";
-                    dataGridView.Rows[index].Cells[2].Style.BackColor = Color.ForestGreen;
-                }
-                else
-                {
-                    dataGridView.Rows[index].Cells[2].Value = "Não";
-                    dataGridView.Rows[index].Cells[2].Style.BackColor = Color.IndianRed;
-                }
-
-                if (data.noHorario)
                 {
                     dataGridView.Rows[index].Cells[3].Value = "Sim";
                     dataGridView.Rows[index].Cells[3].Style.BackColor = Color.ForestGreen;
@@ -82,14 +78,25 @@ namespace WindowsFormsApp1
                     dataGridView.Rows[index].Cells[3].Value = "Não";
                     dataGridView.Rows[index].Cells[3].Style.BackColor = Color.IndianRed;
                 }
+
+                if (data.noHorario)
+                {
+                    dataGridView.Rows[index].Cells[4].Value = "Sim";
+                    dataGridView.Rows[index].Cells[4].Style.BackColor = Color.ForestGreen;
+                }
+                else
+                {
+                    dataGridView.Rows[index].Cells[4].Value = "Não";
+                    dataGridView.Rows[index].Cells[4].Style.BackColor = Color.IndianRed;
+                }
                 if (data.justificativa.Length > 0)
                 {
-                    dataGridView.Rows[index].Cells[4].Value = data.justificativa;
+                    dataGridView.Rows[index].Cells[5].Value = data.justificativa;
                 }
 
                 if (data.Tutor != null)
                 {
-                    dataGridView.Rows[index].Cells[5].Value = data.Tutor.getNome();
+                    dataGridView.Rows[index].Cells[6].Value = data.Tutor.getNome();
                 }
             }
         }
@@ -134,6 +141,14 @@ namespace WindowsFormsApp1
         {
             List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);        
             preencherDataGridView(filtro);
+        }
+
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            int id = int.Parse(dataGridView.Rows[index].Cells[0].Value.ToString());
+            Data d = TodasDatas.Find(x => x.getId() == id);
+            d.DebugData();
         }
     }
 }

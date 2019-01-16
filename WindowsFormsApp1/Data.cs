@@ -72,6 +72,10 @@ namespace WindowsFormsApp1
             this.justificativa = mensagem;
             this.Tutor = responsavel;
         }
+        public int getId()
+        {
+            return id;
+        }
         public DateTime getDataEsperada()
         {
             return dataEsperada;

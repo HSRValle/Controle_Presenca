@@ -17,15 +17,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             data.getDataEsperada();
             lblData.Text += data.getDataEsperada();
-
-            radUnico.Text += data.Aluno.getNome();
-            dateTimePickerData.Value = data.getDataEsperada();
-            dateTimePickerTime.Value = data.getDataEsperada();
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
+            lblAluno.Text += data.Aluno.getNome();
         }
     }
 }

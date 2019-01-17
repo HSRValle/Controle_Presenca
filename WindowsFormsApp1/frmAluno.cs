@@ -72,14 +72,6 @@ namespace WindowsFormsApp1
             pnlCorrecao.BringToFront();
         }
 
-        private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
-        { //faz com que apenas uma opção possa ser selecionada
-            if (e.NewValue == CheckState.Checked && checkedListBox1.CheckedItems.Count > 0)
-            {
-                checkedListBox1.ItemCheck -= checkedListBox1_ItemCheck;
-                checkedListBox1.SetItemChecked(checkedListBox1.CheckedIndices[0], false);
-                checkedListBox1.ItemCheck += checkedListBox1_ItemCheck;
-            }
-        }
+        
     }
 }

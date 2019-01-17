@@ -44,9 +44,17 @@
             this.editarCadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlConsulta = new System.Windows.Forms.Panel();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.pnlPresenca = new System.Windows.Forms.Panel();
             this.pnlCadastroNovo = new System.Windows.Forms.Panel();
+            this.pnlCadastroPesquisa = new System.Windows.Forms.Panel();
+            this.lblResultado = new System.Windows.Forms.Label();
+            this.btnProcurar = new System.Windows.Forms.Button();
+            this.txtProcNCadastro = new System.Windows.Forms.TextBox();
+            this.txtProcNome = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -60,20 +68,22 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnlCadastroPesquisa = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtProcNome = new System.Windows.Forms.TextBox();
-            this.txtProcNCadastro = new System.Windows.Forms.TextBox();
-            this.btnProcurar = new System.Windows.Forms.Button();
-            this.lblResultado = new System.Windows.Forms.Label();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.pnlMudarSenha = new System.Windows.Forms.Panel();
+            this.txtConfSenha = new System.Windows.Forms.TextBox();
+            this.txtNovaSenha = new System.Windows.Forms.TextBox();
+            this.txtSenhaAntiga = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblErro = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.pnlConsulta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.pnlPresenca.SuspendLayout();
             this.pnlCadastroNovo.SuspendLayout();
             this.pnlCadastroPesquisa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.pnlMudarSenha.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -181,7 +191,8 @@
             // 
             this.editarSenhaToolStripMenuItem.Name = "editarSenhaToolStripMenuItem";
             this.editarSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.editarSenhaToolStripMenuItem.Text = "Editar Senha";
+            this.editarSenhaToolStripMenuItem.Text = "Mudar Senha";
+            this.editarSenhaToolStripMenuItem.Click += new System.EventHandler(this.editarSenhaToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -190,25 +201,15 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // pnlConsulta
+            // pnlPresenca
             // 
-            this.pnlConsulta.Controls.Add(this.pnlCadastroNovo);
-            this.pnlConsulta.Controls.Add(this.dataGridView);
-            this.pnlConsulta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlConsulta.Location = new System.Drawing.Point(0, 24);
-            this.pnlConsulta.Name = "pnlConsulta";
-            this.pnlConsulta.Size = new System.Drawing.Size(699, 464);
-            this.pnlConsulta.TabIndex = 1;
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(27, 15);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(643, 437);
-            this.dataGridView.TabIndex = 1;
-            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
+            this.pnlPresenca.Controls.Add(this.pnlCadastroNovo);
+            this.pnlPresenca.Controls.Add(this.dataGridView);
+            this.pnlPresenca.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPresenca.Location = new System.Drawing.Point(0, 24);
+            this.pnlPresenca.Name = "pnlPresenca";
+            this.pnlPresenca.Size = new System.Drawing.Size(699, 464);
+            this.pnlPresenca.TabIndex = 1;
             // 
             // pnlCadastroNovo
             // 
@@ -231,6 +232,91 @@
             this.pnlCadastroNovo.Name = "pnlCadastroNovo";
             this.pnlCadastroNovo.Size = new System.Drawing.Size(699, 464);
             this.pnlCadastroNovo.TabIndex = 3;
+            // 
+            // pnlCadastroPesquisa
+            // 
+            this.pnlCadastroPesquisa.Controls.Add(this.pnlMudarSenha);
+            this.pnlCadastroPesquisa.Controls.Add(this.lblResultado);
+            this.pnlCadastroPesquisa.Controls.Add(this.btnProcurar);
+            this.pnlCadastroPesquisa.Controls.Add(this.txtProcNCadastro);
+            this.pnlCadastroPesquisa.Controls.Add(this.txtProcNome);
+            this.pnlCadastroPesquisa.Controls.Add(this.label10);
+            this.pnlCadastroPesquisa.Controls.Add(this.label9);
+            this.pnlCadastroPesquisa.Controls.Add(this.label8);
+            this.pnlCadastroPesquisa.Controls.Add(this.label7);
+            this.pnlCadastroPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCadastroPesquisa.Location = new System.Drawing.Point(0, 0);
+            this.pnlCadastroPesquisa.Name = "pnlCadastroPesquisa";
+            this.pnlCadastroPesquisa.Size = new System.Drawing.Size(699, 464);
+            this.pnlCadastroPesquisa.TabIndex = 27;
+            // 
+            // lblResultado
+            // 
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Location = new System.Drawing.Point(310, 242);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(16, 13);
+            this.lblResultado.TabIndex = 7;
+            this.lblResultado.Text = "...";
+            // 
+            // btnProcurar
+            // 
+            this.btnProcurar.Location = new System.Drawing.Point(330, 198);
+            this.btnProcurar.Name = "btnProcurar";
+            this.btnProcurar.Size = new System.Drawing.Size(75, 23);
+            this.btnProcurar.TabIndex = 6;
+            this.btnProcurar.Text = "Procurar";
+            this.btnProcurar.UseVisualStyleBackColor = true;
+            // 
+            // txtProcNCadastro
+            // 
+            this.txtProcNCadastro.Location = new System.Drawing.Point(268, 144);
+            this.txtProcNCadastro.Name = "txtProcNCadastro";
+            this.txtProcNCadastro.Size = new System.Drawing.Size(137, 20);
+            this.txtProcNCadastro.TabIndex = 5;
+            // 
+            // txtProcNome
+            // 
+            this.txtProcNome.Location = new System.Drawing.Point(268, 115);
+            this.txtProcNome.Name = "txtProcNome";
+            this.txtProcNome.Size = new System.Drawing.Size(137, 20);
+            this.txtProcNome.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(198, 92);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 13);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Procurar por";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(225, 118);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Nome:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(181, 147);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Nº de Cadastro:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(278, 49);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(110, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Pesquisa de Cadastro";
             // 
             // btnLimpar
             // 
@@ -341,96 +427,105 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Novo Cadastro";
             // 
-            // pnlCadastroPesquisa
+            // dataGridView
             // 
-            this.pnlCadastroPesquisa.Controls.Add(this.lblResultado);
-            this.pnlCadastroPesquisa.Controls.Add(this.btnProcurar);
-            this.pnlCadastroPesquisa.Controls.Add(this.txtProcNCadastro);
-            this.pnlCadastroPesquisa.Controls.Add(this.txtProcNome);
-            this.pnlCadastroPesquisa.Controls.Add(this.label10);
-            this.pnlCadastroPesquisa.Controls.Add(this.label9);
-            this.pnlCadastroPesquisa.Controls.Add(this.label8);
-            this.pnlCadastroPesquisa.Controls.Add(this.label7);
-            this.pnlCadastroPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCadastroPesquisa.Location = new System.Drawing.Point(0, 0);
-            this.pnlCadastroPesquisa.Name = "pnlCadastroPesquisa";
-            this.pnlCadastroPesquisa.Size = new System.Drawing.Size(699, 464);
-            this.pnlCadastroPesquisa.TabIndex = 27;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(27, 15);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.Size = new System.Drawing.Size(643, 437);
+            this.dataGridView.TabIndex = 1;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
-            // label7
+            // pnlMudarSenha
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(265, 36);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Pesquisa de Cadastro";
+            this.pnlMudarSenha.Controls.Add(this.txtConfSenha);
+            this.pnlMudarSenha.Controls.Add(this.txtNovaSenha);
+            this.pnlMudarSenha.Controls.Add(this.txtSenhaAntiga);
+            this.pnlMudarSenha.Controls.Add(this.button1);
+            this.pnlMudarSenha.Controls.Add(this.lblErro);
+            this.pnlMudarSenha.Controls.Add(this.label11);
+            this.pnlMudarSenha.Controls.Add(this.label12);
+            this.pnlMudarSenha.Controls.Add(this.label13);
+            this.pnlMudarSenha.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMudarSenha.Location = new System.Drawing.Point(0, 0);
+            this.pnlMudarSenha.Name = "pnlMudarSenha";
+            this.pnlMudarSenha.Size = new System.Drawing.Size(699, 464);
+            this.pnlMudarSenha.TabIndex = 8;
             // 
-            // label8
+            // txtConfSenha
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(181, 147);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Nº de Cadastro:";
+            this.txtConfSenha.Location = new System.Drawing.Point(291, 184);
+            this.txtConfSenha.Name = "txtConfSenha";
+            this.txtConfSenha.Size = new System.Drawing.Size(134, 20);
+            this.txtConfSenha.TabIndex = 15;
+            this.txtConfSenha.TextChanged += new System.EventHandler(this.txtConfSenha_TextChanged);
             // 
-            // label9
+            // txtNovaSenha
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(225, 118);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Nome:";
+            this.txtNovaSenha.Location = new System.Drawing.Point(291, 150);
+            this.txtNovaSenha.Name = "txtNovaSenha";
+            this.txtNovaSenha.Size = new System.Drawing.Size(134, 20);
+            this.txtNovaSenha.TabIndex = 14;
             // 
-            // label10
+            // txtSenhaAntiga
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(198, 92);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 13);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Procurar por";
+            this.txtSenhaAntiga.Location = new System.Drawing.Point(291, 112);
+            this.txtSenhaAntiga.Name = "txtSenhaAntiga";
+            this.txtSenhaAntiga.Size = new System.Drawing.Size(134, 20);
+            this.txtSenhaAntiga.TabIndex = 13;
             // 
-            // txtProcNome
+            // button1
             // 
-            this.txtProcNome.Location = new System.Drawing.Point(268, 115);
-            this.txtProcNome.Name = "txtProcNome";
-            this.txtProcNome.Size = new System.Drawing.Size(137, 20);
-            this.txtProcNome.TabIndex = 4;
+            this.button1.Location = new System.Drawing.Point(350, 236);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Salvar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // txtProcNCadastro
+            // lblErro
             // 
-            this.txtProcNCadastro.Location = new System.Drawing.Point(268, 144);
-            this.txtProcNCadastro.Name = "txtProcNCadastro";
-            this.txtProcNCadastro.Size = new System.Drawing.Size(137, 20);
-            this.txtProcNCadastro.TabIndex = 5;
+            this.lblErro.AutoSize = true;
+            this.lblErro.Location = new System.Drawing.Point(347, 207);
+            this.lblErro.Name = "lblErro";
+            this.lblErro.Size = new System.Drawing.Size(10, 13);
+            this.lblErro.TabIndex = 11;
+            this.lblErro.Text = ".";
             // 
-            // btnProcurar
+            // label11
             // 
-            this.btnProcurar.Location = new System.Drawing.Point(330, 198);
-            this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(75, 23);
-            this.btnProcurar.TabIndex = 6;
-            this.btnProcurar.Text = "Procurar";
-            this.btnProcurar.UseVisualStyleBackColor = true;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(199, 187);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 13);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Confirmar senha:";
             // 
-            // lblResultado
+            // label12
             // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(310, 242);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(16, 13);
-            this.lblResultado.TabIndex = 7;
-            this.lblResultado.Text = "...";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(217, 153);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 13);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Nova senha:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(244, 115);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Senha:";
             // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 488);
-            this.Controls.Add(this.pnlConsulta);
+            this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -440,12 +535,14 @@
             this.Load += new System.EventHandler(this.frmTutor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.pnlConsulta.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.pnlPresenca.ResumeLayout(false);
             this.pnlCadastroNovo.ResumeLayout(false);
             this.pnlCadastroNovo.PerformLayout();
             this.pnlCadastroPesquisa.ResumeLayout(false);
             this.pnlCadastroPesquisa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.pnlMudarSenha.ResumeLayout(false);
+            this.pnlMudarSenha.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,7 +563,7 @@
         private System.Windows.Forms.ToolStripMenuItem editarSenhaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem presençaDoAlunosToolStripMenuItem;
-        private System.Windows.Forms.Panel pnlConsulta;
+        private System.Windows.Forms.Panel pnlPresenca;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.ToolStripMenuItem datasPassadasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem datasFuturasToolStripMenuItem;
@@ -493,5 +590,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel pnlMudarSenha;
+        private System.Windows.Forms.TextBox txtConfSenha;
+        private System.Windows.Forms.TextBox txtNovaSenha;
+        private System.Windows.Forms.TextBox txtSenhaAntiga;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblErro;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

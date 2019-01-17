@@ -105,8 +105,9 @@ namespace WindowsFormsApp1
         {
             //esconder todos os painéis
             pnlCadastroNovo.Hide();
-            pnlConsulta.Hide();
+            pnlPresenca.Hide();
             pnlCadastroPesquisa.Hide();
+            pnlMudarSenha.Hide();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -146,6 +147,8 @@ namespace WindowsFormsApp1
         {
             List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);        
             preencherDataGridView(filtro);
+            pnlPresenca.Show();
+            pnlPresenca.BringToFront();
         }
 
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -160,9 +163,26 @@ namespace WindowsFormsApp1
         {
             /**fazer o painel relevante aparecer e o trazer para frente, 
             para ter certeza que não está escondio atrás de outro painel**/
-            RefreshForm(); //tbh não tenho certeza o que faz, mas acredito que faça o form voltar para o form_load
+            RefreshForm(); 
             pnlCadastroNovo.Show();
             pnlCadastroNovo.BringToFront();
+        }
+
+        private void editarSenhaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshForm();
+            pnlMudarSenha.Show();
+            pnlMudarSenha.BringToFront();
+        }
+
+        private void txtConfSenha_TextChanged(object sender, EventArgs e)
+        {
+            string NovaSenha = txtNovaSenha.ToString();
+            string ConfSenha = txtConfSenha.ToString();
+            if (NovaSenha != ConfSenha)
+            {
+                lblErro.Text = "Senhas não correspondem.";
+            }
         }
     }
 }

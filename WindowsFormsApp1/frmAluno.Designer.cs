@@ -56,7 +56,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSalvarJust = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlCorrecao = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,7 +67,7 @@
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlJustificativa.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlCorrecao.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -112,6 +112,7 @@
             this.solicitarCorreçãoToolStripMenuItem.Name = "solicitarCorreçãoToolStripMenuItem";
             this.solicitarCorreçãoToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.solicitarCorreçãoToolStripMenuItem.Text = "Solicitar Correção";
+            this.solicitarCorreçãoToolStripMenuItem.Click += new System.EventHandler(this.solicitarCorreçãoToolStripMenuItem_Click);
             // 
             // cadastroToolStripMenuItem
             // 
@@ -308,18 +309,18 @@
             this.btnSalvarJust.Text = "Enviar";
             this.btnSalvarJust.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // pnlCorrecao
             // 
-            this.panel1.Controls.Add(this.btnEnviar);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(729, 330);
-            this.panel1.TabIndex = 12;
+            this.pnlCorrecao.Controls.Add(this.btnEnviar);
+            this.pnlCorrecao.Controls.Add(this.textBox2);
+            this.pnlCorrecao.Controls.Add(this.label4);
+            this.pnlCorrecao.Controls.Add(this.label3);
+            this.pnlCorrecao.Controls.Add(this.dateTimePicker2);
+            this.pnlCorrecao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCorrecao.Location = new System.Drawing.Point(0, 24);
+            this.pnlCorrecao.Name = "pnlCorrecao";
+            this.pnlCorrecao.Size = new System.Drawing.Size(729, 330);
+            this.pnlCorrecao.TabIndex = 12;
             // 
             // label3
             // 
@@ -368,7 +369,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 354);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlCorrecao);
             this.Controls.Add(this.pnlJustificativa);
             this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.pnlMudarSenha);
@@ -386,8 +387,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnlJustificativa.ResumeLayout(false);
             this.pnlJustificativa.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlCorrecao.ResumeLayout(false);
+            this.pnlCorrecao.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,7 +423,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlCorrecao;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;

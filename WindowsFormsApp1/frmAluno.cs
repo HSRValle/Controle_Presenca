@@ -64,5 +64,12 @@ namespace WindowsFormsApp1
             pnlJustificativa.Show();
             pnlJustificativa.BringToFront();
         }
+
+        private void solicitarCorreçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshForm();
+            pnlCorrecao.Show();
+            pnlCorrecao.BringToFront();
+        }
     }
 }

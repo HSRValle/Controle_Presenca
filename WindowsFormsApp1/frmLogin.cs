@@ -109,7 +109,7 @@ namespace WindowsFormsApp1
                 {
                     this.Hide();
                     //abre dash dos tutores se o usuario for tutor(a).
-                    frmTutor frmTutor = new frmTutor();                    
+                    frmTutor frmTutor = new frmTutor(usuario);                    
                     frmTutor.Show();
 
                 }

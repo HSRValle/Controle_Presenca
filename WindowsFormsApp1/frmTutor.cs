@@ -21,8 +21,11 @@ namespace WindowsFormsApp1
         private List<Data> TodasDatas;
         private void RefreshForm()
         {
-            this.Controls.Clear();
-            this.InitializeComponent();
+            //esconder todos os painéis
+            pnlCadastroNovo.Hide();
+            pnlPresenca.Hide();
+            pnlCadastroPesquisa.Hide();
+            pnlMudarSenha.Hide();
         } 
 
         public frmTutor()
@@ -103,11 +106,7 @@ namespace WindowsFormsApp1
 
         private void frmTutor_Load(object sender, EventArgs e)
         {
-            //esconder todos os painéis
-            pnlCadastroNovo.Hide();
-            pnlPresenca.Hide();
-            pnlCadastroPesquisa.Hide();
-            pnlMudarSenha.Hide();
+            RefreshForm();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)

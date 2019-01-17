@@ -25,15 +25,11 @@ namespace WindowsFormsApp1
             this.InitializeComponent();
         } 
 
-        public frmTutor(Usuario usuarioLogado)
-        {            
-            InitializeComponent();
-
-            lblTutor.Text += usuarioLogado.getNome();
-            lblTime.Text += DateTime.Now;
-
+        public frmTutor()
+        {
             this.TodosUsuarios = Consulta.getUsuarios();
             this.TodasDatas = Consulta.getDatas(this.TodosUsuarios);
+            InitializeComponent();
 
             datasPassadasToolStripMenuItem_Click();
 
@@ -159,17 +155,8 @@ namespace WindowsFormsApp1
         {
             int index = e.RowIndex;
             int id = int.Parse(dataGridView.Rows[index].Cells[0].Value.ToString());
-            Data d = TodasDatas.Find(x => x.getId() == id);            
-            if(MessageBox.Show("Gostaria de editar a data " + d.getDataEsperada().ToString() + "?", "Editar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                frmEditData frmEditData = new frmEditData(d);
-                frmEditData.Show();
-            }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            Data d = TodasDatas.Find(x => x.getId() == id);
+            d.DebugData();
         }
 
         private void novoCadastroToolStripMenuItem_Click(object sender, EventArgs e)

@@ -14,31 +14,14 @@ namespace WindowsFormsApp1
     {
         private void RefreshForm()
         {
-            this.Controls.Clear();
-            this.InitializeComponent();
+            //esconder todos os painéis
+           
+            pnlMudarSenha.Hide();
         }
 
         public frmAluno()
         {
             InitializeComponent();
-        }
-
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
-        }
-
-        private void frmAluno_Load(object sender, EventArgs e)
-        {
-            pnlMudarSenha.Hide();
-            pnlJustificar.Hide();
-            pnlPresenca.Show();
-            pnlPresenca.BringToFront();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void txtConfSenha_TextChanged(object sender, EventArgs e)
@@ -51,25 +34,21 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void frmAluno_Load(object sender, EventArgs e)
+        {
+            RefreshForm();
+        }
+
         private void mudarSenhaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RefreshForm();
             pnlMudarSenha.Show();
             pnlMudarSenha.BringToFront();
-        }
-
-        private void justificarAusênciaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RefreshForm();
-            pnlJustificar.Show();
-            pnlJustificar.BringToFront();
-        }
-
-        private void consultarHistóricoDePresençaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RefreshForm();
-            pnlPresenca.Show();
-            pnlPresenca.BringToFront();
         }
     }
 }

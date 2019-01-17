@@ -107,9 +107,11 @@ namespace WindowsFormsApp1
                 
                 if (usuario.tutor)
                 {
+                    this.Hide();
                     //abre dash dos tutores se o usuario for tutor(a).
-                    frmTutor frmTutor = new frmTutor();
+                    frmTutor frmTutor = new frmTutor();                    
                     frmTutor.Show();
+
                 }
                 else {
                     List<Usuario> usuariosNaMemoria = Consulta.getUsuarios(true);

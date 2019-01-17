@@ -147,8 +147,12 @@ namespace WindowsFormsApp1
         {
             int index = e.RowIndex;
             int id = int.Parse(dataGridView.Rows[index].Cells[0].Value.ToString());
-            Data d = TodasDatas.Find(x => x.getId() == id);
-            d.DebugData();
+            Data d = TodasDatas.Find(x => x.getId() == id);            
+            if(MessageBox.Show("Gostaria de editar a data " + d.getDataEsperada().ToString() + "?", "Editar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                frmEditData frmEditData = new frmEditData(d);
+                frmEditData.Show();
+            }
         }
     }
 }

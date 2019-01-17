@@ -156,6 +156,8 @@ namespace WindowsFormsApp1
             int id = int.Parse(dataGridView.Rows[index].Cells[0].Value.ToString());
             Data d = TodasDatas.Find(x => x.getId() == id);
             d.DebugData();
+            frmEditData frmEditData = new frmEditData(d);
+            frmEditData.Show();
         }
 
         private void novoCadastroToolStripMenuItem_Click(object sender, EventArgs e)

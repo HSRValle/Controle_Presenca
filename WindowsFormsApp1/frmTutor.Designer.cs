@@ -65,9 +65,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtProcNome = new System.Windows.Forms.TextBox();
+            this.txtProcNCadastro = new System.Windows.Forms.TextBox();
+            this.btnProcurar = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlConsulta.SuspendLayout();
@@ -107,14 +107,14 @@
             // datasPassadasToolStripMenuItem
             // 
             this.datasPassadasToolStripMenuItem.Name = "datasPassadasToolStripMenuItem";
-            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.datasPassadasToolStripMenuItem.Text = "Datas Passadas";
             this.datasPassadasToolStripMenuItem.Click += new System.EventHandler(this.datasPassadasToolStripMenuItem_Click);
             // 
             // datasFuturasToolStripMenuItem
             // 
             this.datasFuturasToolStripMenuItem.Name = "datasFuturasToolStripMenuItem";
-            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.datasFuturasToolStripMenuItem.Text = "Datas Futuras";
             this.datasFuturasToolStripMenuItem.Click += new System.EventHandler(this.datasFuturasToolStripMenuItem_Click);
             // 
@@ -168,19 +168,19 @@
             // checarCadastroToolStripMenuItem
             // 
             this.checarCadastroToolStripMenuItem.Name = "checarCadastroToolStripMenuItem";
-            this.checarCadastroToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.checarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checarCadastroToolStripMenuItem.Text = "Checar Cadastro";
             // 
             // editarCadastroToolStripMenuItem1
             // 
             this.editarCadastroToolStripMenuItem1.Name = "editarCadastroToolStripMenuItem1";
-            this.editarCadastroToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
+            this.editarCadastroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.editarCadastroToolStripMenuItem1.Text = "Editar Cadastro";
             // 
             // editarSenhaToolStripMenuItem
             // 
             this.editarSenhaToolStripMenuItem.Name = "editarSenhaToolStripMenuItem";
-            this.editarSenhaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.editarSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editarSenhaToolStripMenuItem.Text = "Editar Senha";
             // 
             // sairToolStripMenuItem
@@ -344,9 +344,9 @@
             // pnlCadastroPesquisa
             // 
             this.pnlCadastroPesquisa.Controls.Add(this.lblResultado);
-            this.pnlCadastroPesquisa.Controls.Add(this.button1);
-            this.pnlCadastroPesquisa.Controls.Add(this.textBox2);
-            this.pnlCadastroPesquisa.Controls.Add(this.textBox1);
+            this.pnlCadastroPesquisa.Controls.Add(this.btnProcurar);
+            this.pnlCadastroPesquisa.Controls.Add(this.txtProcNCadastro);
+            this.pnlCadastroPesquisa.Controls.Add(this.txtProcNome);
             this.pnlCadastroPesquisa.Controls.Add(this.label10);
             this.pnlCadastroPesquisa.Controls.Add(this.label9);
             this.pnlCadastroPesquisa.Controls.Add(this.label8);
@@ -393,28 +393,28 @@
             this.label10.TabIndex = 3;
             this.label10.Text = "Procurar por";
             // 
-            // textBox1
+            // txtProcNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(268, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtProcNome.Location = new System.Drawing.Point(268, 115);
+            this.txtProcNome.Name = "txtProcNome";
+            this.txtProcNome.Size = new System.Drawing.Size(137, 20);
+            this.txtProcNome.TabIndex = 4;
             // 
-            // textBox2
+            // txtProcNCadastro
             // 
-            this.textBox2.Location = new System.Drawing.Point(268, 144);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtProcNCadastro.Location = new System.Drawing.Point(268, 144);
+            this.txtProcNCadastro.Name = "txtProcNCadastro";
+            this.txtProcNCadastro.Size = new System.Drawing.Size(137, 20);
+            this.txtProcNCadastro.TabIndex = 5;
             // 
-            // button1
+            // btnProcurar
             // 
-            this.button1.Location = new System.Drawing.Point(330, 198);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Procurar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnProcurar.Location = new System.Drawing.Point(330, 198);
+            this.btnProcurar.Name = "btnProcurar";
+            this.btnProcurar.Size = new System.Drawing.Size(75, 23);
+            this.btnProcurar.TabIndex = 6;
+            this.btnProcurar.Text = "Procurar";
+            this.btnProcurar.UseVisualStyleBackColor = true;
             // 
             // lblResultado
             // 
@@ -486,9 +486,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlCadastroPesquisa;
         private System.Windows.Forms.Label lblResultado;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnProcurar;
+        private System.Windows.Forms.TextBox txtProcNCadastro;
+        private System.Windows.Forms.TextBox txtProcNome;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

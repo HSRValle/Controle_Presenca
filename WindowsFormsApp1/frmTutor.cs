@@ -103,7 +103,10 @@ namespace WindowsFormsApp1
 
         private void frmTutor_Load(object sender, EventArgs e)
         {
-            
+            //esconder todos os painéis
+            pnlCadastroNovo.Hide();
+            pnlConsulta.Hide();
+            pnlCadastroPesquisa.Hide();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -129,6 +132,8 @@ namespace WindowsFormsApp1
         private void procurarCadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RefreshForm();
+            pnlCadastroPesquisa.Show();
+            pnlCadastroPesquisa.BringToFront();
         }
 
         private void datasFuturasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -149,6 +154,15 @@ namespace WindowsFormsApp1
             int id = int.Parse(dataGridView.Rows[index].Cells[0].Value.ToString());
             Data d = TodasDatas.Find(x => x.getId() == id);
             d.DebugData();
+        }
+
+        private void novoCadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /**fazer o painel relevante aparecer e o trazer para frente, 
+            para ter certeza que não está escondio atrás de outro painel**/
+            RefreshForm(); //tbh não tenho certeza o que faz, mas acredito que faça o form voltar para o form_load
+            pnlCadastroNovo.Show();
+            pnlCadastroNovo.BringToFront();
         }
     }
 }

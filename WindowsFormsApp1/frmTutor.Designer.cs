@@ -44,7 +44,14 @@
             this.editarCadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
             this.pnlPresenca = new System.Windows.Forms.Panel();
+=======
+            this.pnlConsulta = new System.Windows.Forms.Panel();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.lblTutor = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+>>>>>>> 532b1092eb38885b61fa51e52187927b18fa0610
             this.pnlCadastroNovo = new System.Windows.Forms.Panel();
             this.pnlCadastroPesquisa = new System.Windows.Forms.Panel();
             this.lblResultado = new System.Windows.Forms.Label();
@@ -201,6 +208,7 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
+<<<<<<< HEAD
             // pnlPresenca
             // 
             this.pnlPresenca.Controls.Add(this.pnlCadastroNovo);
@@ -210,7 +218,54 @@
             this.pnlPresenca.Name = "pnlPresenca";
             this.pnlPresenca.Size = new System.Drawing.Size(699, 464);
             this.pnlPresenca.TabIndex = 1;
+=======
+            // pnlConsulta
             // 
+            this.pnlConsulta.Controls.Add(this.lblTime);
+            this.pnlConsulta.Controls.Add(this.lblTutor);
+            this.pnlConsulta.Controls.Add(this.dataGridView);
+            this.pnlConsulta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlConsulta.Location = new System.Drawing.Point(0, 24);
+            this.pnlConsulta.Name = "panel1";
+            this.pnlConsulta.Size = new System.Drawing.Size(699, 490);
+            this.pnlConsulta.TabIndex = 1;
+            this.pnlConsulta.Controls.Add(this.pnlCadastroNovo);
+            this.pnlConsulta.Controls.Add(this.dataGridView);
+            this.pnlConsulta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlConsulta.Location = new System.Drawing.Point(0, 24);
+            this.pnlConsulta.Name = "pnlConsulta";
+            this.pnlConsulta.Size = new System.Drawing.Size(699, 464);
+            this.pnlConsulta.TabIndex = 1;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(31, 50);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.Size = new System.Drawing.Size(643, 437);
+            this.dataGridView.TabIndex = 1;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
+>>>>>>> 532b1092eb38885b61fa51e52187927b18fa0610
+            // 
+            // lblTutor
+            // 
+            this.lblTutor.AutoSize = true;
+            this.lblTutor.Location = new System.Drawing.Point(28, 9);
+            this.lblTutor.Name = "lblTutor";
+            this.lblTutor.Size = new System.Drawing.Size(84, 13);
+            this.lblTutor.TabIndex = 2;
+            this.lblTutor.Text = "Usuário logado: ";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(28, 29);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(73, 13);
+            this.lblTime.TabIndex = 3;
+            this.lblTime.Text = "Hora de login:";
+            this.lblTime.Click += new System.EventHandler(this.label1_Click);
             // pnlCadastroNovo
             // 
             this.pnlCadastroNovo.Controls.Add(this.pnlCadastroPesquisa);
@@ -524,6 +579,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(699, 514);
+            this.Controls.Add(this.pnlConsulta);
             this.ClientSize = new System.Drawing.Size(699, 488);
             this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.menuStrip1);
@@ -535,7 +592,14 @@
             this.Load += new System.EventHandler(this.frmTutor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+<<<<<<< HEAD
             this.pnlPresenca.ResumeLayout(false);
+=======
+            this.pnlConsulta.ResumeLayout(false);
+            this.pnlConsulta.PerformLayout();
+            this.pnlConsulta.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+>>>>>>> 532b1092eb38885b61fa51e52187927b18fa0610
             this.pnlCadastroNovo.ResumeLayout(false);
             this.pnlCadastroNovo.PerformLayout();
             this.pnlCadastroPesquisa.ResumeLayout(false);
@@ -567,6 +631,8 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.ToolStripMenuItem datasPassadasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem datasFuturasToolStripMenuItem;
+        private System.Windows.Forms.Label lblTutor;
+        private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Panel pnlCadastroNovo;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSalvar;

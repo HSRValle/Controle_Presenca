@@ -50,5 +50,19 @@ namespace WindowsFormsApp1
             pnlMudarSenha.Show();
             pnlMudarSenha.BringToFront();
         }
+
+        private void consultarHistóricoDePresençaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshForm();
+            pnlPresenca.Show();
+            pnlPresenca.BringToFront();
+        }
+
+        private void justificarAusênciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshForm();
+            pnlJustificativa.Show();
+            pnlJustificativa.BringToFront();
+        }
     }
 }

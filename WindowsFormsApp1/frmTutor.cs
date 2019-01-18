@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-
+/** lblResultado existe para que o resultado possa ser imprimido nessa label, mudar caso ache um metódo mais eficiente **/
 
 namespace WindowsFormsApp1
 {

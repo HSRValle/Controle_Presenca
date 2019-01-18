@@ -37,6 +37,7 @@
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mudarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMudarSenha = new System.Windows.Forms.Panel();
             this.txtConfSenha = new System.Windows.Forms.TextBox();
             this.txtNovaSenha = new System.Windows.Forms.TextBox();
@@ -46,28 +47,30 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlPresenca = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnlJustificativa = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSalvarJust = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pnlCorrecao = new System.Windows.Forms.Panel();
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnEnviar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbtnAtraso = new System.Windows.Forms.RadioButton();
+            this.rbtnFalta = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             this.pnlMudarSenha.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlJustificativa.SuspendLayout();
             this.pnlCorrecao.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -126,15 +129,22 @@
             // consultarCadastroToolStripMenuItem
             // 
             this.consultarCadastroToolStripMenuItem.Name = "consultarCadastroToolStripMenuItem";
-            this.consultarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarCadastroToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.consultarCadastroToolStripMenuItem.Text = "Consultar Cadastro";
             // 
             // mudarSenhaToolStripMenuItem
             // 
             this.mudarSenhaToolStripMenuItem.Name = "mudarSenhaToolStripMenuItem";
-            this.mudarSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mudarSenhaToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.mudarSenhaToolStripMenuItem.Text = "Mudar Senha";
             this.mudarSenhaToolStripMenuItem.Click += new System.EventHandler(this.mudarSenhaToolStripMenuItem_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // pnlMudarSenha
             // 
@@ -147,9 +157,9 @@
             this.pnlMudarSenha.Controls.Add(this.label12);
             this.pnlMudarSenha.Controls.Add(this.label13);
             this.pnlMudarSenha.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMudarSenha.Location = new System.Drawing.Point(0, 24);
+            this.pnlMudarSenha.Location = new System.Drawing.Point(0, 0);
             this.pnlMudarSenha.Name = "pnlMudarSenha";
-            this.pnlMudarSenha.Size = new System.Drawing.Size(729, 330);
+            this.pnlMudarSenha.Size = new System.Drawing.Size(729, 354);
             this.pnlMudarSenha.TabIndex = 9;
             // 
             // txtConfSenha
@@ -218,20 +228,13 @@
             this.label13.TabIndex = 8;
             this.label13.Text = "Senha:";
             // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
             // pnlPresenca
             // 
             this.pnlPresenca.Controls.Add(this.dataGridView1);
             this.pnlPresenca.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPresenca.Location = new System.Drawing.Point(0, 24);
+            this.pnlPresenca.Location = new System.Drawing.Point(0, 0);
             this.pnlPresenca.Name = "pnlPresenca";
-            this.pnlPresenca.Size = new System.Drawing.Size(729, 330);
+            this.pnlPresenca.Size = new System.Drawing.Size(729, 354);
             this.pnlPresenca.TabIndex = 10;
             // 
             // dataGridView1
@@ -239,66 +242,22 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(46, 47);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(695, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(636, 258);
             this.dataGridView1.TabIndex = 0;
             // 
             // pnlJustificativa
             // 
+            this.pnlJustificativa.Controls.Add(this.groupBox1);
             this.pnlJustificativa.Controls.Add(this.btnSalvarJust);
             this.pnlJustificativa.Controls.Add(this.textBox1);
             this.pnlJustificativa.Controls.Add(this.label2);
             this.pnlJustificativa.Controls.Add(this.label1);
-            this.pnlJustificativa.Controls.Add(this.checkedListBox1);
             this.pnlJustificativa.Controls.Add(this.dateTimePicker1);
             this.pnlJustificativa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlJustificativa.Location = new System.Drawing.Point(0, 24);
+            this.pnlJustificativa.Location = new System.Drawing.Point(0, 0);
             this.pnlJustificativa.Name = "pnlJustificativa";
-            this.pnlJustificativa.Size = new System.Drawing.Size(729, 330);
+            this.pnlJustificativa.Size = new System.Drawing.Size(729, 354);
             this.pnlJustificativa.TabIndex = 11;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(220, 108);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(235, 20);
-            this.dateTimePicker1.TabIndex = 0;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Falta",
-            "Atraso"});
-            this.checkedListBox1.Location = new System.Drawing.Point(220, 70);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(235, 34);
-            this.checkedListBox1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(149, 137);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Justificativa:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(188, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Dia:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(220, 134);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(235, 53);
-            this.textBox1.TabIndex = 4;
             // 
             // btnSalvarJust
             // 
@@ -309,6 +268,39 @@
             this.btnSalvarJust.Text = "Enviar";
             this.btnSalvarJust.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(220, 134);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(235, 53);
+            this.textBox1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(188, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Dia:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(149, 137);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Justificativa:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(220, 108);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(235, 20);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
             // pnlCorrecao
             // 
             this.pnlCorrecao.Controls.Add(this.btnEnviar);
@@ -317,15 +309,41 @@
             this.pnlCorrecao.Controls.Add(this.label3);
             this.pnlCorrecao.Controls.Add(this.dateTimePicker2);
             this.pnlCorrecao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCorrecao.Location = new System.Drawing.Point(0, 24);
+            this.pnlCorrecao.Location = new System.Drawing.Point(0, 0);
             this.pnlCorrecao.Name = "pnlCorrecao";
-            this.pnlCorrecao.Size = new System.Drawing.Size(729, 330);
+            this.pnlCorrecao.Size = new System.Drawing.Size(729, 354);
             this.pnlCorrecao.TabIndex = 12;
+            // 
+            // btnEnviar
+            // 
+            this.btnEnviar.Location = new System.Drawing.Point(407, 192);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(75, 23);
+            this.btnEnviar.TabIndex = 8;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(247, 136);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(235, 42);
+            this.textBox2.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(139, 143);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Correção a ser feita:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(215, 88);
+            this.label3.Location = new System.Drawing.Point(215, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 5;
@@ -333,47 +351,54 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(247, 82);
+            this.dateTimePicker2.Location = new System.Drawing.Point(247, 110);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(235, 20);
             this.dateTimePicker2.TabIndex = 4;
             // 
-            // label4
+            // groupBox1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(139, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Correção a ser feita:";
+            this.groupBox1.Controls.Add(this.rbtnAtraso);
+            this.groupBox1.Controls.Add(this.rbtnFalta);
+            this.groupBox1.Location = new System.Drawing.Point(220, 34);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(235, 68);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Justificar:";
             // 
-            // textBox2
+            // rbtnAtraso
             // 
-            this.textBox2.Location = new System.Drawing.Point(247, 108);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(235, 42);
-            this.textBox2.TabIndex = 7;
+            this.rbtnAtraso.AutoSize = true;
+            this.rbtnAtraso.Location = new System.Drawing.Point(6, 42);
+            this.rbtnAtraso.Name = "rbtnAtraso";
+            this.rbtnAtraso.Size = new System.Drawing.Size(55, 17);
+            this.rbtnAtraso.TabIndex = 1;
+            this.rbtnAtraso.TabStop = true;
+            this.rbtnAtraso.Text = "Atraso";
+            this.rbtnAtraso.UseVisualStyleBackColor = true;
             // 
-            // btnEnviar
+            // rbtnFalta
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(407, 164);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(75, 23);
-            this.btnEnviar.TabIndex = 8;
-            this.btnEnviar.Text = "Enviar";
-            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.rbtnFalta.AutoSize = true;
+            this.rbtnFalta.Location = new System.Drawing.Point(6, 19);
+            this.rbtnFalta.Name = "rbtnFalta";
+            this.rbtnFalta.Size = new System.Drawing.Size(48, 17);
+            this.rbtnFalta.TabIndex = 0;
+            this.rbtnFalta.TabStop = true;
+            this.rbtnFalta.Text = "Falta";
+            this.rbtnFalta.UseVisualStyleBackColor = true;
             // 
             // frmAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 354);
-            this.Controls.Add(this.pnlCorrecao);
-            this.Controls.Add(this.pnlJustificativa);
-            this.Controls.Add(this.pnlPresenca);
-            this.Controls.Add(this.pnlMudarSenha);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pnlMudarSenha);
+            this.Controls.Add(this.pnlJustificativa);
+            this.Controls.Add(this.pnlCorrecao);
+            this.Controls.Add(this.pnlPresenca);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmAluno";
@@ -389,6 +414,8 @@
             this.pnlJustificativa.PerformLayout();
             this.pnlCorrecao.ResumeLayout(false);
             this.pnlCorrecao.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,7 +448,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Panel pnlCorrecao;
         private System.Windows.Forms.Button btnEnviar;
@@ -429,5 +455,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbtnAtraso;
+        private System.Windows.Forms.RadioButton rbtnFalta;
     }
 }

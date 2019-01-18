@@ -185,5 +185,12 @@ namespace WindowsFormsApp1
                 lblErro.Text = "Senhas não correspondem.";
             }
         }
+
+        private void excluirCadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshForm();
+            pnlExcluir.Show();
+            pnlExcluir.BringToFront();
+        }
     }
 }

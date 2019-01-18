@@ -36,8 +36,7 @@ namespace WindowsFormsApp1
             if (txtJustificativa.Text.Trim().Length <= 0)
                 return;
             this.data.justificativa = txtJustificativa.Text;
-            DateTime novaDataEsperada = dateTimePickerData.Value.Date + dateTimePickerTime.Value.TimeOfDay;
-            Console.WriteLine(novaDataEsperada);            
+            DateTime novaDataEsperada = dateTimePickerData.Value.Date + dateTimePickerTime.Value.TimeOfDay;        
             /*
             if (radTodos.Checked)
             {

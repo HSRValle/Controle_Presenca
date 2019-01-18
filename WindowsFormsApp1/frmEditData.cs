@@ -45,14 +45,14 @@ namespace WindowsFormsApp1
                     Data dataAluno = frmTutor.TodasDatas.Find(x => x.Aluno.Equals(aluno) && x.getDataEsperada().Equals(this.data.getDataEsperada()));                    
                     dataAluno.justificativa = txtJustificativa.Text;
                     dataAluno.setDataEsperada(novaDataEsperada);                                        
-                    // this.data.updateData();
+                    dataAluno.updateData();
                 }
             }
             else
             {
                 this.data.justificativa = txtJustificativa.Text;
                 this.data.setDataEsperada(novaDataEsperada);
-                // this.data.updateData();
+                this.data.updateData();
             }
 
 

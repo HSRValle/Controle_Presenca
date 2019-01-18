@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
     public class Data
     {
         private int id;
-        private readonly DateTime dataEsperada;
+        private DateTime dataEsperada;
         private DateTime dataReal;
         public Boolean presente;
         public Boolean noHorario;
@@ -79,6 +79,10 @@ namespace WindowsFormsApp1
         public DateTime getDataEsperada()
         {
             return dataEsperada;
+        }
+        public void setDataEsperada(DateTime novaData)
+        {
+            this.dataEsperada = novaData;
         }
         public DateTime getDataReal()
         {

@@ -35,15 +35,25 @@ namespace WindowsFormsApp1
             //A justificativa não pode ser vazia
             if (txtJustificativa.Text.Trim().Length <= 0)
                 return;
-            this.data.justificativa = txtJustificativa.Text;
-            DateTime novaDataEsperada = dateTimePickerData.Value.Date + dateTimePickerTime.Value.TimeOfDay;        
-            /*
+            
+            DateTime novaDataEsperada = dateTimePickerData.Value.Date + dateTimePickerTime.Value.TimeOfDay;                
             if (radTodos.Checked)
             {
-                
+                List<Usuario> alunos = frmTutor.TodosUsuarios.FindAll(x => !x.tutor);
+                foreach (Usuario aluno in alunos)
+                {                    
+                    Data dataAluno = frmTutor.TodasDatas.Find(x => x.Aluno.Equals(aluno) && x.getDataEsperada().Equals(this.data.getDataEsperada()));                    
+                    dataAluno.justificativa = txtJustificativa.Text;
+                    dataAluno.setDataEsperada(novaDataEsperada);                                        
+                    // this.data.updateData();
+                }
             }
-            */
-            // this.data.updateData();
+            else
+            {
+                this.data.justificativa = txtJustificativa.Text;
+                this.data.setDataEsperada(novaDataEsperada);
+                // this.data.updateData();
+            }
 
 
 

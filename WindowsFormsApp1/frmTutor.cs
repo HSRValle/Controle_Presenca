@@ -144,18 +144,17 @@ namespace WindowsFormsApp1
 
         private void datasPassadasToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
-            List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);        
-            preencherDataGridView(filtro);
             pnlPresenca.Show();
             pnlPresenca.BringToFront();
+            List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);        
+            preencherDataGridView(filtro);            
         }
 
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
             int id = int.Parse(dataGridView.Rows[index].Cells[0].Value.ToString());
-            Data d = TodasDatas.Find(x => x.getId() == id);
-            d.DebugData();
+            Data d = TodasDatas.Find(x => x.getId() == id);            
             frmEditData frmEditData = new frmEditData(d);
             frmEditData.Show();
         }

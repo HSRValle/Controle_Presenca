@@ -38,8 +38,7 @@ namespace WindowsFormsApp1
                 MySqlDataReader result = cmd.ExecuteReader();
                 while (result.Read())
                 {
-                    retorno = new Usuario(result);
-                    retorno.DebugUsuario();
+                    retorno = new Usuario(result);                    
                 }
                 result.Close();
                 return retorno;

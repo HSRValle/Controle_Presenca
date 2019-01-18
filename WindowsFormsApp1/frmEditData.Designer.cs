@@ -68,6 +68,7 @@
             // radUnico
             // 
             this.radUnico.AutoSize = true;
+            this.radUnico.Checked = true;
             this.radUnico.Location = new System.Drawing.Point(250, 157);
             this.radUnico.Name = "radUnico";
             this.radUnico.Size = new System.Drawing.Size(87, 17);
@@ -84,7 +85,6 @@
             this.radTodos.Name = "radTodos";
             this.radTodos.Size = new System.Drawing.Size(123, 17);
             this.radTodos.TabIndex = 5;
-            this.radTodos.TabStop = true;
             this.radTodos.Text = "para todos os alunos";
             this.radTodos.UseVisualStyleBackColor = true;
             // 

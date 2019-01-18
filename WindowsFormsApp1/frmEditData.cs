@@ -32,6 +32,9 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //A justificativa não pode ser vazia
+            if (txtJustificativa.Text.Trim().Length <= 0)
+                return;
             this.data.justificativa = txtJustificativa.Text;
             DateTime novaDataEsperada = dateTimePickerData.Value.Date + dateTimePickerTime.Value.TimeOfDay;
             Console.WriteLine(novaDataEsperada);            

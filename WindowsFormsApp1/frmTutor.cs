@@ -16,9 +16,10 @@ using MySql.Data.MySqlClient;
 namespace WindowsFormsApp1
 {
     public partial class frmTutor : Form
-    {
-        private List<Usuario> TodosUsuarios;
-        private List<Data> TodasDatas;
+    {   
+        // as listas devem estar sempre disponíveis
+        public static List<Usuario> TodosUsuarios;
+        public static List<Data> TodasDatas;
         private void RefreshForm()
         {
             //esconder todos os painéis
@@ -30,8 +31,8 @@ namespace WindowsFormsApp1
 
         public frmTutor()
         {
-            this.TodosUsuarios = Consulta.getUsuarios();
-            this.TodasDatas = Consulta.getDatas(this.TodosUsuarios);
+            TodosUsuarios = Consulta.getUsuarios();
+            TodasDatas = Consulta.getDatas(TodosUsuarios);
             InitializeComponent();
 
             datasPassadasToolStripMenuItem_Click();

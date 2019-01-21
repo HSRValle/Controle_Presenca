@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             //A justificativa não pode ser vazia
             if (txtJustificativa.Text.Trim().Length <= 0)
                 return;
-            
+            Boolean sucesso = true;
             DateTime novaDataEsperada = dateTimePickerData.Value.Date + dateTimePickerTime.Value.TimeOfDay;                
             if (radTodos.Checked)
             {
@@ -48,7 +48,10 @@ namespace WindowsFormsApp1
                     {
                         dataAluno.justificativa = txtJustificativa.Text;
                         dataAluno.setDataEsperada(novaDataEsperada);
-                        dataAluno.updateData();
+                        if (!dataAluno.updateData())
+                        {
+                            sucesso = false;
+                        }
                     }                        
                 }
             }
@@ -56,7 +59,19 @@ namespace WindowsFormsApp1
             {
                 this.data.justificativa = txtJustificativa.Text;
                 this.data.setDataEsperada(novaDataEsperada);
-                this.data.updateData();
+                if (!this.data.updateData())
+                {
+                    sucesso = false;
+                }
+            }
+            if (sucesso)
+            {
+                MessageBox.Show("Alteração concluída com sucesso");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Erro aon atualizar o banco");
             }
 
 

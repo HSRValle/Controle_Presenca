@@ -48,6 +48,7 @@ namespace WindowsFormsApp1
                     {
                         dataAluno.justificativa = txtJustificativa.Text;
                         dataAluno.setDataEsperada(novaDataEsperada);
+                        dataAluno.Tutor = frmTutor.Login;
                         if (!dataAluno.updateData())
                         {
                             sucesso = false;
@@ -59,6 +60,7 @@ namespace WindowsFormsApp1
             {
                 this.data.justificativa = txtJustificativa.Text;
                 this.data.setDataEsperada(novaDataEsperada);
+                this.data.Tutor = frmTutor.Login;
                 if (!this.data.updateData())
                 {
                     sucesso = false;

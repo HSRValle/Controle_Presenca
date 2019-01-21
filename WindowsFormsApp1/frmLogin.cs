@@ -107,7 +107,7 @@ namespace WindowsFormsApp1
                 if (usuario.tutor)
                 {
                     //abre dash dos tutores se o usuario for tutor(a).
-                    frmTutor frmTutor = new frmTutor();
+                    frmTutor frmTutor = new frmTutor(usuario);
                     frmTutor.Show();
                 }
                 else {

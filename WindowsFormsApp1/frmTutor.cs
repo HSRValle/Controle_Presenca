@@ -17,9 +17,10 @@ namespace WindowsFormsApp1
 {
     public partial class frmTutor : Form
     {   
-        // as listas devem estar sempre disponíveis
+        // as listas e o usuário atual devem estar sempre disponíveis
         public static List<Usuario> TodosUsuarios;
         public static List<Data> TodasDatas;
+        public static Usuario Login;
         private void RefreshForm()
         {
             //esconder todos os painéis
@@ -29,8 +30,9 @@ namespace WindowsFormsApp1
             pnlMudarSenha.Hide();
         } 
 
-        public frmTutor()
+        public frmTutor(Usuario tutor)
         {
+            Login = tutor;
             TodosUsuarios = Consulta.getUsuarios();
             TodasDatas = Consulta.getDatas(TodosUsuarios);
             InitializeComponent();

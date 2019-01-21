@@ -144,7 +144,7 @@ namespace WindowsFormsApp1
                     sql += " dataReal = '" + this.dataReal.ToString("yyyy-MM-dd HH:mm:ss") + "',";
                 sql += " presente = " + this.presente + ",";
                 sql += " noHorario = " + this.noHorario + ",";
-                sql += " justificativa = '" + this.justificativa + "',";
+                sql += " justificativa = '" + MySql.Data.MySqlClient.MySqlHelper.EscapeString(this.justificativa) + "',";
                 if (this.Tutor != null)
                     sql += " idTutor = " + this.Tutor.id + ",";
                 sql += " idAluno = " + this.Aluno.id;

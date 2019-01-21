@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Erro aon atualizar o banco");
+                MessageBox.Show("Erro ao atualizar o banco");
             }
 
 

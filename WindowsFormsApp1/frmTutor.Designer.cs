@@ -61,6 +61,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlCadastroPesquisa = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnProcurar = new System.Windows.Forms.Button();
             this.txtProcNCadastro = new System.Windows.Forms.TextBox();
             this.txtProcNome = new System.Windows.Forms.TextBox();
@@ -78,18 +83,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.pnlExcluir = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.pnlCadastroNovo.SuspendLayout();
             this.pnlCadastroPesquisa.SuspendLayout();
-            this.pnlMudarSenha.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.pnlMudarSenha.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -123,14 +124,14 @@
             // datasPassadasToolStripMenuItem
             // 
             this.datasPassadasToolStripMenuItem.Name = "datasPassadasToolStripMenuItem";
-            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.datasPassadasToolStripMenuItem.Text = "Datas Passadas";
             this.datasPassadasToolStripMenuItem.Click += new System.EventHandler(this.datasPassadasToolStripMenuItem_Click);
             // 
             // datasFuturasToolStripMenuItem
             // 
             this.datasFuturasToolStripMenuItem.Name = "datasFuturasToolStripMenuItem";
-            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.datasFuturasToolStripMenuItem.Text = "Datas Futuras";
             this.datasFuturasToolStripMenuItem.Click += new System.EventHandler(this.datasFuturasToolStripMenuItem_Click);
             // 
@@ -148,27 +149,27 @@
             // procurarCadastroToolStripMenuItem
             // 
             this.procurarCadastroToolStripMenuItem.Name = "procurarCadastroToolStripMenuItem";
-            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.procurarCadastroToolStripMenuItem.Text = "Procurar Cadastro";
             this.procurarCadastroToolStripMenuItem.Click += new System.EventHandler(this.procurarCadastroToolStripMenuItem_Click);
             // 
             // novoCadastroToolStripMenuItem
             // 
             this.novoCadastroToolStripMenuItem.Name = "novoCadastroToolStripMenuItem";
-            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.novoCadastroToolStripMenuItem.Text = "Novo Cadastro";
             this.novoCadastroToolStripMenuItem.Click += new System.EventHandler(this.novoCadastroToolStripMenuItem_Click);
             // 
             // editarCadastroToolStripMenuItem
             // 
             this.editarCadastroToolStripMenuItem.Name = "editarCadastroToolStripMenuItem";
-            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.editarCadastroToolStripMenuItem.Text = "Editar Cadastro";
             // 
             // excluirCadastroToolStripMenuItem
             // 
             this.excluirCadastroToolStripMenuItem.Name = "excluirCadastroToolStripMenuItem";
-            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.excluirCadastroToolStripMenuItem.Text = "Excluir Cadastro";
             this.excluirCadastroToolStripMenuItem.Click += new System.EventHandler(this.excluirCadastroToolStripMenuItem_Click);
             // 
@@ -185,19 +186,19 @@
             // checarCadastroToolStripMenuItem
             // 
             this.checarCadastroToolStripMenuItem.Name = "checarCadastroToolStripMenuItem";
-            this.checarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checarCadastroToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.checarCadastroToolStripMenuItem.Text = "Checar Cadastro";
             // 
             // editarCadastroToolStripMenuItem1
             // 
             this.editarCadastroToolStripMenuItem1.Name = "editarCadastroToolStripMenuItem1";
-            this.editarCadastroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.editarCadastroToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.editarCadastroToolStripMenuItem1.Text = "Editar Cadastro";
             // 
             // editarSenhaToolStripMenuItem
             // 
             this.editarSenhaToolStripMenuItem.Name = "editarSenhaToolStripMenuItem";
-            this.editarSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarSenhaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.editarSenhaToolStripMenuItem.Text = "Mudar Senha";
             this.editarSenhaToolStripMenuItem.Click += new System.EventHandler(this.editarSenhaToolStripMenuItem_Click);
             // 
@@ -210,20 +211,21 @@
             // 
             // pnlPresenca
             // 
+            this.pnlPresenca.Controls.Add(this.btnAtualizar);
             this.pnlPresenca.Controls.Add(this.dataGridView);
             this.pnlPresenca.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPresenca.Location = new System.Drawing.Point(0, 24);
             this.pnlPresenca.Name = "pnlPresenca";
-            this.pnlPresenca.Size = new System.Drawing.Size(764, 427);
+            this.pnlPresenca.Size = new System.Drawing.Size(764, 489);
             this.pnlPresenca.TabIndex = 1;
             // 
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(27, 15);
+            this.dataGridView.Location = new System.Drawing.Point(35, 37);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(643, 437);
+            this.dataGridView.Size = new System.Drawing.Size(717, 440);
             this.dataGridView.TabIndex = 1;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
@@ -245,7 +247,7 @@
             this.pnlCadastroNovo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCadastroNovo.Location = new System.Drawing.Point(0, 0);
             this.pnlCadastroNovo.Name = "pnlCadastroNovo";
-            this.pnlCadastroNovo.Size = new System.Drawing.Size(764, 451);
+            this.pnlCadastroNovo.Size = new System.Drawing.Size(764, 513);
             this.pnlCadastroNovo.TabIndex = 3;
             // 
             // btnLimpar
@@ -368,10 +370,58 @@
             this.pnlCadastroPesquisa.Controls.Add(this.label8);
             this.pnlCadastroPesquisa.Controls.Add(this.label7);
             this.pnlCadastroPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCadastroPesquisa.Location = new System.Drawing.Point(0, 24);
+            this.pnlCadastroPesquisa.Location = new System.Drawing.Point(0, 0);
             this.pnlCadastroPesquisa.Name = "pnlCadastroPesquisa";
-            this.pnlCadastroPesquisa.Size = new System.Drawing.Size(764, 427);
+            this.pnlCadastroPesquisa.Size = new System.Drawing.Size(764, 513);
             this.pnlCadastroPesquisa.TabIndex = 27;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Location = new System.Drawing.Point(202, 237);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(356, 178);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(15, 94);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(41, 13);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "label17";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(15, 73);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(41, 13);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "label16";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(15, 52);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 13);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Nº Cadastro:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(15, 35);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Nome:";
             // 
             // btnProcurar
             // 
@@ -443,9 +493,9 @@
             this.pnlMudarSenha.Controls.Add(this.label12);
             this.pnlMudarSenha.Controls.Add(this.label13);
             this.pnlMudarSenha.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMudarSenha.Location = new System.Drawing.Point(0, 24);
+            this.pnlMudarSenha.Location = new System.Drawing.Point(0, 0);
             this.pnlMudarSenha.Name = "pnlMudarSenha";
-            this.pnlMudarSenha.Size = new System.Drawing.Size(764, 427);
+            this.pnlMudarSenha.Size = new System.Drawing.Size(764, 513);
             this.pnlMudarSenha.TabIndex = 8;
             // 
             // txtConfSenha
@@ -519,68 +569,30 @@
             this.pnlExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlExcluir.Location = new System.Drawing.Point(0, 0);
             this.pnlExcluir.Name = "pnlExcluir";
-            this.pnlExcluir.Size = new System.Drawing.Size(764, 451);
+            this.pnlExcluir.Size = new System.Drawing.Size(764, 513);
             this.pnlExcluir.TabIndex = 28;
             // 
-            // label14
+            // btnAtualizar
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 35);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(38, 13);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Nome:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(15, 52);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(67, 13);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Nº Cadastro:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(15, 73);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 13);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "label16";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(15, 94);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 13);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "label17";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Location = new System.Drawing.Point(202, 237);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(356, 178);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
+            this.btnAtualizar.Location = new System.Drawing.Point(35, 7);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizar.TabIndex = 2;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 451);
-            this.Controls.Add(this.pnlCadastroPesquisa);
-            this.Controls.Add(this.pnlMudarSenha);
+            this.ClientSize = new System.Drawing.Size(764, 513);
             this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlCadastroNovo);
+            this.Controls.Add(this.pnlCadastroPesquisa);
+            this.Controls.Add(this.pnlMudarSenha);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmTutor";
@@ -595,10 +607,10 @@
             this.pnlCadastroNovo.PerformLayout();
             this.pnlCadastroPesquisa.ResumeLayout(false);
             this.pnlCadastroPesquisa.PerformLayout();
-            this.pnlMudarSenha.ResumeLayout(false);
-            this.pnlMudarSenha.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.pnlMudarSenha.ResumeLayout(false);
+            this.pnlMudarSenha.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,5 +672,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnAtualizar;
     }
 }

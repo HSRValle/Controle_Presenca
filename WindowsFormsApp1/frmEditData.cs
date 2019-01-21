@@ -49,6 +49,14 @@ namespace WindowsFormsApp1
                         dataAluno.justificativa = txtJustificativa.Text;
                         dataAluno.setDataEsperada(novaDataEsperada);
                         dataAluno.Tutor = frmTutor.Login;
+                        if (chbAtribuir.Checked)
+                        {
+                            dataAluno.presente = true;
+                        }
+                        else if (chbRemover.Checked)
+                        {
+                            dataAluno.presente = false;
+                        }
                         if (!dataAluno.updateData())
                         {
                             sucesso = false;
@@ -61,6 +69,14 @@ namespace WindowsFormsApp1
                 this.data.justificativa = txtJustificativa.Text;
                 this.data.setDataEsperada(novaDataEsperada);
                 this.data.Tutor = frmTutor.Login;
+                if (chbAtribuir.Checked)
+                {
+                    this.data.presente = true;
+                }
+                else if (chbRemover.Checked)
+                {
+                    this.data.presente = false;
+                }
                 if (!this.data.updateData())
                 {
                     sucesso = false;

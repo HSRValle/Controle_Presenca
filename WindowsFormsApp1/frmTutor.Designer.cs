@@ -84,6 +84,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.pnlExcluir = new System.Windows.Forms.Panel();
             this.btnAtualizar = new System.Windows.Forms.Button();
+            this.btnCriar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -211,6 +212,7 @@
             // 
             // pnlPresenca
             // 
+            this.pnlPresenca.Controls.Add(this.btnCriar);
             this.pnlPresenca.Controls.Add(this.btnAtualizar);
             this.pnlPresenca.Controls.Add(this.dataGridView);
             this.pnlPresenca.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -582,6 +584,16 @@
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
+            // btnCriar
+            // 
+            this.btnCriar.Location = new System.Drawing.Point(116, 7);
+            this.btnCriar.Name = "btnCriar";
+            this.btnCriar.Size = new System.Drawing.Size(75, 23);
+            this.btnCriar.TabIndex = 3;
+            this.btnCriar.Text = "Criar datas futuras";
+            this.btnCriar.UseVisualStyleBackColor = true;
+            this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
+            // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -673,5 +685,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.Button btnCriar;
     }
 }

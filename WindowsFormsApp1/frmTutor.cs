@@ -95,7 +95,7 @@ namespace WindowsFormsApp1
                     dataGridView.Rows[index].Cells[4].Value = "Não";
                     dataGridView.Rows[index].Cells[4].Style.BackColor = Color.IndianRed;
                 }
-                if (data.justificativa.Length > 0)
+                if (data.justificativa != null && data.justificativa.Length > 0)
                 {
                     dataGridView.Rows[index].Cells[5].Value = data.justificativa;
                 }
@@ -198,6 +198,52 @@ namespace WindowsFormsApp1
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             datasPassadasToolStripMenuItem_Click();
+        }
+
+        private void btnCriar_Click(object sender, EventArgs e)
+        {
+            createNextDatas();
+            System.Threading.Thread.Sleep(100);
+            datasFuturasToolStripMenuItem_Click(sender, e);
+        }
+        public Boolean createNextDatas(int dias = 7)
+        {
+            List<Data> novasDatas = new List<Data>();
+
+
+            DateTime hoje = DateTime.Now;
+            TimeSpan manha = new TimeSpan(9, 0, 0);
+            TimeSpan tarde = new TimeSpan(13, 30, 0);
+            for (int i = 1; i <= dias; i++)
+            {
+                DateTime novaData = hoje.AddDays(i);
+                novaData = novaData.Date + manha;
+                if (novaData.DayOfWeek != DayOfWeek.Saturday && novaData.DayOfWeek != DayOfWeek.Sunday)
+                {
+                    foreach (Usuario usuario in TodosUsuarios)
+                    {
+                        if (!usuario.tutor)
+                        {
+                            //Se é aluno
+                            Data insert = new Data(novaData.Date + manha, usuario);
+                            insert.insertNewData();
+                            TodasDatas.Add(insert);
+                            if (novaData.DayOfWeek != DayOfWeek.Monday && novaData.DayOfWeek != DayOfWeek.Friday)
+                            {
+                                insert = new Data(novaData.Date + tarde, usuario);
+                                insert.insertNewData();
+                                TodasDatas.Add(insert);
+
+
+                            }
+
+                        }
+                        // Else com horários para tutores?
+                    }
+                }
+
+            }            
+            return true;
         }
     }
 }

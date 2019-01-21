@@ -63,6 +63,7 @@ namespace WindowsFormsApp1
             dataGridView.Columns[4].Name = "No horário?";
 
             dataGridView.Columns[5].Name = "Justificativa";
+            dataGridView.Columns[5].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
             dataGridView.Columns[6].Name = "Tutor";
 

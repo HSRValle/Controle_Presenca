@@ -37,10 +37,10 @@
             this.dateTimePickerData = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerTime = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.chbAtribuir = new System.Windows.Forms.CheckBox();
+            this.chbRemover = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -129,28 +129,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(0, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(105, 17);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Atribuir Presença";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(207, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(116, 17);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Remover Presença";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.radUnico);
@@ -162,12 +140,34 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.radioButton1);
-            this.panel2.Controls.Add(this.radioButton2);
+            this.panel2.Controls.Add(this.chbRemover);
+            this.panel2.Controls.Add(this.chbAtribuir);
             this.panel2.Location = new System.Drawing.Point(250, 182);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(331, 23);
             this.panel2.TabIndex = 13;
+            // 
+            // chbAtribuir
+            // 
+            this.chbAtribuir.AutoSize = true;
+            this.chbAtribuir.Location = new System.Drawing.Point(0, 4);
+            this.chbAtribuir.Name = "chbAtribuir";
+            this.chbAtribuir.Size = new System.Drawing.Size(106, 17);
+            this.chbAtribuir.TabIndex = 0;
+            this.chbAtribuir.Text = "Atribuir Presença";
+            this.chbAtribuir.UseVisualStyleBackColor = true;
+            this.chbAtribuir.CheckedChanged += new System.EventHandler(this.chbAtribuir_CheckedChanged);
+            // 
+            // chbRemover
+            // 
+            this.chbRemover.AutoSize = true;
+            this.chbRemover.Location = new System.Drawing.Point(207, 3);
+            this.chbRemover.Name = "chbRemover";
+            this.chbRemover.Size = new System.Drawing.Size(117, 17);
+            this.chbRemover.TabIndex = 1;
+            this.chbRemover.Text = "Remover Presença";
+            this.chbRemover.UseVisualStyleBackColor = true;
+            this.chbRemover.CheckedChanged += new System.EventHandler(this.chbRemover_CheckedChanged);
             // 
             // frmEditData
             // 
@@ -205,9 +205,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerData;
         private System.Windows.Forms.DateTimePicker dateTimePickerTime;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox chbRemover;
+        private System.Windows.Forms.CheckBox chbAtribuir;
     }
 }

@@ -80,5 +80,23 @@ namespace WindowsFormsApp1
 
 
         }
+
+        private void chbAtribuir_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox box = sender as CheckBox;
+            if (box.Checked)
+            {
+                chbRemover.Checked = false;
+            }
+        }
+
+        private void chbRemover_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox box = sender as CheckBox;
+            if (box.Checked)
+            {
+                chbAtribuir.Checked = false;
+            }
+        }
     }
 }

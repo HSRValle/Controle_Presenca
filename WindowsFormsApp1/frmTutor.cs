@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
         public static List<Usuario> TodosUsuarios;
         public static List<Data> TodasDatas;
         public static Usuario Login;
+        private Boolean exibirFuturo;
         private void RefreshForm()
         {
             //esconder todos os painéis
@@ -141,12 +142,14 @@ namespace WindowsFormsApp1
 
         private void datasFuturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.exibirFuturo = true;
             List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) > 0);
             preencherDataGridView(filtro);
         }
 
         private void datasPassadasToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
+            this.exibirFuturo = false;
             pnlPresenca.Show();
             pnlPresenca.BringToFront();
             List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);        
@@ -197,7 +200,14 @@ namespace WindowsFormsApp1
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            datasPassadasToolStripMenuItem_Click();
+            if (this.exibirFuturo)
+            {
+                datasFuturasToolStripMenuItem_Click(sender, e);
+            }
+            else
+            {
+                datasPassadasToolStripMenuItem_Click(sender, e);
+            }            
         }
 
         private void btnCriar_Click(object sender, EventArgs e)

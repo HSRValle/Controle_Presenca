@@ -40,12 +40,16 @@ namespace WindowsFormsApp1
             if (radTodos.Checked)
             {
                 List<Usuario> alunos = frmTutor.TodosUsuarios.FindAll(x => !x.tutor);
+                DateTime buscaDataEsperada = this.data.getDataEsperada();
                 foreach (Usuario aluno in alunos)
                 {                    
-                    Data dataAluno = frmTutor.TodasDatas.Find(x => x.Aluno.Equals(aluno) && x.getDataEsperada().Equals(this.data.getDataEsperada()));                    
-                    dataAluno.justificativa = txtJustificativa.Text;
-                    dataAluno.setDataEsperada(novaDataEsperada);                                        
-                    dataAluno.updateData();
+                    Data dataAluno = frmTutor.TodasDatas.Find(x => x.Aluno.Equals(aluno) && x.getDataEsperada().Equals(buscaDataEsperada));
+                    if(dataAluno != null)
+                    {
+                        dataAluno.justificativa = txtJustificativa.Text;
+                        dataAluno.setDataEsperada(novaDataEsperada);
+                        dataAluno.updateData();
+                    }                        
                 }
             }
             else

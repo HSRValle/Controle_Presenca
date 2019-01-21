@@ -104,7 +104,7 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(764, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(841, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -218,7 +218,7 @@
             this.pnlPresenca.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPresenca.Location = new System.Drawing.Point(0, 24);
             this.pnlPresenca.Name = "pnlPresenca";
-            this.pnlPresenca.Size = new System.Drawing.Size(764, 489);
+            this.pnlPresenca.Size = new System.Drawing.Size(841, 489);
             this.pnlPresenca.TabIndex = 1;
             // 
             // dataGridView
@@ -227,7 +227,7 @@
             this.dataGridView.Location = new System.Drawing.Point(35, 37);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(717, 440);
+            this.dataGridView.Size = new System.Drawing.Size(774, 440);
             this.dataGridView.TabIndex = 1;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
@@ -249,7 +249,7 @@
             this.pnlCadastroNovo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCadastroNovo.Location = new System.Drawing.Point(0, 0);
             this.pnlCadastroNovo.Name = "pnlCadastroNovo";
-            this.pnlCadastroNovo.Size = new System.Drawing.Size(764, 513);
+            this.pnlCadastroNovo.Size = new System.Drawing.Size(841, 513);
             this.pnlCadastroNovo.TabIndex = 3;
             // 
             // btnLimpar
@@ -374,7 +374,7 @@
             this.pnlCadastroPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCadastroPesquisa.Location = new System.Drawing.Point(0, 0);
             this.pnlCadastroPesquisa.Name = "pnlCadastroPesquisa";
-            this.pnlCadastroPesquisa.Size = new System.Drawing.Size(764, 513);
+            this.pnlCadastroPesquisa.Size = new System.Drawing.Size(841, 513);
             this.pnlCadastroPesquisa.TabIndex = 27;
             // 
             // groupBox1
@@ -497,7 +497,7 @@
             this.pnlMudarSenha.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMudarSenha.Location = new System.Drawing.Point(0, 0);
             this.pnlMudarSenha.Name = "pnlMudarSenha";
-            this.pnlMudarSenha.Size = new System.Drawing.Size(764, 513);
+            this.pnlMudarSenha.Size = new System.Drawing.Size(841, 513);
             this.pnlMudarSenha.TabIndex = 8;
             // 
             // txtConfSenha
@@ -571,7 +571,7 @@
             this.pnlExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlExcluir.Location = new System.Drawing.Point(0, 0);
             this.pnlExcluir.Name = "pnlExcluir";
-            this.pnlExcluir.Size = new System.Drawing.Size(764, 513);
+            this.pnlExcluir.Size = new System.Drawing.Size(841, 513);
             this.pnlExcluir.TabIndex = 28;
             // 
             // btnAtualizar
@@ -598,7 +598,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 513);
+            this.ClientSize = new System.Drawing.Size(841, 513);
             this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlExcluir);

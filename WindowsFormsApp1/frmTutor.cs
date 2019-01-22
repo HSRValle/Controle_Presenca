@@ -276,5 +276,32 @@ namespace WindowsFormsApp1
                 lblResultado.Text += "\nNenhum usuário encontrado";
             }
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            String nome = txtNome.Text;
+            String senha = txtSenha.Text;
+            String confirmarSenha = txtConfirmSenha.Text;
+            String email = txtEmail.Text;
+            if (senha == confirmarSenha)
+            {
+                Usuario novoUsuario = new Usuario(nome, email, senha, chbTutor.Checked);
+                novoUsuario.insertNewUsuario();
+                TodosUsuarios.Add(novoUsuario);
+                MessageBox.Show("Usuário cadastrado");
+                btnLimpar_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Senhas não são iguais");
+            }                
+
+            
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtNome.Text = txtSenha.Text = txtConfirmSenha.Text = txtEmail.Text = "";
+        }
     }
 }

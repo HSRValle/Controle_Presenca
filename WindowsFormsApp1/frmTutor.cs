@@ -144,6 +144,8 @@ namespace WindowsFormsApp1
         private void datasFuturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.exibirFuturo = true;
+            pnlPresenca.Show();
+            pnlPresenca.BringToFront();
             List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) > 0);
             preencherDataGridView(filtro);
         }

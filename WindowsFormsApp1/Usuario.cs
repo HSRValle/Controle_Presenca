@@ -45,6 +45,11 @@ namespace WindowsFormsApp1
         {
             return senha.Equals(this.senha) ;
         }
+        public void mudaSenha(String senha)
+        {
+            this.senha = senha;
+            updateUsuario();
+        }
 
         public string DebugUsuario()
         {
@@ -77,11 +82,8 @@ namespace WindowsFormsApp1
             return false;
 
         }
-        public void updateUsuario(String nome, String email, Boolean tutor)
+        public void updateUsuario()
         {
-            this.nome = nome;
-            this.email = email;
-            this.tutor = tutor;
             MySql.Data.MySqlClient.MySqlConnection conn;
             try
             {

@@ -183,16 +183,7 @@ namespace WindowsFormsApp1
             pnlMudarSenha.Show();
             pnlMudarSenha.BringToFront();
         }
-
-        private void txtConfSenha_TextChanged(object sender, EventArgs e)
-        {
-            string NovaSenha = txtNovaSenha.ToString();
-            string ConfSenha = txtConfSenha.ToString();
-            if (NovaSenha != ConfSenha)
-            {
-                lblErro.Text = "Senhas não correspondem.";
-            }
-        }
+        
 
         private void excluirCadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -302,6 +293,27 @@ namespace WindowsFormsApp1
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             txtNome.Text = txtSenha.Text = txtConfirmSenha.Text = txtEmail.Text = "";
+        }
+
+        private void btnEditarSenha_Click(object sender, EventArgs e)
+        {
+            String SenhaAntiga = txtSenhaAntiga.Text;
+            String NovaSenha = txtNovaSenha.Text;
+            String ConfSenha = txtConfSenha.Text;
+            if (!Login.comparaSenha(SenhaAntiga))
+            {
+                lblErro.Text = "Senha incorreta";
+                return;
+            }
+            if (NovaSenha != ConfSenha)
+            {
+                lblErro.Text = "Senhas não correspondem.";
+                return;
+            }
+            Login.mudaSenha(NovaSenha);
+            MessageBox.Show("Senha alterada com sucesso");
+            txtNovaSenha.Text = txtConfSenha.Text = txtSenhaAntiga.Text = "";
+
         }
     }
 }

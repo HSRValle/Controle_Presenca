@@ -73,7 +73,7 @@
             this.txtConfSenha = new System.Windows.Forms.TextBox();
             this.txtNovaSenha = new System.Windows.Forms.TextBox();
             this.txtSenhaAntiga = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditarSenha = new System.Windows.Forms.Button();
             this.lblErro = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -119,14 +119,14 @@
             // datasPassadasToolStripMenuItem
             // 
             this.datasPassadasToolStripMenuItem.Name = "datasPassadasToolStripMenuItem";
-            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.datasPassadasToolStripMenuItem.Text = "Datas Passadas";
             this.datasPassadasToolStripMenuItem.Click += new System.EventHandler(this.datasPassadasToolStripMenuItem_Click);
             // 
             // datasFuturasToolStripMenuItem
             // 
             this.datasFuturasToolStripMenuItem.Name = "datasFuturasToolStripMenuItem";
-            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.datasFuturasToolStripMenuItem.Text = "Datas Futuras";
             this.datasFuturasToolStripMenuItem.Click += new System.EventHandler(this.datasFuturasToolStripMenuItem_Click);
             // 
@@ -144,27 +144,27 @@
             // procurarCadastroToolStripMenuItem
             // 
             this.procurarCadastroToolStripMenuItem.Name = "procurarCadastroToolStripMenuItem";
-            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.procurarCadastroToolStripMenuItem.Text = "Procurar Cadastro";
             this.procurarCadastroToolStripMenuItem.Click += new System.EventHandler(this.procurarCadastroToolStripMenuItem_Click);
             // 
             // novoCadastroToolStripMenuItem
             // 
             this.novoCadastroToolStripMenuItem.Name = "novoCadastroToolStripMenuItem";
-            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.novoCadastroToolStripMenuItem.Text = "Novo Cadastro";
             this.novoCadastroToolStripMenuItem.Click += new System.EventHandler(this.novoCadastroToolStripMenuItem_Click);
             // 
             // editarCadastroToolStripMenuItem
             // 
             this.editarCadastroToolStripMenuItem.Name = "editarCadastroToolStripMenuItem";
-            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.editarCadastroToolStripMenuItem.Text = "Editar Cadastro";
             // 
             // excluirCadastroToolStripMenuItem
             // 
             this.excluirCadastroToolStripMenuItem.Name = "excluirCadastroToolStripMenuItem";
-            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.excluirCadastroToolStripMenuItem.Text = "Excluir Cadastro";
             this.excluirCadastroToolStripMenuItem.Click += new System.EventHandler(this.excluirCadastroToolStripMenuItem_Click);
             // 
@@ -451,7 +451,7 @@
             this.pnlMudarSenha.Controls.Add(this.txtConfSenha);
             this.pnlMudarSenha.Controls.Add(this.txtNovaSenha);
             this.pnlMudarSenha.Controls.Add(this.txtSenhaAntiga);
-            this.pnlMudarSenha.Controls.Add(this.button1);
+            this.pnlMudarSenha.Controls.Add(this.btnEditarSenha);
             this.pnlMudarSenha.Controls.Add(this.lblErro);
             this.pnlMudarSenha.Controls.Add(this.label11);
             this.pnlMudarSenha.Controls.Add(this.label12);
@@ -466,14 +466,15 @@
             // 
             this.txtConfSenha.Location = new System.Drawing.Point(403, 246);
             this.txtConfSenha.Name = "txtConfSenha";
+            this.txtConfSenha.PasswordChar = '•';
             this.txtConfSenha.Size = new System.Drawing.Size(134, 20);
             this.txtConfSenha.TabIndex = 15;
-            this.txtConfSenha.TextChanged += new System.EventHandler(this.txtConfSenha_TextChanged);
             // 
             // txtNovaSenha
             // 
             this.txtNovaSenha.Location = new System.Drawing.Point(403, 212);
             this.txtNovaSenha.Name = "txtNovaSenha";
+            this.txtNovaSenha.PasswordChar = '•';
             this.txtNovaSenha.Size = new System.Drawing.Size(134, 20);
             this.txtNovaSenha.TabIndex = 14;
             // 
@@ -481,22 +482,24 @@
             // 
             this.txtSenhaAntiga.Location = new System.Drawing.Point(403, 174);
             this.txtSenhaAntiga.Name = "txtSenhaAntiga";
+            this.txtSenhaAntiga.PasswordChar = '•';
             this.txtSenhaAntiga.Size = new System.Drawing.Size(134, 20);
             this.txtSenhaAntiga.TabIndex = 13;
             // 
-            // button1
+            // btnEditarSenha
             // 
-            this.button1.Location = new System.Drawing.Point(462, 298);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEditarSenha.Location = new System.Drawing.Point(426, 301);
+            this.btnEditarSenha.Name = "btnEditarSenha";
+            this.btnEditarSenha.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarSenha.TabIndex = 12;
+            this.btnEditarSenha.Text = "Salvar";
+            this.btnEditarSenha.UseVisualStyleBackColor = true;
+            this.btnEditarSenha.Click += new System.EventHandler(this.btnEditarSenha_Click);
             // 
             // lblErro
             // 
             this.lblErro.AutoSize = true;
-            this.lblErro.Location = new System.Drawing.Point(459, 269);
+            this.lblErro.Location = new System.Drawing.Point(371, 280);
             this.lblErro.Name = "lblErro";
             this.lblErro.Size = new System.Drawing.Size(0, 13);
             this.lblErro.TabIndex = 11;
@@ -542,11 +545,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 513);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pnlMudarSenha);
             this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlCadastroNovo);
             this.Controls.Add(this.pnlCadastroPesquisa);
-            this.Controls.Add(this.pnlMudarSenha);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmTutor";
@@ -611,7 +614,7 @@
         private System.Windows.Forms.TextBox txtConfSenha;
         private System.Windows.Forms.TextBox txtNovaSenha;
         private System.Windows.Forms.TextBox txtSenhaAntiga;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEditarSenha;
         private System.Windows.Forms.Label lblErro;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;

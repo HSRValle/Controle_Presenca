@@ -167,31 +167,6 @@ namespace WindowsFormsApp1
             frmEditData frmEditData = new frmEditData(d);
             frmEditData.Show();
         }
-
-        private void novoCadastroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            /**fazer o painel relevante aparecer e o trazer para frente, 
-            para ter certeza que não está escondio atrás de outro painel**/
-            RefreshForm(); 
-            pnlCadastroNovo.Show();
-            pnlCadastroNovo.BringToFront();
-        }
-
-        private void editarSenhaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RefreshForm();
-            pnlMudarSenha.Show();
-            pnlMudarSenha.BringToFront();
-        }
-        
-
-        private void excluirCadastroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RefreshForm();
-            pnlExcluir.Show();
-            pnlExcluir.BringToFront();
-        }
-
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             if (this.exibirFuturo)
@@ -201,8 +176,87 @@ namespace WindowsFormsApp1
             else
             {
                 datasPassadasToolStripMenuItem_Click(sender, e);
-            }            
+            }
         }
+
+
+
+        private void novoCadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /**fazer o painel relevante aparecer e o trazer para frente, 
+            para ter certeza que não está escondio atrás de outro painel**/
+            RefreshForm(); 
+            pnlCadastroNovo.Show();
+            pnlCadastroNovo.BringToFront();
+        }
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            String nome = txtNome.Text;
+            String senha = txtSenha.Text;
+            String confirmarSenha = txtConfirmSenha.Text;
+            String email = txtEmail.Text;
+            if (senha == confirmarSenha)
+            {
+                Usuario novoUsuario = new Usuario(nome, email, senha, chbTutor.Checked);
+                novoUsuario.insertNewUsuario();
+                TodosUsuarios.Add(novoUsuario);
+                MessageBox.Show("Usuário cadastrado");
+                btnLimpar_Click(sender, e);
+            }
+            else
+            {
+                lblErroNovo.Text = "Senhas não correspondem.";
+            }
+
+
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtNome.Text = txtSenha.Text = txtConfirmSenha.Text = txtEmail.Text = "";
+        }
+
+
+
+        private void editarSenhaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshForm();
+            pnlMudarSenha.Show();
+            pnlMudarSenha.BringToFront();
+        }
+        private void btnEditarSenha_Click(object sender, EventArgs e)
+        {
+            String SenhaAntiga = txtSenhaAntiga.Text;
+            String NovaSenha = txtNovaSenha.Text;
+            String ConfSenha = txtConfSenha.Text;
+            if (!Login.comparaSenha(SenhaAntiga))
+            {
+                lblErro.Text = "Senha incorreta";
+                return;
+            }
+            if (NovaSenha != ConfSenha)
+            {
+                lblErro.Text = "Senhas não correspondem.";
+                return;
+            }
+            Login.mudaSenha(NovaSenha);
+            MessageBox.Show("Senha alterada com sucesso");
+            txtNovaSenha.Text = txtConfSenha.Text = txtSenhaAntiga.Text = "";
+
+        }
+
+
+
+
+        private void excluirCadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshForm();
+            pnlExcluir.Show();
+            pnlExcluir.BringToFront();
+        }
+
+
+
 
         private void btnCriar_Click(object sender, EventArgs e)
         {
@@ -268,52 +322,5 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            String nome = txtNome.Text;
-            String senha = txtSenha.Text;
-            String confirmarSenha = txtConfirmSenha.Text;
-            String email = txtEmail.Text;
-            if (senha == confirmarSenha)
-            {
-                Usuario novoUsuario = new Usuario(nome, email, senha, chbTutor.Checked);
-                novoUsuario.insertNewUsuario();
-                TodosUsuarios.Add(novoUsuario);
-                MessageBox.Show("Usuário cadastrado");
-                btnLimpar_Click(sender, e);
-            }
-            else
-            {
-                MessageBox.Show("Senhas não são iguais");
-            }                
-
-            
-        }
-
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-            txtNome.Text = txtSenha.Text = txtConfirmSenha.Text = txtEmail.Text = "";
-        }
-
-        private void btnEditarSenha_Click(object sender, EventArgs e)
-        {
-            String SenhaAntiga = txtSenhaAntiga.Text;
-            String NovaSenha = txtNovaSenha.Text;
-            String ConfSenha = txtConfSenha.Text;
-            if (!Login.comparaSenha(SenhaAntiga))
-            {
-                lblErro.Text = "Senha incorreta";
-                return;
-            }
-            if (NovaSenha != ConfSenha)
-            {
-                lblErro.Text = "Senhas não correspondem.";
-                return;
-            }
-            Login.mudaSenha(NovaSenha);
-            MessageBox.Show("Senha alterada com sucesso");
-            txtNovaSenha.Text = txtConfSenha.Text = txtSenhaAntiga.Text = "";
-
-        }
     }
 }

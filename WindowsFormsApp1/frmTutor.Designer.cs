@@ -79,6 +79,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.pnlExcluir = new System.Windows.Forms.Panel();
+            this.lblErroNovo = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -247,6 +248,7 @@
             // 
             // pnlCadastroNovo
             // 
+            this.pnlCadastroNovo.Controls.Add(this.lblErroNovo);
             this.pnlCadastroNovo.Controls.Add(this.chbTutor);
             this.pnlCadastroNovo.Controls.Add(this.btnLimpar);
             this.pnlCadastroNovo.Controls.Add(this.btnSalvar);
@@ -539,17 +541,25 @@
             this.pnlExcluir.Size = new System.Drawing.Size(879, 513);
             this.pnlExcluir.TabIndex = 28;
             // 
+            // lblErroNovo
+            // 
+            this.lblErroNovo.AutoSize = true;
+            this.lblErroNovo.Location = new System.Drawing.Point(400, 399);
+            this.lblErroNovo.Name = "lblErroNovo";
+            this.lblErroNovo.Size = new System.Drawing.Size(0, 13);
+            this.lblErroNovo.TabIndex = 28;
+            // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 513);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pnlCadastroNovo);
+            this.Controls.Add(this.pnlCadastroPesquisa);
             this.Controls.Add(this.pnlMudarSenha);
             this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.pnlExcluir);
-            this.Controls.Add(this.pnlCadastroNovo);
-            this.Controls.Add(this.pnlCadastroPesquisa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmTutor";
@@ -625,5 +635,6 @@
         private System.Windows.Forms.Button btnCriar;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.CheckBox chbTutor;
+        private System.Windows.Forms.Label lblErroNovo;
     }
 }

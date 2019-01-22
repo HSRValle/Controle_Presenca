@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
             pnlPresenca.Hide();
             pnlCadastroPesquisa.Hide();
             pnlMudarSenha.Hide();
+            pnlEditarCadastro.Hide();
         } 
 
         public frmTutor(Usuario tutor)
@@ -322,5 +323,20 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void editarCadastroToolStripMenuItem1_Click(object sender, EventArgs e)
+        {            
+            RefreshForm();
+            pnlEditarCadastro.Show();            
+            pnlEditarCadastro.BringToFront();
+
+            txtNomeEditar.Text = Login.getNome();
+            txtEmailEditar.Text = Login.getEmail();
+        }
+
+        private void btnSalvarEditar_Click(object sender, EventArgs e)
+        {
+            Login.updateUsuario(txtNomeEditar.Text, txtEmailEditar.Text);
+            MessageBox.Show("Usuário alterado");
+        }
     }
 }

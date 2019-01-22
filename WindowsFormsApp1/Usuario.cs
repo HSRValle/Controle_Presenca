@@ -41,6 +41,10 @@ namespace WindowsFormsApp1
         {
             return this.nome;
         }
+        public String getEmail()
+        {
+            return this.email;
+        }
         public Boolean comparaSenha(String senha)
         {
             return senha.Equals(this.senha) ;
@@ -82,8 +86,12 @@ namespace WindowsFormsApp1
             return false;
 
         }
-        public void updateUsuario()
+        public void updateUsuario(String nome = "", String email = "")
         {
+            if(nome.Length > 0)
+                this.nome = nome;
+            if(email.Length > 0)
+                this.email = email;                        
             MySql.Data.MySqlClient.MySqlConnection conn;
             try
             {

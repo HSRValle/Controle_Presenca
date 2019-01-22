@@ -49,6 +49,7 @@
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.pnlCadastroNovo = new System.Windows.Forms.Panel();
+            this.lblErroNovo = new System.Windows.Forms.Label();
             this.chbTutor = new System.Windows.Forms.CheckBox();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -79,7 +80,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.pnlExcluir = new System.Windows.Forms.Panel();
-            this.lblErroNovo = new System.Windows.Forms.Label();
+            this.pnlEditarCadastro = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalvarEditar = new System.Windows.Forms.Button();
+            this.txtEmailEditar = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtNomeEditar = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -87,6 +95,8 @@
             this.pnlCadastroPesquisa.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlMudarSenha.SuspendLayout();
+            this.pnlExcluir.SuspendLayout();
+            this.pnlEditarCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -190,6 +200,7 @@
             this.editarCadastroToolStripMenuItem1.Name = "editarCadastroToolStripMenuItem1";
             this.editarCadastroToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.editarCadastroToolStripMenuItem1.Text = "Editar Cadastro";
+            this.editarCadastroToolStripMenuItem1.Click += new System.EventHandler(this.editarCadastroToolStripMenuItem1_Click);
             // 
             // editarSenhaToolStripMenuItem
             // 
@@ -266,6 +277,14 @@
             this.pnlCadastroNovo.Name = "pnlCadastroNovo";
             this.pnlCadastroNovo.Size = new System.Drawing.Size(879, 513);
             this.pnlCadastroNovo.TabIndex = 3;
+            // 
+            // lblErroNovo
+            // 
+            this.lblErroNovo.AutoSize = true;
+            this.lblErroNovo.Location = new System.Drawing.Point(400, 399);
+            this.lblErroNovo.Name = "lblErroNovo";
+            this.lblErroNovo.Size = new System.Drawing.Size(0, 13);
+            this.lblErroNovo.TabIndex = 28;
             // 
             // chbTutor
             // 
@@ -535,19 +554,87 @@
             // 
             // pnlExcluir
             // 
+            this.pnlExcluir.Controls.Add(this.pnlEditarCadastro);
             this.pnlExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlExcluir.Location = new System.Drawing.Point(0, 0);
             this.pnlExcluir.Name = "pnlExcluir";
             this.pnlExcluir.Size = new System.Drawing.Size(879, 513);
             this.pnlExcluir.TabIndex = 28;
             // 
-            // lblErroNovo
+            // pnlEditarCadastro
             // 
-            this.lblErroNovo.AutoSize = true;
-            this.lblErroNovo.Location = new System.Drawing.Point(400, 399);
-            this.lblErroNovo.Name = "lblErroNovo";
-            this.lblErroNovo.Size = new System.Drawing.Size(0, 13);
-            this.lblErroNovo.TabIndex = 28;
+            this.pnlEditarCadastro.Controls.Add(this.button1);
+            this.pnlEditarCadastro.Controls.Add(this.btnSalvarEditar);
+            this.pnlEditarCadastro.Controls.Add(this.txtEmailEditar);
+            this.pnlEditarCadastro.Controls.Add(this.label14);
+            this.pnlEditarCadastro.Controls.Add(this.txtNomeEditar);
+            this.pnlEditarCadastro.Controls.Add(this.label17);
+            this.pnlEditarCadastro.Controls.Add(this.label18);
+            this.pnlEditarCadastro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlEditarCadastro.Location = new System.Drawing.Point(0, 0);
+            this.pnlEditarCadastro.Name = "pnlEditarCadastro";
+            this.pnlEditarCadastro.Size = new System.Drawing.Size(879, 513);
+            this.pnlEditarCadastro.TabIndex = 31;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(514, 260);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "Limpar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvarEditar
+            // 
+            this.btnSalvarEditar.Location = new System.Drawing.Point(356, 260);
+            this.btnSalvarEditar.Name = "btnSalvarEditar";
+            this.btnSalvarEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvarEditar.TabIndex = 38;
+            this.btnSalvarEditar.Text = "Salvar";
+            this.btnSalvarEditar.UseVisualStyleBackColor = true;
+            this.btnSalvarEditar.Click += new System.EventHandler(this.btnSalvarEditar_Click);
+            // 
+            // txtEmailEditar
+            // 
+            this.txtEmailEditar.Location = new System.Drawing.Point(406, 193);
+            this.txtEmailEditar.Name = "txtEmailEditar";
+            this.txtEmailEditar.Size = new System.Drawing.Size(172, 20);
+            this.txtEmailEditar.TabIndex = 37;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(340, 196);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 13);
+            this.label14.TabIndex = 36;
+            this.label14.Text = "E-mail:";
+            // 
+            // txtNomeEditar
+            // 
+            this.txtNomeEditar.Location = new System.Drawing.Point(406, 152);
+            this.txtNomeEditar.Name = "txtNomeEditar";
+            this.txtNomeEditar.Size = new System.Drawing.Size(172, 20);
+            this.txtNomeEditar.TabIndex = 31;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(340, 155);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(38, 13);
+            this.label17.TabIndex = 30;
+            this.label17.Text = "Nome:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(443, 99);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(79, 13);
+            this.label18.TabIndex = 29;
+            this.label18.Text = "Editar Cadastro";
             // 
             // frmTutor
             // 
@@ -555,11 +642,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 513);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlCadastroNovo);
             this.Controls.Add(this.pnlCadastroPesquisa);
             this.Controls.Add(this.pnlMudarSenha);
             this.Controls.Add(this.pnlPresenca);
-            this.Controls.Add(this.pnlExcluir);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmTutor";
@@ -578,6 +665,9 @@
             this.groupBox1.PerformLayout();
             this.pnlMudarSenha.ResumeLayout(false);
             this.pnlMudarSenha.PerformLayout();
+            this.pnlExcluir.ResumeLayout(false);
+            this.pnlEditarCadastro.ResumeLayout(false);
+            this.pnlEditarCadastro.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -636,5 +726,13 @@
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.CheckBox chbTutor;
         private System.Windows.Forms.Label lblErroNovo;
+        private System.Windows.Forms.Panel pnlEditarCadastro;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalvarEditar;
+        private System.Windows.Forms.TextBox txtEmailEditar;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtNomeEditar;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
     }
 }

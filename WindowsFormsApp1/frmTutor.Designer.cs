@@ -45,6 +45,8 @@
             this.editarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlPresenca = new System.Windows.Forms.Panel();
+            this.btnCriar = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.pnlCadastroNovo = new System.Windows.Forms.Panel();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -62,16 +64,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlCadastroPesquisa = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.btnProcurar = new System.Windows.Forms.Button();
-            this.txtProcNCadastro = new System.Windows.Forms.TextBox();
             this.txtProcNome = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlMudarSenha = new System.Windows.Forms.Panel();
             this.txtConfSenha = new System.Windows.Forms.TextBox();
@@ -83,8 +79,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.pnlExcluir = new System.Windows.Forms.Panel();
-            this.btnAtualizar = new System.Windows.Forms.Button();
-            this.btnCriar = new System.Windows.Forms.Button();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -125,14 +120,14 @@
             // datasPassadasToolStripMenuItem
             // 
             this.datasPassadasToolStripMenuItem.Name = "datasPassadasToolStripMenuItem";
-            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.datasPassadasToolStripMenuItem.Text = "Datas Passadas";
             this.datasPassadasToolStripMenuItem.Click += new System.EventHandler(this.datasPassadasToolStripMenuItem_Click);
             // 
             // datasFuturasToolStripMenuItem
             // 
             this.datasFuturasToolStripMenuItem.Name = "datasFuturasToolStripMenuItem";
-            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.datasFuturasToolStripMenuItem.Text = "Datas Futuras";
             this.datasFuturasToolStripMenuItem.Click += new System.EventHandler(this.datasFuturasToolStripMenuItem_Click);
             // 
@@ -216,10 +211,30 @@
             this.pnlPresenca.Controls.Add(this.btnAtualizar);
             this.pnlPresenca.Controls.Add(this.dataGridView);
             this.pnlPresenca.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPresenca.Location = new System.Drawing.Point(0, 24);
+            this.pnlPresenca.Location = new System.Drawing.Point(0, 0);
             this.pnlPresenca.Name = "pnlPresenca";
-            this.pnlPresenca.Size = new System.Drawing.Size(841, 489);
+            this.pnlPresenca.Size = new System.Drawing.Size(841, 513);
             this.pnlPresenca.TabIndex = 1;
+            // 
+            // btnCriar
+            // 
+            this.btnCriar.Location = new System.Drawing.Point(116, 7);
+            this.btnCriar.Name = "btnCriar";
+            this.btnCriar.Size = new System.Drawing.Size(75, 23);
+            this.btnCriar.TabIndex = 3;
+            this.btnCriar.Text = "Criar datas futuras";
+            this.btnCriar.UseVisualStyleBackColor = true;
+            this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
+            // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Location = new System.Drawing.Point(35, 7);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizar.TabIndex = 2;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // dataGridView
             // 
@@ -365,11 +380,9 @@
             // 
             this.pnlCadastroPesquisa.Controls.Add(this.groupBox1);
             this.pnlCadastroPesquisa.Controls.Add(this.btnProcurar);
-            this.pnlCadastroPesquisa.Controls.Add(this.txtProcNCadastro);
             this.pnlCadastroPesquisa.Controls.Add(this.txtProcNome);
             this.pnlCadastroPesquisa.Controls.Add(this.label10);
             this.pnlCadastroPesquisa.Controls.Add(this.label9);
-            this.pnlCadastroPesquisa.Controls.Add(this.label8);
             this.pnlCadastroPesquisa.Controls.Add(this.label7);
             this.pnlCadastroPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCadastroPesquisa.Location = new System.Drawing.Point(0, 0);
@@ -379,51 +392,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.lblResultado);
             this.groupBox1.Location = new System.Drawing.Point(202, 237);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(356, 178);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(15, 94);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 13);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "label17";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(15, 73);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 13);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "label16";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(15, 52);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(67, 13);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Nº Cadastro:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 35);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(38, 13);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Nome:";
             // 
             // btnProcurar
             // 
@@ -433,13 +407,7 @@
             this.btnProcurar.TabIndex = 6;
             this.btnProcurar.Text = "Procurar";
             this.btnProcurar.UseVisualStyleBackColor = true;
-            // 
-            // txtProcNCadastro
-            // 
-            this.txtProcNCadastro.Location = new System.Drawing.Point(300, 144);
-            this.txtProcNCadastro.Name = "txtProcNCadastro";
-            this.txtProcNCadastro.Size = new System.Drawing.Size(137, 20);
-            this.txtProcNCadastro.TabIndex = 5;
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // txtProcNome
             // 
@@ -451,7 +419,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(230, 92);
+            this.label10.Location = new System.Drawing.Point(213, 92);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 13);
             this.label10.TabIndex = 3;
@@ -460,20 +428,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(257, 118);
+            this.label9.Location = new System.Drawing.Point(213, 118);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 13);
             this.label9.TabIndex = 2;
             this.label9.Text = "Nome:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(213, 147);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Nº de Cadastro:";
             // 
             // label7
             // 
@@ -574,37 +533,26 @@
             this.pnlExcluir.Size = new System.Drawing.Size(841, 513);
             this.pnlExcluir.TabIndex = 28;
             // 
-            // btnAtualizar
+            // lblResultado
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(35, 7);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizar.TabIndex = 2;
-            this.btnAtualizar.Text = "Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
-            // 
-            // btnCriar
-            // 
-            this.btnCriar.Location = new System.Drawing.Point(116, 7);
-            this.btnCriar.Name = "btnCriar";
-            this.btnCriar.Size = new System.Drawing.Size(75, 23);
-            this.btnCriar.TabIndex = 3;
-            this.btnCriar.Text = "Criar datas futuras";
-            this.btnCriar.UseVisualStyleBackColor = true;
-            this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Location = new System.Drawing.Point(15, 24);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(58, 13);
+            this.lblResultado.TabIndex = 0;
+            this.lblResultado.Text = "Resultado:";
             // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 513);
-            this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnlExcluir);
-            this.Controls.Add(this.pnlCadastroNovo);
             this.Controls.Add(this.pnlCadastroPesquisa);
             this.Controls.Add(this.pnlMudarSenha);
+            this.Controls.Add(this.pnlPresenca);
+            this.Controls.Add(this.pnlExcluir);
+            this.Controls.Add(this.pnlCadastroNovo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmTutor";
@@ -663,11 +611,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlCadastroPesquisa;
         private System.Windows.Forms.Button btnProcurar;
-        private System.Windows.Forms.TextBox txtProcNCadastro;
         private System.Windows.Forms.TextBox txtProcNome;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel pnlMudarSenha;
         private System.Windows.Forms.TextBox txtConfSenha;
@@ -680,11 +626,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel pnlExcluir;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnCriar;
+        private System.Windows.Forms.Label lblResultado;
     }
 }

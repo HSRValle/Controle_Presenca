@@ -258,5 +258,23 @@ namespace WindowsFormsApp1
             }            
             return true;
         }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            lblResultado.Text = "Resultado:";
+            String nome = txtProcNome.Text;
+            List<Usuario> resultado = TodosUsuarios.FindAll(x => x.getNome().Contains(nome) );
+            if(resultado.Count > 0)
+            {
+                foreach (Usuario usuario in resultado)
+                {
+                    lblResultado.Text += "\n" + usuario.getNome();
+                }
+            }
+            else
+            {
+                lblResultado.Text += "\nNenhum usuário encontrado";
+            }
+        }
     }
 }

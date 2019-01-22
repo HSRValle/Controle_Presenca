@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
                 {
                     sql += "WHERE tutor = 1";
                 }
-                sql += ";";
+                sql += "ORDER BY nome;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader result = cmd.ExecuteReader();
                 while (result.Read())

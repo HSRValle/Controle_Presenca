@@ -86,7 +86,7 @@ namespace WindowsFormsApp1
                 if (data.presente)
                 {
                     dataGridView.Rows[index].Cells[3].Value = "Sim";
-                    dataGridView.Rows[index].Cells[3].Style.BackColor = Color.ForestGreen;
+                    dataGridView.Rows[index].Cells[3].Style.BackColor = Color.LightGreen;
                 }
                 else
                 {
@@ -97,7 +97,7 @@ namespace WindowsFormsApp1
                 if (data.noHorario)
                 {
                     dataGridView.Rows[index].Cells[4].Value = "Sim";
-                    dataGridView.Rows[index].Cells[4].Style.BackColor = Color.ForestGreen;
+                    dataGridView.Rows[index].Cells[4].Style.BackColor = Color.LightGreen;
                 }
                 else
                 {

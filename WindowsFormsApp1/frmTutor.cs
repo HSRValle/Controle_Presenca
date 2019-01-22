@@ -56,17 +56,23 @@ namespace WindowsFormsApp1
 
             dataGridView.Columns[1].Name = "Data";
             dataGridView.Columns[1].ValueType = typeof(DateTime);
+            dataGridView.Columns[1].FillWeight = 17;
 
             dataGridView.Columns[2].Name = "Aluno";
+            dataGridView.Columns[2].FillWeight = 16;
 
             dataGridView.Columns[3].Name = "Presente?";
+            dataGridView.Columns[3].FillWeight = 13;
 
             dataGridView.Columns[4].Name = "No horário?";
+            dataGridView.Columns[4].FillWeight = 13;
 
             dataGridView.Columns[5].Name = "Justificativa";
             dataGridView.Columns[5].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dataGridView.Columns[5].FillWeight = 28;
 
             dataGridView.Columns[6].Name = "Tutor";
+            dataGridView.Columns[6].FillWeight = 13;
 
             foreach (Data data in listaDatas)
             {

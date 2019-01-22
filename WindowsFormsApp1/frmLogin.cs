@@ -118,10 +118,6 @@ namespace WindowsFormsApp1
                     {
                         MessageBox.Show("Presença confirmada!\n" + DateTime.Now.ToString());
                     }                    
-                    //exibe lista de datas
-                    foreach (Data data in datas)
-                        data.DebugData();
-                    
 
 
                 }

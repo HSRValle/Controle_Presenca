@@ -114,20 +114,20 @@
             this.datasPassadasToolStripMenuItem,
             this.datasFuturasToolStripMenuItem});
             this.presençaDoAlunosToolStripMenuItem.Name = "presençaDoAlunosToolStripMenuItem";
-            this.presençaDoAlunosToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
-            this.presençaDoAlunosToolStripMenuItem.Text = "Presença do Alunos";
+            this.presençaDoAlunosToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.presençaDoAlunosToolStripMenuItem.Text = "Presença dos Alunos";
             // 
             // datasPassadasToolStripMenuItem
             // 
             this.datasPassadasToolStripMenuItem.Name = "datasPassadasToolStripMenuItem";
-            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.datasPassadasToolStripMenuItem.Text = "Datas Passadas";
             this.datasPassadasToolStripMenuItem.Click += new System.EventHandler(this.datasPassadasToolStripMenuItem_Click);
             // 
             // datasFuturasToolStripMenuItem
             // 
             this.datasFuturasToolStripMenuItem.Name = "datasFuturasToolStripMenuItem";
-            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.datasFuturasToolStripMenuItem.Text = "Datas Futuras";
             this.datasFuturasToolStripMenuItem.Click += new System.EventHandler(this.datasFuturasToolStripMenuItem_Click);
             // 

@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
                 string sql = "SELECT * FROM new_schema.usuarios ";
                 if (tutores)
                 {
-                    sql += "WHERE tutor = 1";
+                    sql += "WHERE tutor = 1 ";
                 }
                 sql += "ORDER BY nome;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);

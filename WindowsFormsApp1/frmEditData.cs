@@ -16,13 +16,15 @@ namespace WindowsFormsApp1
         public frmEditData(Data data)
         {
             this.data = data;
-            InitializeComponent();
-            data.getDataEsperada();
+            InitializeComponent();           
             lblData.Text += data.getDataEsperada();
-
             radUnico.Text += data.Aluno.getNome();
             dateTimePickerData.Value = data.getDataEsperada();
             dateTimePickerTime.Value = data.getDataEsperada();
+            if(data.justificativa != null)
+            {
+                txtJustificativa.Text = data.justificativa;
+            }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

@@ -464,8 +464,7 @@ namespace WindowsFormsApp1
         }
 
         private void btnSalvarOutroUsuario_Click(object sender, EventArgs e)
-        {
-
+        {            
             if (txtEditarOutroSenha.Text != txtEditarOutroConfirmacao.Text)
             {
                 Console.WriteLine("(" + txtEditarOutroSenha +")");
@@ -478,15 +477,18 @@ namespace WindowsFormsApp1
             {
                 return;
             }
-            
-            if (txtEditarNome.Text != usuario.getNome() || txtEditarEmail.Text != usuario.getEmail() || nudEditarGrupo.Value != usuario.grupo)
+            DialogResult result =  MessageBox.Show("Tem certeza que quer alterar o usuário " + usuario.getNome() + "?", "Confirmação", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
             {
-                usuario.updateUsuario(txtEditarNome.Text, txtEditarEmail.Text, (int)nudEditarGrupo.Value);
+                if (txtEditarNome.Text != usuario.getNome() || txtEditarEmail.Text != usuario.getEmail() || nudEditarGrupo.Value != usuario.grupo)
+                {
+                    usuario.updateUsuario(txtEditarNome.Text, txtEditarEmail.Text, (int)nudEditarGrupo.Value);
+                }
+                if (txtEditarOutroSenha.Text != "" && !usuario.comparaSenha(txtEditarOutroSenha.Text))
+                {
+                    usuario.mudaSenha(txtEditarOutroSenha.Text);
+                }
             }            
-            if(txtEditarOutroSenha.Text != "" && !usuario.comparaSenha(txtEditarOutroSenha.Text))
-            {
-                usuario.mudaSenha(txtEditarOutroSenha.Text);
-            }
                         
 
         }

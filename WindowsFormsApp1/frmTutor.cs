@@ -228,8 +228,7 @@ namespace WindowsFormsApp1
             String name = cmb.Items[cmb.SelectedIndex].ToString();
             Usuario usuarioSelecionado = TodosUsuarios.Find(x => x.getNome().Equals(name));
             if (usuarioSelecionado != null)
-            {
-                usuarioSelecionado.DebugUsuario();
+            {                
                 List<Data> filtro;
                 if (this.exibirFuturo)
                 {

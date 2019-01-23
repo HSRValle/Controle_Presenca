@@ -161,7 +161,7 @@ namespace WindowsFormsApp1
                 return false;
             }
         }
-        public void insertNewData()
+        public Boolean insertNewData()
         {
             MySql.Data.MySqlClient.MySqlConnection conn;
             try
@@ -175,10 +175,13 @@ namespace WindowsFormsApp1
                 sql += " " + this.Aluno.id + ");";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
+
+                return true;
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
                 Console.WriteLine(ex);
+                return false;
             }
         }
         public Boolean isRealSet(){

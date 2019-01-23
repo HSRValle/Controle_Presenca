@@ -601,9 +601,9 @@
             this.pnlExcluir.Controls.Add(this.label3);
             this.pnlExcluir.Controls.Add(this.cmbExcluirUsuario);
             this.pnlExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlExcluir.Location = new System.Drawing.Point(0, 0);
+            this.pnlExcluir.Location = new System.Drawing.Point(0, 24);
             this.pnlExcluir.Name = "pnlExcluir";
-            this.pnlExcluir.Size = new System.Drawing.Size(879, 513);
+            this.pnlExcluir.Size = new System.Drawing.Size(879, 489);
             this.pnlExcluir.TabIndex = 28;
             // 
             // pnlEditarCadastro
@@ -933,12 +933,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 513);
+            this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlEditarOutroCadastro);
             this.Controls.Add(this.pnlCadastroNovo);
             this.Controls.Add(this.pnlEditarCadastro);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlPresenca);
-            this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlMudarSenha);
             this.Controls.Add(this.pnlCadastroPesquisa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -139,33 +139,6 @@ namespace WindowsFormsApp1
             RefreshForm();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
-        }
-        /**
-        private void presençaDosAlunosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MySqlConnection sqlcon = new MySqlConnection(Sql.Conection());
-            sqlcon.Open();
-            MySqlCommand cmd = new MySqlCommand("Select * from new_schema.usuarios", sqlcon);
-            DataSet ds = new DataSet();
-            MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
-            sda.Fill(ds);
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = ds.Tables[0].ToString();
-            dataGridView1.Show();
-
-        } **/
-
-        private void procurarCadastroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RefreshForm();
-            pnlCadastroPesquisa.Show();
-            pnlCadastroPesquisa.BringToFront();
-        }
-
         private void datasFuturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.exibirFuturo = true;
@@ -203,6 +176,73 @@ namespace WindowsFormsApp1
                 datasPassadasToolStripMenuItem_Click(sender, e);
             }
         }
+        private void btnCriar_Click(object sender, EventArgs e)
+        {
+            createNextDatas();
+            System.Threading.Thread.Sleep(100);
+            datasFuturasToolStripMenuItem_Click(sender, e);
+        }
+        public Boolean createNextDatas(int dias = 7)
+        {
+            List<Data> novasDatas = new List<Data>();
+
+
+            DateTime hoje = DateTime.Now;
+            TimeSpan manha = new TimeSpan(9, 0, 0);
+            TimeSpan tarde = new TimeSpan(13, 30, 0);
+            for (int i = 1; i <= dias; i++)
+            {
+                DateTime novaData = hoje.AddDays(i);
+                novaData = novaData.Date + manha;
+                if (novaData.DayOfWeek != DayOfWeek.Saturday && novaData.DayOfWeek != DayOfWeek.Sunday)
+                {
+                    foreach (Usuario usuario in TodosUsuarios)
+                    {
+                        if (!usuario.tutor)
+                        {
+                            //Se é aluno
+                            Data insert = new Data(novaData.Date + manha, usuario);
+                            if (insert.insertNewData())
+                                TodasDatas.Add(insert);
+                            if (novaData.DayOfWeek != DayOfWeek.Monday && novaData.DayOfWeek != DayOfWeek.Friday)
+                            {
+                                insert = new Data(novaData.Date + tarde, usuario);
+                                if (insert.insertNewData())
+                                    TodasDatas.Add(insert);
+
+
+                            }
+
+                        }
+                        // Else com horários para tutores?
+                    }
+                }
+
+            }
+            return true;
+        }
+
+        private void cmbAluno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cmb = (ComboBox)sender;
+            String name = cmb.Items[cmb.SelectedIndex].ToString();
+            Usuario usuarioSelecionado = TodosUsuarios.Find(x => x.getNome().Equals(name));
+            if (usuarioSelecionado != null)
+            {
+                usuarioSelecionado.DebugUsuario();
+                List<Data> filtro;
+                if (this.exibirFuturo)
+                {
+                    filtro = TodasDatas.FindAll(x => x.Aluno.Equals(usuarioSelecionado) && x.getDataEsperada() > DateTime.Now);
+                }
+                else
+                {
+                    filtro = TodasDatas.FindAll(x => x.Aluno.Equals(usuarioSelecionado) && x.getDataEsperada() < DateTime.Now);
+                }
+                preencherDataGridView(filtro);
+
+            }
+        }
 
 
 
@@ -236,7 +276,6 @@ namespace WindowsFormsApp1
 
 
         }
-
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             txtNome.Text = txtSenha.Text = txtConfirmSenha.Text = txtEmail.Text = "";
@@ -269,75 +308,18 @@ namespace WindowsFormsApp1
             MessageBox.Show("Senha alterada com sucesso");
             txtNovaSenha.Text = txtConfSenha.Text = txtSenhaAntiga.Text = "";
 
-        }
+        }              
 
 
 
 
-        private void excluirCadastroToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void procurarCadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RefreshForm();
-            pnlExcluir.Show();
-            pnlExcluir.BringToFront();
-            if (cmbExcluirUsuario.Items.Count == 0)
-            {
-                foreach (Usuario usuario in TodosUsuarios)
-                {
-                    cmbExcluirUsuario.Items.Add(usuario.getNome());
-                }
-            }
-            else Console.WriteLine("Count:" + cmbExcluirUsuario.Items.Count);
+            pnlCadastroPesquisa.Show();
+            pnlCadastroPesquisa.BringToFront();
         }
-
-
-
-
-        private void btnCriar_Click(object sender, EventArgs e)
-        {
-            createNextDatas();
-            System.Threading.Thread.Sleep(100);
-            datasFuturasToolStripMenuItem_Click(sender, e);
-        }
-        public Boolean createNextDatas(int dias = 7)
-        {
-            List<Data> novasDatas = new List<Data>();
-
-
-            DateTime hoje = DateTime.Now;
-            TimeSpan manha = new TimeSpan(9, 0, 0);
-            TimeSpan tarde = new TimeSpan(13, 30, 0);
-            for (int i = 1; i <= dias; i++)
-            {
-                DateTime novaData = hoje.AddDays(i);
-                novaData = novaData.Date + manha;
-                if (novaData.DayOfWeek != DayOfWeek.Saturday && novaData.DayOfWeek != DayOfWeek.Sunday)
-                {
-                    foreach (Usuario usuario in TodosUsuarios)
-                    {
-                        if (!usuario.tutor)
-                        {
-                            //Se é aluno
-                            Data insert = new Data(novaData.Date + manha, usuario);
-                            insert.insertNewData();
-                            TodasDatas.Add(insert);
-                            if (novaData.DayOfWeek != DayOfWeek.Monday && novaData.DayOfWeek != DayOfWeek.Friday)
-                            {
-                                insert = new Data(novaData.Date + tarde, usuario);
-                                insert.insertNewData();
-                                TodasDatas.Add(insert);
-
-
-                            }
-
-                        }
-                        // Else com horários para tutores?
-                    }
-                }
-
-            }            
-            return true;
-        }
-
         private void btnProcurar_Click(object sender, EventArgs e)
         {
             lblResultado.Text = "Resultado:";
@@ -374,29 +356,21 @@ namespace WindowsFormsApp1
             MessageBox.Show("Usuário alterado");
         }
 
-        private void cmbAluno_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ComboBox cmb = (ComboBox)sender;
-            String name = cmb.Items[cmb.SelectedIndex].ToString();
-            Console.WriteLine(name);
-            Usuario usuarioSelecionado = TodosUsuarios.Find(x => x.getNome().Equals(name));
-            if(usuarioSelecionado != null)
-            {
-                usuarioSelecionado.DebugUsuario();
-                List<Data> filtro;
-                if (this.exibirFuturo)
-                {
-                    filtro = TodasDatas.FindAll(x => x.Aluno.Equals(usuarioSelecionado) && x.getDataEsperada() > DateTime.Now);
-                }                    
-                else
-                {
-                    filtro = TodasDatas.FindAll(x => x.Aluno.Equals(usuarioSelecionado) && x.getDataEsperada() < DateTime.Now);
-                }
-                preencherDataGridView(filtro);
 
+
+        private void excluirCadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshForm();
+            pnlExcluir.Show();
+            pnlExcluir.BringToFront();
+            if (cmbExcluirUsuario.Items.Count == 0)
+            {
+                foreach (Usuario usuario in TodosUsuarios)
+                {
+                    cmbExcluirUsuario.Items.Add(usuario.getNome());
+                }
             }
         }
-
         private void txtExcluirSenha_TextChanged(object sender, EventArgs e)
         {
             if (txtExcluirSenha.Text != "")
@@ -467,9 +441,7 @@ namespace WindowsFormsApp1
         private void btnSalvarOutroUsuario_Click(object sender, EventArgs e)
         {            
             if (txtEditarOutroSenha.Text != txtEditarOutroConfirmacao.Text)
-            {
-                Console.WriteLine("(" + txtEditarOutroSenha +")");
-                Console.WriteLine("(" + txtEditarOutroConfirmacao + ")");
+            {                
                 lblErroEditarOutroUsuario.Text = "Senhas não conferem";
                 return;
             }
@@ -505,6 +477,11 @@ namespace WindowsFormsApp1
             nudEditarGrupo.Value = usuario.grupo;
             txtEditarOutroSenha.Text = txtEditarOutroConfirmacao.Text = "";
 
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

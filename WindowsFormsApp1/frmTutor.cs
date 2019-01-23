@@ -383,5 +383,42 @@ namespace WindowsFormsApp1
 
             }
         }
+
+        private void txtExcluirSenha_TextChanged(object sender, EventArgs e)
+        {
+            if (txtExcluirSenha.Text != "")
+            {
+                btnExcluirConfirmar.Enabled = true;
+            }
+            else
+            {
+                btnExcluirConfirmar.Enabled = false;
+            }
+        }
+
+        private void btnExcluirConfirmar_Click(object sender, EventArgs e)
+        {
+            if (Login.comparaSenha(txtExcluirSenha.Text))
+            {
+                DialogResult confirmacao;
+                String name = cmbExcluirUsuario.SelectedItem.ToString();
+                confirmacao = MessageBox
+                    .Show("Remover o usuário removerá todas as datas associadas a ele\n" 
+                            + "Essa operação não pode ser desfeita" 
+                            + "\nTem certeza que deseja remover o usuario " + name + "?",
+                    "Confirmação",
+                    MessageBoxButtons.YesNo);
+                if(confirmacao == DialogResult.Yes)
+                {
+                    Usuario usuarioADeleter = TodosUsuarios.Find(x => x.getNome().Equals(name));
+                    usuarioADeleter.deleteUsuario();
+                }
+
+            }
+            else
+            {
+                lblExcluirErro.Text = "Senha incorreta";
+            }
+        }
     }
 }

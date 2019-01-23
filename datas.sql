@@ -1,4 +1,4 @@
-SELECT * FROM new_schema.datas;CREATE TABLE `datas` (
+CREATE TABLE `datas` (
   `iddata` int(11) NOT NULL AUTO_INCREMENT,
   `dataEsperada` datetime NOT NULL,
   `dataReal` datetime DEFAULT NULL,
@@ -12,6 +12,7 @@ SELECT * FROM new_schema.datas;CREATE TABLE `datas` (
   UNIQUE KEY `unique_index` (`dataEsperada`,`idAluno`),
   KEY `fk_aluno_idx` (`idAluno`),
   KEY `fk_tutor_idx` (`idTutor`),
-  CONSTRAINT `fk_aluno` FOREIGN KEY (`idAluno`) REFERENCES `usuarios` (`idUser`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_aluno` FOREIGN KEY (`idAluno`) REFERENCES `usuarios` (`idUser`) ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT `fk_tutor` FOREIGN KEY (`idTutor`) REFERENCES `usuarios` (`idUser`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+SELECT * FROM new_schema.usuarios;

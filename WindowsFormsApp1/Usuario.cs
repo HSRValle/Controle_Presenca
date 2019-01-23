@@ -151,5 +151,26 @@ namespace WindowsFormsApp1
                 Console.WriteLine(ex);
             }
         }
+        public void deleteUsuario()
+        {
+            MySql.Data.MySqlClient.MySqlConnection conn;
+            try
+            {
+                conn = new MySql.Data.MySqlClient.MySqlConnection();
+                conn.ConnectionString = Sql.Conection();
+                conn.Open();              
+
+                string sql = "DELETE FROM `new_schema`.`usuarios` ";
+                sql += "WHERE(`idUser` = '"+this.id+"');";
+
+                Console.WriteLine(sql);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
     }
 }

@@ -38,7 +38,14 @@ namespace WindowsFormsApp1
             TodosUsuarios = Consulta.getUsuarios();
             TodasDatas = Consulta.getDatas(TodosUsuarios);
             InitializeComponent();
-
+            
+            foreach (Usuario u in TodosUsuarios)
+            {
+                if (!u.tutor)
+                {
+                    cmbAluno.Items.Add(u.getNome());
+                }                
+            }
             datasPassadasToolStripMenuItem_Click();
 
         }
@@ -343,6 +350,29 @@ namespace WindowsFormsApp1
         {
             Login.updateUsuario(txtNomeEditar.Text, txtEmailEditar.Text);
             MessageBox.Show("Usuário alterado");
+        }
+
+        private void cmbAluno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cmb = (ComboBox)sender;
+            String name = cmb.Items[cmb.SelectedIndex].ToString();
+            Console.WriteLine(name);
+            Usuario usuarioSelecionado = TodosUsuarios.Find(x => x.getNome().Equals(name));
+            if(usuarioSelecionado != null)
+            {
+                usuarioSelecionado.DebugUsuario();
+                List<Data> filtro;
+                if (this.exibirFuturo)
+                {
+                    filtro = TodasDatas.FindAll(x => x.Aluno.Equals(usuarioSelecionado) && x.getDataEsperada() > DateTime.Now);
+                }                    
+                else
+                {
+                    filtro = TodasDatas.FindAll(x => x.Aluno.Equals(usuarioSelecionado) && x.getDataEsperada() < DateTime.Now);
+                }
+                preencherDataGridView(filtro);
+
+            }
         }
     }
 }

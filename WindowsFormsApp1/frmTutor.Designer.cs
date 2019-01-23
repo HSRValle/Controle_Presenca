@@ -40,7 +40,6 @@
             this.editarCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPessoalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checarCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarCadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -183,30 +182,23 @@
             // menuPessoalToolStripMenuItem
             // 
             this.menuPessoalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.checarCadastroToolStripMenuItem,
             this.editarCadastroToolStripMenuItem1,
             this.editarSenhaToolStripMenuItem});
             this.menuPessoalToolStripMenuItem.Name = "menuPessoalToolStripMenuItem";
             this.menuPessoalToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.menuPessoalToolStripMenuItem.Text = "Menu Pessoal";
             // 
-            // checarCadastroToolStripMenuItem
-            // 
-            this.checarCadastroToolStripMenuItem.Name = "checarCadastroToolStripMenuItem";
-            this.checarCadastroToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.checarCadastroToolStripMenuItem.Text = "Checar Cadastro";
-            // 
             // editarCadastroToolStripMenuItem1
             // 
             this.editarCadastroToolStripMenuItem1.Name = "editarCadastroToolStripMenuItem1";
-            this.editarCadastroToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
+            this.editarCadastroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.editarCadastroToolStripMenuItem1.Text = "Editar Cadastro";
             this.editarCadastroToolStripMenuItem1.Click += new System.EventHandler(this.editarCadastroToolStripMenuItem1_Click);
             // 
             // editarSenhaToolStripMenuItem
             // 
             this.editarSenhaToolStripMenuItem.Name = "editarSenhaToolStripMenuItem";
-            this.editarSenhaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.editarSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editarSenhaToolStripMenuItem.Text = "Mudar Senha";
             this.editarSenhaToolStripMenuItem.Click += new System.EventHandler(this.editarSenhaToolStripMenuItem_Click);
             // 
@@ -697,7 +689,6 @@
         private System.Windows.Forms.ToolStripMenuItem editarCadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excluirCadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuPessoalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem checarCadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarCadastroToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editarSenhaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;

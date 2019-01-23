@@ -30,6 +30,7 @@ namespace WindowsFormsApp1
             pnlCadastroPesquisa.Hide();
             pnlMudarSenha.Hide();
             pnlEditarCadastro.Hide();
+            pnlExcluir.Hide();
         } 
 
         public frmTutor(Usuario tutor)
@@ -271,11 +272,14 @@ namespace WindowsFormsApp1
             RefreshForm();
             pnlExcluir.Show();
             pnlExcluir.BringToFront();
-
-            foreach (Usuario usuario in TodosUsuarios)
+            if (cmbExcluirUsuario.Items.Count == 0)
             {
-                cmbExcluirUsuario.Items.Add(usuario.getNome());
+                foreach (Usuario usuario in TodosUsuarios)
+                {
+                    cmbExcluirUsuario.Items.Add(usuario.getNome());
+                }
             }
+            else Console.WriteLine("Count:" + cmbExcluirUsuario.Items.Count);
         }
 
 

@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
             dataGridView.Refresh();
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dataGridView.ColumnCount = 7;
+            dataGridView.ColumnCount = 8;
 
             dataGridView.Columns[0].Name = "Id";
             dataGridView.Columns[0].Visible = false;
@@ -69,18 +69,21 @@ namespace WindowsFormsApp1
             dataGridView.Columns[2].Name = "Aluno";
             dataGridView.Columns[2].FillWeight = 16;
 
-            dataGridView.Columns[3].Name = "Presente?";
-            dataGridView.Columns[3].FillWeight = 13;
+            dataGridView.Columns[3].Name = "Grupo";
+            dataGridView.Columns[3].FillWeight = 6;
 
-            dataGridView.Columns[4].Name = "No horário?";
+            dataGridView.Columns[4].Name = "Presente?";
             dataGridView.Columns[4].FillWeight = 13;
 
-            dataGridView.Columns[5].Name = "Justificativa";
-            dataGridView.Columns[5].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            dataGridView.Columns[5].FillWeight = 28;
+            dataGridView.Columns[5].Name = "No horário?";
+            dataGridView.Columns[5].FillWeight = 13;
 
-            dataGridView.Columns[6].Name = "Tutor";
-            dataGridView.Columns[6].FillWeight = 13;
+            dataGridView.Columns[6].Name = "Justificativa";
+            dataGridView.Columns[6].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dataGridView.Columns[6].FillWeight = 26;
+
+            dataGridView.Columns[7].Name = "Tutor";
+            dataGridView.Columns[7].FillWeight = 13;
 
             foreach (Data data in listaDatas)
             {
@@ -91,18 +94,9 @@ namespace WindowsFormsApp1
                 dataGridView.Rows[index].Cells[1].Value = data.getDataEsperada();
                 dataGridView.Rows[index].Cells[2].Value = data.Aluno.getNome();
 
-                if (data.presente)
-                {
-                    dataGridView.Rows[index].Cells[3].Value = "Sim";
-                    dataGridView.Rows[index].Cells[3].Style.BackColor = Color.LightGreen;
-                }
-                else
-                {
-                    dataGridView.Rows[index].Cells[3].Value = "Não";
-                    dataGridView.Rows[index].Cells[3].Style.BackColor = Color.IndianRed;
-                }
+                dataGridView.Rows[index].Cells[3].Value = data.Aluno.grupo;
 
-                if (data.noHorario)
+                if (data.presente)
                 {
                     dataGridView.Rows[index].Cells[4].Value = "Sim";
                     dataGridView.Rows[index].Cells[4].Style.BackColor = Color.LightGreen;
@@ -110,20 +104,31 @@ namespace WindowsFormsApp1
                 else
                 {
                     dataGridView.Rows[index].Cells[4].Value = "Não";
+                    dataGridView.Rows[index].Cells[4].Style.BackColor = Color.IndianRed;
+                }
+
+                if (data.noHorario)
+                {
+                    dataGridView.Rows[index].Cells[5].Value = "Sim";
+                    dataGridView.Rows[index].Cells[5].Style.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    dataGridView.Rows[index].Cells[5].Value = "Não";
                     if (data.isRealSet())
                     {
-                        dataGridView.Rows[index].Cells[4].Value += " ("+data.getDataReal().TimeOfDay+ ")";
+                        dataGridView.Rows[index].Cells[5].Value += " ("+data.getDataReal().TimeOfDay+ ")";
                     }
-                    dataGridView.Rows[index].Cells[4].Style.BackColor = Color.IndianRed;
+                    dataGridView.Rows[index].Cells[5].Style.BackColor = Color.IndianRed;
                 }
                 if (data.justificativa != null && data.justificativa.Length > 0)
                 {
-                    dataGridView.Rows[index].Cells[5].Value = data.justificativa;
+                    dataGridView.Rows[index].Cells[6].Value = data.justificativa;
                 }
 
                 if (data.Tutor != null)
                 {
-                    dataGridView.Rows[index].Cells[6].Value = data.Tutor.getNome();
+                    dataGridView.Rows[index].Cells[7].Value = data.Tutor.getNome();
                 }
             }
         }

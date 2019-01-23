@@ -109,6 +109,10 @@ namespace WindowsFormsApp1
                 else
                 {
                     dataGridView.Rows[index].Cells[4].Value = "Não";
+                    if (data.isRealSet())
+                    {
+                        dataGridView.Rows[index].Cells[4].Value += " ("+data.getDataReal().TimeOfDay+ ")";
+                    }
                     dataGridView.Rows[index].Cells[4].Style.BackColor = Color.IndianRed;
                 }
                 if (data.justificativa != null && data.justificativa.Length > 0)

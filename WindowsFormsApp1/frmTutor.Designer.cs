@@ -94,6 +94,8 @@
             this.txtExcluirSenha = new System.Windows.Forms.TextBox();
             this.btnExcluirConfirmar = new System.Windows.Forms.Button();
             this.lblExcluirErro = new System.Windows.Forms.Label();
+            this.nudGrupo = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -103,6 +105,7 @@
             this.pnlMudarSenha.SuspendLayout();
             this.pnlExcluir.SuspendLayout();
             this.pnlEditarCadastro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGrupo)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -271,6 +274,8 @@
             // 
             // pnlCadastroNovo
             // 
+            this.pnlCadastroNovo.Controls.Add(this.label15);
+            this.pnlCadastroNovo.Controls.Add(this.nudGrupo);
             this.pnlCadastroNovo.Controls.Add(this.lblErroNovo);
             this.pnlCadastroNovo.Controls.Add(this.chbTutor);
             this.pnlCadastroNovo.Controls.Add(this.btnLimpar);
@@ -285,15 +290,15 @@
             this.pnlCadastroNovo.Controls.Add(this.label2);
             this.pnlCadastroNovo.Controls.Add(this.label1);
             this.pnlCadastroNovo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCadastroNovo.Location = new System.Drawing.Point(0, 0);
+            this.pnlCadastroNovo.Location = new System.Drawing.Point(0, 24);
             this.pnlCadastroNovo.Name = "pnlCadastroNovo";
-            this.pnlCadastroNovo.Size = new System.Drawing.Size(879, 513);
+            this.pnlCadastroNovo.Size = new System.Drawing.Size(879, 489);
             this.pnlCadastroNovo.TabIndex = 3;
             // 
             // lblErroNovo
             // 
             this.lblErroNovo.AutoSize = true;
-            this.lblErroNovo.Location = new System.Drawing.Point(400, 399);
+            this.lblErroNovo.Location = new System.Drawing.Point(400, 411);
             this.lblErroNovo.Name = "lblErroNovo";
             this.lblErroNovo.Size = new System.Drawing.Size(0, 13);
             this.lblErroNovo.TabIndex = 28;
@@ -301,7 +306,7 @@
             // chbTutor
             // 
             this.chbTutor.AutoSize = true;
-            this.chbTutor.Location = new System.Drawing.Point(421, 301);
+            this.chbTutor.Location = new System.Drawing.Point(421, 313);
             this.chbTutor.Name = "chbTutor";
             this.chbTutor.Size = new System.Drawing.Size(51, 17);
             this.chbTutor.TabIndex = 27;
@@ -310,7 +315,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(494, 343);
+            this.btnLimpar.Location = new System.Drawing.Point(494, 355);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 26;
@@ -320,7 +325,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(336, 343);
+            this.btnSalvar.Location = new System.Drawing.Point(336, 355);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 25;
@@ -330,7 +335,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(386, 262);
+            this.txtEmail.Location = new System.Drawing.Point(386, 274);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(172, 20);
             this.txtEmail.TabIndex = 24;
@@ -338,7 +343,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(320, 265);
+            this.label6.Location = new System.Drawing.Point(320, 277);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 23;
@@ -346,7 +351,7 @@
             // 
             // txtConfirmSenha
             // 
-            this.txtConfirmSenha.Location = new System.Drawing.Point(386, 227);
+            this.txtConfirmSenha.Location = new System.Drawing.Point(386, 239);
             this.txtConfirmSenha.Name = "txtConfirmSenha";
             this.txtConfirmSenha.PasswordChar = '*';
             this.txtConfirmSenha.Size = new System.Drawing.Size(172, 20);
@@ -355,7 +360,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(270, 227);
+            this.label5.Location = new System.Drawing.Point(270, 239);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 21;
@@ -363,7 +368,7 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(386, 186);
+            this.txtSenha.Location = new System.Drawing.Point(386, 198);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(172, 20);
@@ -372,7 +377,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(317, 189);
+            this.label4.Location = new System.Drawing.Point(317, 201);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 19;
@@ -380,7 +385,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(386, 151);
+            this.txtNome.Location = new System.Drawing.Point(386, 136);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(172, 20);
             this.txtNome.TabIndex = 16;
@@ -388,7 +393,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(320, 154);
+            this.label2.Location = new System.Drawing.Point(320, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 15;
@@ -712,17 +717,33 @@
             this.lblExcluirErro.Size = new System.Drawing.Size(0, 13);
             this.lblExcluirErro.TabIndex = 12;
             // 
+            // nudGrupo
+            // 
+            this.nudGrupo.Location = new System.Drawing.Point(455, 166);
+            this.nudGrupo.Name = "nudGrupo";
+            this.nudGrupo.Size = new System.Drawing.Size(57, 20);
+            this.nudGrupo.TabIndex = 29;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(403, 168);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(39, 13);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "Grupo:";
+            // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 513);
+            this.Controls.Add(this.pnlCadastroNovo);
             this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlMudarSenha);
             this.Controls.Add(this.pnlEditarCadastro);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnlCadastroNovo);
             this.Controls.Add(this.pnlCadastroPesquisa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -746,6 +767,7 @@
             this.pnlExcluir.PerformLayout();
             this.pnlEditarCadastro.ResumeLayout(false);
             this.pnlEditarCadastro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGrupo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -818,5 +840,7 @@
         private System.Windows.Forms.TextBox txtExcluirSenha;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblExcluirErro;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.NumericUpDown nudGrupo;
     }
 }

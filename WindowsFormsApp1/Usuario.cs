@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
     {
         public int id;
         private String nome;
+        public int grupo;
         private String email;
         private String senha;
         public Boolean tutor;
@@ -22,9 +23,10 @@ namespace WindowsFormsApp1
             this.id = id;
         }
 
-        public Usuario(string nome, string email, string senha, Boolean tutor = false)
+        public Usuario(string nome, int grupo, string email, string senha, Boolean tutor = false)
         {
             this.nome = nome;
+            this.grupo = grupo;
             this.email = email;
             this.senha = senha;
             this.tutor = tutor;
@@ -33,6 +35,7 @@ namespace WindowsFormsApp1
         {
             this.id = Int32.Parse(retornoSql["idUser"].ToString());
             this.nome = retornoSql["nome"].ToString();
+            this.grupo = Int32.Parse(retornoSql["grupo"].ToString());
             this.email = retornoSql["email"].ToString();
             this.senha = retornoSql["senha"].ToString();
             this.tutor = retornoSql["tutor"].ToString() == "1";

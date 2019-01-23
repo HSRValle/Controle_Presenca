@@ -212,11 +212,12 @@ namespace WindowsFormsApp1
         {
             String nome = txtNome.Text;
             String senha = txtSenha.Text;
+            int grupo = (int)nudGrupo.Value;
             String confirmarSenha = txtConfirmSenha.Text;
             String email = txtEmail.Text;
             if (senha == confirmarSenha)
             {
-                Usuario novoUsuario = new Usuario(nome, email, senha, chbTutor.Checked);
+                Usuario novoUsuario = new Usuario(nome, grupo, email, senha, chbTutor.Checked);
                 novoUsuario.insertNewUsuario();
                 TodosUsuarios.Add(novoUsuario);
                 MessageBox.Show("Usuário cadastrado");

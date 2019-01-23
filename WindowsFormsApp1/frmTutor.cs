@@ -31,6 +31,7 @@ namespace WindowsFormsApp1
             pnlMudarSenha.Hide();
             pnlEditarCadastro.Hide();
             pnlExcluir.Hide();
+            pnlEditarOutroCadastro.Hide();
         } 
 
         public frmTutor(Usuario tutor)
@@ -348,7 +349,7 @@ namespace WindowsFormsApp1
                 {
                     lblResultado.Text += "\n" + usuario.getNome();
                     if(!usuario.tutor)
-                        lblResultado.Text += "(G"+usuario.grupo+")";
+                        lblResultado.Text += " (G"+usuario.grupo+")";
                 }
             }
             else
@@ -431,6 +432,63 @@ namespace WindowsFormsApp1
             {
                 lblExcluirErro.Text = "Senha incorreta";
             }
+        }
+
+        private void editarCadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshForm();
+            pnlEditarOutroCadastro.Show();
+            pnlEditarOutroCadastro.BringToFront();
+            foreach (Usuario usuario in TodosUsuarios)
+            {
+                cmbEditarUsuarios.Items.Add(usuario.getNome());
+            }            
+        }
+
+        private void cmbEditarUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {            
+            ComboBox cmb = (ComboBox)sender;
+            String nome = cmb.Items[cmb.SelectedIndex].ToString();
+
+            lblEditarCadastro.Text = "Editando " + nome;
+
+            pnlEditarControles.Visible = true;
+            Usuario usuario = TodosUsuarios.Find(x => x.getNome() == nome);
+
+            nudId.Value = usuario.id;
+
+            txtEditarNome.Text = usuario.getNome();
+            txtEditarEmail.Text = usuario.getEmail();
+            nudEditarGrupo.Value = usuario.grupo;
+
+        }
+
+        private void btnSalvarOutroUsuario_Click(object sender, EventArgs e)
+        {
+
+            if (txtEditarOutroSenha.Text != txtEditarOutroConfirmacao.Text)
+            {
+                Console.WriteLine("(" + txtEditarOutroSenha +")");
+                Console.WriteLine("(" + txtEditarOutroConfirmacao + ")");
+                lblErroEditarOutroUsuario.Text = "Senhas não conferem";
+                return;
+            }
+            Usuario usuario = TodosUsuarios.Find(x => x.id == nudId.Value);          
+            if (usuario == null)
+            {
+                return;
+            }
+            
+            if (txtEditarNome.Text != usuario.getNome() || txtEditarEmail.Text != usuario.getEmail() || nudEditarGrupo.Value != usuario.grupo)
+            {
+                usuario.updateUsuario(txtEditarNome.Text, txtEditarEmail.Text, (int)nudEditarGrupo.Value);
+            }            
+            if(txtEditarOutroSenha.Text != "" && usuario.comparaSenha(txtEditarOutroSenha.Text))
+            {
+                usuario.mudaSenha(txtEditarOutroSenha.Text);
+            }
+                        
+
         }
     }
 }

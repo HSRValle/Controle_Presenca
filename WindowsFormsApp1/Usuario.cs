@@ -89,12 +89,14 @@ namespace WindowsFormsApp1
             return false;
 
         }
-        public void updateUsuario(String nome = "", String email = "")
+        public void updateUsuario(String nome = "", String email = "", int grupo = -1)
         {
             if(nome.Length > 0)
                 this.nome = nome;
             if(email.Length > 0)
-                this.email = email;                        
+                this.email = email;
+            if (grupo > -1)
+                this.grupo = grupo;
             MySql.Data.MySqlClient.MySqlConnection conn;
             try
             {

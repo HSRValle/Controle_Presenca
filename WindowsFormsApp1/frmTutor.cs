@@ -347,6 +347,8 @@ namespace WindowsFormsApp1
                 foreach (Usuario usuario in resultado)
                 {
                     lblResultado.Text += "\n" + usuario.getNome();
+                    if(!usuario.tutor)
+                        lblResultado.Text += "(G"+usuario.grupo+")";
                 }
             }
             else

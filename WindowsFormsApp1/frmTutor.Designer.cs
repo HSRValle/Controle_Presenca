@@ -44,6 +44,7 @@
             this.editarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlPresenca = new System.Windows.Forms.Panel();
+            this.cmbAluno = new System.Windows.Forms.ComboBox();
             this.btnCriar = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -87,7 +88,6 @@
             this.txtNomeEditar = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.cmbAluno = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -95,7 +95,6 @@
             this.pnlCadastroPesquisa.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlMudarSenha.SuspendLayout();
-            this.pnlExcluir.SuspendLayout();
             this.pnlEditarCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,14 +129,14 @@
             // datasPassadasToolStripMenuItem
             // 
             this.datasPassadasToolStripMenuItem.Name = "datasPassadasToolStripMenuItem";
-            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.datasPassadasToolStripMenuItem.Text = "Datas Passadas";
             this.datasPassadasToolStripMenuItem.Click += new System.EventHandler(this.datasPassadasToolStripMenuItem_Click);
             // 
             // datasFuturasToolStripMenuItem
             // 
             this.datasFuturasToolStripMenuItem.Name = "datasFuturasToolStripMenuItem";
-            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.datasFuturasToolStripMenuItem.Text = "Datas Futuras";
             this.datasFuturasToolStripMenuItem.Click += new System.EventHandler(this.datasFuturasToolStripMenuItem_Click);
             // 
@@ -155,27 +154,27 @@
             // procurarCadastroToolStripMenuItem
             // 
             this.procurarCadastroToolStripMenuItem.Name = "procurarCadastroToolStripMenuItem";
-            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.procurarCadastroToolStripMenuItem.Text = "Procurar Cadastro";
             this.procurarCadastroToolStripMenuItem.Click += new System.EventHandler(this.procurarCadastroToolStripMenuItem_Click);
             // 
             // novoCadastroToolStripMenuItem
             // 
             this.novoCadastroToolStripMenuItem.Name = "novoCadastroToolStripMenuItem";
-            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.novoCadastroToolStripMenuItem.Text = "Novo Cadastro";
             this.novoCadastroToolStripMenuItem.Click += new System.EventHandler(this.novoCadastroToolStripMenuItem_Click);
             // 
             // editarCadastroToolStripMenuItem
             // 
             this.editarCadastroToolStripMenuItem.Name = "editarCadastroToolStripMenuItem";
-            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.editarCadastroToolStripMenuItem.Text = "Editar Cadastro";
             // 
             // excluirCadastroToolStripMenuItem
             // 
             this.excluirCadastroToolStripMenuItem.Name = "excluirCadastroToolStripMenuItem";
-            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.excluirCadastroToolStripMenuItem.Text = "Excluir Cadastro";
             this.excluirCadastroToolStripMenuItem.Click += new System.EventHandler(this.excluirCadastroToolStripMenuItem_Click);
             // 
@@ -191,14 +190,14 @@
             // editarCadastroToolStripMenuItem1
             // 
             this.editarCadastroToolStripMenuItem1.Name = "editarCadastroToolStripMenuItem1";
-            this.editarCadastroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.editarCadastroToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
             this.editarCadastroToolStripMenuItem1.Text = "Editar Cadastro";
             this.editarCadastroToolStripMenuItem1.Click += new System.EventHandler(this.editarCadastroToolStripMenuItem1_Click);
             // 
             // editarSenhaToolStripMenuItem
             // 
             this.editarSenhaToolStripMenuItem.Name = "editarSenhaToolStripMenuItem";
-            this.editarSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarSenhaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.editarSenhaToolStripMenuItem.Text = "Mudar Senha";
             this.editarSenhaToolStripMenuItem.Click += new System.EventHandler(this.editarSenhaToolStripMenuItem_Click);
             // 
@@ -220,6 +219,18 @@
             this.pnlPresenca.Name = "pnlPresenca";
             this.pnlPresenca.Size = new System.Drawing.Size(879, 489);
             this.pnlPresenca.TabIndex = 1;
+            // 
+            // cmbAluno
+            // 
+            this.cmbAluno.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbAluno.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbAluno.FormattingEnabled = true;
+            this.cmbAluno.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.cmbAluno.Location = new System.Drawing.Point(206, 7);
+            this.cmbAluno.Name = "cmbAluno";
+            this.cmbAluno.Size = new System.Drawing.Size(162, 21);
+            this.cmbAluno.TabIndex = 4;
+            this.cmbAluno.SelectedIndexChanged += new System.EventHandler(this.cmbAluno_SelectedIndexChanged);
             // 
             // btnCriar
             // 
@@ -548,11 +559,10 @@
             // 
             // pnlExcluir
             // 
-            this.pnlExcluir.Controls.Add(this.pnlEditarCadastro);
             this.pnlExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlExcluir.Location = new System.Drawing.Point(0, 0);
+            this.pnlExcluir.Location = new System.Drawing.Point(0, 24);
             this.pnlExcluir.Name = "pnlExcluir";
-            this.pnlExcluir.Size = new System.Drawing.Size(879, 513);
+            this.pnlExcluir.Size = new System.Drawing.Size(879, 489);
             this.pnlExcluir.TabIndex = 28;
             // 
             // pnlEditarCadastro
@@ -565,9 +575,9 @@
             this.pnlEditarCadastro.Controls.Add(this.label17);
             this.pnlEditarCadastro.Controls.Add(this.label18);
             this.pnlEditarCadastro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlEditarCadastro.Location = new System.Drawing.Point(0, 0);
+            this.pnlEditarCadastro.Location = new System.Drawing.Point(0, 24);
             this.pnlEditarCadastro.Name = "pnlEditarCadastro";
-            this.pnlEditarCadastro.Size = new System.Drawing.Size(879, 513);
+            this.pnlEditarCadastro.Size = new System.Drawing.Size(879, 489);
             this.pnlEditarCadastro.TabIndex = 31;
             // 
             // button1
@@ -630,26 +640,15 @@
             this.label18.TabIndex = 29;
             this.label18.Text = "Editar Cadastro";
             // 
-            // cmbAluno
-            // 
-            this.cmbAluno.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbAluno.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbAluno.FormattingEnabled = true;
-            this.cmbAluno.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cmbAluno.Location = new System.Drawing.Point(206, 7);
-            this.cmbAluno.Name = "cmbAluno";
-            this.cmbAluno.Size = new System.Drawing.Size(162, 21);
-            this.cmbAluno.TabIndex = 4;
-            this.cmbAluno.SelectedIndexChanged += new System.EventHandler(this.cmbAluno_SelectedIndexChanged);
-            // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 513);
+            this.Controls.Add(this.pnlEditarCadastro);
+            this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlCadastroNovo);
             this.Controls.Add(this.pnlCadastroPesquisa);
             this.Controls.Add(this.pnlMudarSenha);
@@ -671,7 +670,6 @@
             this.groupBox1.PerformLayout();
             this.pnlMudarSenha.ResumeLayout(false);
             this.pnlMudarSenha.PerformLayout();
-            this.pnlExcluir.ResumeLayout(false);
             this.pnlEditarCadastro.ResumeLayout(false);
             this.pnlEditarCadastro.PerformLayout();
             this.ResumeLayout(false);

@@ -107,6 +107,7 @@ namespace WindowsFormsApp1
                 string sql = "UPDATE new_schema.usuarios ";
 
                 sql += " SET nome = '" + this.nome + "',";
+                sql += " grupo = '" + this.grupo + "',";
                 sql += " email = '" + this.email + "',";
                 if (this.tutor)
                     sql += " tutor = 1,";

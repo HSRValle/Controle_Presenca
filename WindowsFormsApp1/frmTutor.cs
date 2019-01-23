@@ -483,7 +483,7 @@ namespace WindowsFormsApp1
             {
                 usuario.updateUsuario(txtEditarNome.Text, txtEditarEmail.Text, (int)nudEditarGrupo.Value);
             }            
-            if(txtEditarOutroSenha.Text != "" && usuario.comparaSenha(txtEditarOutroSenha.Text))
+            if(txtEditarOutroSenha.Text != "" && !usuario.comparaSenha(txtEditarOutroSenha.Text))
             {
                 usuario.mudaSenha(txtEditarOutroSenha.Text);
             }

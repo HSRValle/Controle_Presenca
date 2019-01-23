@@ -99,7 +99,7 @@
             this.pnlEditarOutroCadastro = new System.Windows.Forms.Panel();
             this.cmbEditarUsuarios = new System.Windows.Forms.ComboBox();
             this.lblEditarCadastro = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEditarOutrosLimpar = new System.Windows.Forms.Button();
             this.btnSalvarOutroUsuario = new System.Windows.Forms.Button();
             this.txtEditarEmail = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -789,14 +789,15 @@
             this.lblEditarCadastro.TabIndex = 1;
             this.lblEditarCadastro.Text = "Editando";
             // 
-            // button2
+            // btnEditarOutrosLimpar
             // 
-            this.button2.Location = new System.Drawing.Point(237, 230);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 46;
-            this.button2.Text = "Limpar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEditarOutrosLimpar.Location = new System.Drawing.Point(237, 230);
+            this.btnEditarOutrosLimpar.Name = "btnEditarOutrosLimpar";
+            this.btnEditarOutrosLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarOutrosLimpar.TabIndex = 46;
+            this.btnEditarOutrosLimpar.Text = "Limpar";
+            this.btnEditarOutrosLimpar.UseVisualStyleBackColor = true;
+            this.btnEditarOutrosLimpar.Click += new System.EventHandler(this.btnEditarOutrosLimpar_Click);
             // 
             // btnSalvarOutroUsuario
             // 
@@ -899,7 +900,7 @@
             this.pnlEditarControles.Controls.Add(this.label21);
             this.pnlEditarControles.Controls.Add(this.txtEditarOutroSenha);
             this.pnlEditarControles.Controls.Add(this.label22);
-            this.pnlEditarControles.Controls.Add(this.button2);
+            this.pnlEditarControles.Controls.Add(this.btnEditarOutrosLimpar);
             this.pnlEditarControles.Controls.Add(this.btnSalvarOutroUsuario);
             this.pnlEditarControles.Controls.Add(this.txtEditarEmail);
             this.pnlEditarControles.Controls.Add(this.label16);
@@ -1046,7 +1047,7 @@
         private System.Windows.Forms.Panel pnlEditarOutroCadastro;
         private System.Windows.Forms.ComboBox cmbEditarUsuarios;
         private System.Windows.Forms.Label lblEditarCadastro;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEditarOutrosLimpar;
         private System.Windows.Forms.Button btnSalvarOutroUsuario;
         private System.Windows.Forms.TextBox txtEditarEmail;
         private System.Windows.Forms.Label label16;

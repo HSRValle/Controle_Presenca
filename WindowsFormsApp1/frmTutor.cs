@@ -460,6 +460,7 @@ namespace WindowsFormsApp1
             txtEditarNome.Text = usuario.getNome();
             txtEditarEmail.Text = usuario.getEmail();
             nudEditarGrupo.Value = usuario.grupo;
+            txtEditarOutroSenha.Text = txtEditarOutroConfirmacao.Text = "";
 
         }
 
@@ -490,6 +491,19 @@ namespace WindowsFormsApp1
                 }
             }            
                         
+
+        }
+
+        private void btnEditarOutrosLimpar_Click(object sender, EventArgs e)
+        {
+            Usuario usuario = TodosUsuarios.Find(x => x.id == nudId.Value);
+
+            nudId.Value = usuario.id;
+
+            txtEditarNome.Text = usuario.getNome();
+            txtEditarEmail.Text = usuario.getEmail();
+            nudEditarGrupo.Value = usuario.grupo;
+            txtEditarOutroSenha.Text = txtEditarOutroConfirmacao.Text = "";
 
         }
     }

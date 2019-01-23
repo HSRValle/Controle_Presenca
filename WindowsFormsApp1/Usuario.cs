@@ -139,8 +139,9 @@ namespace WindowsFormsApp1
                 conn.ConnectionString = Sql.Conection();
                 conn.Open();
 
-                string sql = "INSERT INTO new_schema.usuarios (nome, email, senha, tutor)";
+                string sql = "INSERT INTO new_schema.usuarios (nome, grupo, email, senha, tutor)";
                 sql += " Values ('" + this.nome + "',";
+                sql += " '" + this.grupo + "', ";
                 sql += " '" + this.email + "', ";
                 sql += " '" + this.senha + "', ";
                 if (this.tutor)

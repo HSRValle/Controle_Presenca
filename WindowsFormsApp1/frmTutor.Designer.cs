@@ -88,6 +88,8 @@
             this.txtNomeEditar = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.cmbExcluirUsuario = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -95,6 +97,7 @@
             this.pnlCadastroPesquisa.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlMudarSenha.SuspendLayout();
+            this.pnlExcluir.SuspendLayout();
             this.pnlEditarCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -559,6 +562,8 @@
             // 
             // pnlExcluir
             // 
+            this.pnlExcluir.Controls.Add(this.label3);
+            this.pnlExcluir.Controls.Add(this.cmbExcluirUsuario);
             this.pnlExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlExcluir.Location = new System.Drawing.Point(0, 24);
             this.pnlExcluir.Name = "pnlExcluir";
@@ -640,13 +645,31 @@
             this.label18.TabIndex = 29;
             this.label18.Text = "Editar Cadastro";
             // 
+            // cmbExcluirUsuario
+            // 
+            this.cmbExcluirUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbExcluirUsuario.FormattingEnabled = true;
+            this.cmbExcluirUsuario.Location = new System.Drawing.Point(350, 169);
+            this.cmbExcluirUsuario.Name = "cmbExcluirUsuario";
+            this.cmbExcluirUsuario.Size = new System.Drawing.Size(172, 28);
+            this.cmbExcluirUsuario.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(347, 127);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(177, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Selecione o cadastro a ser excluído";
+            // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 513);
-            this.Controls.Add(this.pnlEditarCadastro);
             this.Controls.Add(this.pnlExcluir);
+            this.Controls.Add(this.pnlEditarCadastro);
             this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlCadastroNovo);
@@ -670,6 +693,8 @@
             this.groupBox1.PerformLayout();
             this.pnlMudarSenha.ResumeLayout(false);
             this.pnlMudarSenha.PerformLayout();
+            this.pnlExcluir.ResumeLayout(false);
+            this.pnlExcluir.PerformLayout();
             this.pnlEditarCadastro.ResumeLayout(false);
             this.pnlEditarCadastro.PerformLayout();
             this.ResumeLayout(false);
@@ -738,5 +763,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cmbAluno;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbExcluirUsuario;
     }
 }

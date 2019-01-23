@@ -271,6 +271,11 @@ namespace WindowsFormsApp1
             RefreshForm();
             pnlExcluir.Show();
             pnlExcluir.BringToFront();
+
+            foreach (Usuario usuario in TodosUsuarios)
+            {
+                cmbExcluirUsuario.Items.Add(usuario.getNome());
+            }
         }
 
 

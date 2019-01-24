@@ -160,10 +160,7 @@ namespace WindowsFormsApp1
             frmEditData frmEditData = new frmEditData(d);
             frmEditData.Show();
         }
-        private void btnAtualizar_Click(object sender, EventArgs e)
-        {            
-            filtrarDatas();
-        }
+
         private void btnCriar_Click(object sender, EventArgs e)
         {
             createNextDatas();
@@ -280,7 +277,21 @@ namespace WindowsFormsApp1
 
 
             preencherDataGridView(resultado);
-        }        
+        }
+        private void btnLimparFiltros_Click(object sender, EventArgs e)
+        {
+            listaFiltros.Clear();
+            chbFaltas.Checked = false;
+            nudFiltroGrupo.Value = 0;
+            cmbFiltroDatas.SelectedIndex = 0;
+            cmbAluno.SelectedIndex = 0;
+            filtrarDatas();
+
+        }
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            filtrarDatas();
+        }
 
 
 
@@ -521,16 +532,6 @@ namespace WindowsFormsApp1
         {
             System.Windows.Forms.Application.Exit();
         }
-
-        private void btnLimparFiltros_Click(object sender, EventArgs e)
-        {
-            listaFiltros.Clear();
-            chbFaltas.Checked = false;
-            nudFiltroGrupo.Value = 0;
-            cmbFiltroDatas.SelectedIndex = 0;
-            cmbAluno.SelectedIndex = 0;            
-            filtrarDatas();
-
-        }
+       
     }
 }

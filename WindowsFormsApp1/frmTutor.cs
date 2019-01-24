@@ -169,7 +169,7 @@ namespace WindowsFormsApp1
             createNextDatas();
             System.Threading.Thread.Sleep(100);
             listaFiltros.Clear();
-            listaFiltros["Datas"] = "futuras";
+            listaFiltros["Datas"] = "Futuras";
             filtrarDatas();
 
         }
@@ -240,6 +240,8 @@ namespace WindowsFormsApp1
         private void cmbFiltroDatas_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cmb = (ComboBox)sender;
+            if (cmb.SelectedIndex == -1)
+                return;
             String opcao = cmb.Items[cmb.SelectedIndex].ToString();
 
             if (opcao != "todas")
@@ -262,9 +264,9 @@ namespace WindowsFormsApp1
             }
             if (listaFiltros.ContainsKey("Datas"))
             {
-                if (listaFiltros["Datas"] == "futuras")
+                if (listaFiltros["Datas"] == "Futuras")
                     resultado = resultado.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) > 0);
-                else if (listaFiltros["Datas"] == "anteriores")
+                else if (listaFiltros["Datas"] == "Anteriores")
                     resultado = resultado.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);
             }
             if (listaFiltros.ContainsKey("Faltas"))
@@ -519,7 +521,16 @@ namespace WindowsFormsApp1
         {
             System.Windows.Forms.Application.Exit();
         }
-        
 
+        private void btnLimparFiltros_Click(object sender, EventArgs e)
+        {
+            listaFiltros.Clear();
+            chbFaltas.Checked = false;
+            nudFiltroGrupo.Value = 0;
+            cmbFiltroDatas.SelectedIndex = 0;
+            cmbAluno.SelectedIndex = 0;            
+            filtrarDatas();
+
+        }
     }
 }

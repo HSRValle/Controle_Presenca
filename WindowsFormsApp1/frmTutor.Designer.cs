@@ -117,6 +117,7 @@
             this.cmbEditarUsuarios = new System.Windows.Forms.ComboBox();
             this.cmbFiltroDatas = new System.Windows.Forms.ComboBox();
             this.criarDatasFuturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLimparFiltros = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudFiltroGrupo)).BeginInit();
@@ -240,6 +241,7 @@
             // 
             // pnlPresenca
             // 
+            this.pnlPresenca.Controls.Add(this.btnLimparFiltros);
             this.pnlPresenca.Controls.Add(this.cmbFiltroDatas);
             this.pnlPresenca.Controls.Add(this.nudFiltroGrupo);
             this.pnlPresenca.Controls.Add(this.label23);
@@ -273,7 +275,7 @@
             // chbFaltas
             // 
             this.chbFaltas.AutoSize = true;
-            this.chbFaltas.Location = new System.Drawing.Point(719, 13);
+            this.chbFaltas.Location = new System.Drawing.Point(511, 11);
             this.chbFaltas.Name = "chbFaltas";
             this.chbFaltas.Size = new System.Drawing.Size(90, 17);
             this.chbFaltas.TabIndex = 5;
@@ -296,7 +298,7 @@
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(514, 8);
+            this.btnAtualizar.Location = new System.Drawing.Point(734, 8);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizar.TabIndex = 2;
@@ -951,9 +953,9 @@
             // 
             this.cmbFiltroDatas.FormattingEnabled = true;
             this.cmbFiltroDatas.Items.AddRange(new object[] {
-            "anteriores",
-            "futuras",
-            "todas"});
+            "Todas",
+            "Anteriores",
+            "Futuras"});
             this.cmbFiltroDatas.Location = new System.Drawing.Point(31, 9);
             this.cmbFiltroDatas.Name = "cmbFiltroDatas";
             this.cmbFiltroDatas.Size = new System.Drawing.Size(137, 21);
@@ -966,6 +968,16 @@
             this.criarDatasFuturasToolStripMenuItem.Name = "criarDatasFuturasToolStripMenuItem";
             this.criarDatasFuturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.criarDatasFuturasToolStripMenuItem.Text = "Criar Datas Futuras";
+            // 
+            // btnLimparFiltros
+            // 
+            this.btnLimparFiltros.Location = new System.Drawing.Point(653, 8);
+            this.btnLimparFiltros.Name = "btnLimparFiltros";
+            this.btnLimparFiltros.Size = new System.Drawing.Size(75, 23);
+            this.btnLimparFiltros.TabIndex = 9;
+            this.btnLimparFiltros.Text = "Limpar";
+            this.btnLimparFiltros.UseVisualStyleBackColor = true;
+            this.btnLimparFiltros.Click += new System.EventHandler(this.btnLimparFiltros_Click);
             // 
             // frmTutor
             // 
@@ -1106,5 +1118,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ComboBox cmbFiltroDatas;
         private System.Windows.Forms.ToolStripMenuItem criarDatasFuturasToolStripMenuItem;
+        private System.Windows.Forms.Button btnLimparFiltros;
     }
 }

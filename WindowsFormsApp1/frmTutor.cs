@@ -140,24 +140,12 @@ namespace WindowsFormsApp1
             RefreshForm();
         }
 
-        private void datasFuturasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.exibirFuturo = true;
-            pnlPresenca.Show();
-            pnlPresenca.BringToFront();
-            /*List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) > 0);            
-            preencherDataGridView(filtro);*/            
-            listaFiltros["Datas"] = "Futuro";
-            filtrarDatas();
-        }
 
         private void verDatasToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
             this.exibirFuturo = false;
             pnlPresenca.Show();
-            pnlPresenca.BringToFront();
-            /*List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);        
-            preencherDataGridView(filtro);            */
+            pnlPresenca.BringToFront();           
             listaFiltros["Datas"] = "Passado";
             filtrarDatas();
         }
@@ -173,21 +161,17 @@ namespace WindowsFormsApp1
             frmEditData.Show();
         }
         private void btnAtualizar_Click(object sender, EventArgs e)
-        {
-            if (this.exibirFuturo)
-            {
-                datasFuturasToolStripMenuItem_Click(sender, e);
-            }
-            else
-            {
-                verDatasToolStripMenuItem_Click(sender, e);
-            }
+        {            
+            filtrarDatas();
         }
         private void btnCriar_Click(object sender, EventArgs e)
         {
             createNextDatas();
             System.Threading.Thread.Sleep(100);
-            datasFuturasToolStripMenuItem_Click(sender, e);
+            listaFiltros.Clear();
+            listaFiltros["Datas"] = "futuras";
+            filtrarDatas();
+
         }
         public Boolean createNextDatas(int dias = 7)
         {
@@ -235,6 +219,35 @@ namespace WindowsFormsApp1
             listaFiltros["Aluno"] = name;
             filtrarDatas();
         }
+        private void chbFaltas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbFaltas.Checked)
+                listaFiltros["Faltas"] = "";
+            else
+                listaFiltros.Remove("Faltas");
+            filtrarDatas();
+        }
+
+        private void nudFiltroGrupo_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudFiltroGrupo.Value > 0)
+                listaFiltros["Grupo"] = nudFiltroGrupo.Value.ToString();
+            else
+                listaFiltros.Remove("Grupo");
+            filtrarDatas();
+        }
+
+        private void cmbFiltroDatas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cmb = (ComboBox)sender;
+            String opcao = cmb.Items[cmb.SelectedIndex].ToString();
+
+            if (opcao != "todas")
+                listaFiltros["Datas"] = opcao;
+            else
+                listaFiltros.Remove("Datas");
+            filtrarDatas();
+        }
         private void filtrarDatas()
         {
             //Verifica a variável listaFiltros e busca datas correspondentes aos diferentes filtros armazenados no dicionário            
@@ -265,34 +278,7 @@ namespace WindowsFormsApp1
 
 
             preencherDataGridView(resultado);
-        }
-        /*
-        private void cmbAluno_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ComboBox cmb = (ComboBox)sender;
-            String name = cmb.Items[cmb.SelectedIndex].ToString();
-            Usuario usuarioSelecionado = TodosUsuarios.Find(x => x.getNome().Equals(name));
-            if (usuarioSelecionado != null)
-            {                
-                List<Data> filtro;
-                if (this.exibirFuturo)
-                {
-                    listaFiltros.Add("Aluno", usuarioSelecionado.getNome());
-                    filtro = TodasDatas.FindAll(x => x.Aluno.Equals(usuarioSelecionado) && x.getDataEsperada() > DateTime.Now);
-                }
-                else
-                {
-                    filtro = TodasDatas.FindAll(x => x.Aluno.Equals(usuarioSelecionado) && x.getDataEsperada() < DateTime.Now);
-                }
-                preencherDataGridView(filtro);
-
-            }
-            else
-            {
-                Console.WriteLine("OK");
-            }
-        }
-        */
+        }        
 
 
 
@@ -533,36 +519,7 @@ namespace WindowsFormsApp1
         {
             System.Windows.Forms.Application.Exit();
         }
-
-        private void chbFaltas_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chbFaltas.Checked)
-                listaFiltros["Faltas"] = "";
-            else
-                listaFiltros.Remove("Faltas");
-            filtrarDatas();
-        }
-
-        private void nudFiltroGrupo_ValueChanged(object sender, EventArgs e)
-        {            
-            if (nudFiltroGrupo.Value > 0)
-                listaFiltros["Grupo"] = nudFiltroGrupo.Value.ToString();
-            else
-                listaFiltros.Remove("Grupo");
-            filtrarDatas();
-        }
-
-        private void cmbFiltroDatas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ComboBox cmb = (ComboBox)sender;
-            String opcao = cmb.Items[cmb.SelectedIndex].ToString();
-
-            if (opcao != "todas")
-                listaFiltros["Datas"] = opcao;
-            else
-                listaFiltros.Remove("Datas");
-            filtrarDatas();
-        }
+        
 
     }
 }

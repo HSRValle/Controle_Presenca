@@ -183,28 +183,28 @@
             // procurarCadastroToolStripMenuItem
             // 
             this.procurarCadastroToolStripMenuItem.Name = "procurarCadastroToolStripMenuItem";
-            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.procurarCadastroToolStripMenuItem.Text = "Procurar Cadastro";
             this.procurarCadastroToolStripMenuItem.Click += new System.EventHandler(this.procurarCadastroToolStripMenuItem_Click);
             // 
             // novoCadastroToolStripMenuItem
             // 
             this.novoCadastroToolStripMenuItem.Name = "novoCadastroToolStripMenuItem";
-            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoCadastroToolStripMenuItem.Text = "Novo Cadastro";
             this.novoCadastroToolStripMenuItem.Click += new System.EventHandler(this.novoCadastroToolStripMenuItem_Click);
             // 
             // editarCadastroToolStripMenuItem
             // 
             this.editarCadastroToolStripMenuItem.Name = "editarCadastroToolStripMenuItem";
-            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editarCadastroToolStripMenuItem.Text = "Editar Cadastro";
             this.editarCadastroToolStripMenuItem.Click += new System.EventHandler(this.editarCadastroToolStripMenuItem_Click);
             // 
             // excluirCadastroToolStripMenuItem
             // 
             this.excluirCadastroToolStripMenuItem.Name = "excluirCadastroToolStripMenuItem";
-            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.excluirCadastroToolStripMenuItem.Text = "Excluir Cadastro";
             this.excluirCadastroToolStripMenuItem.Click += new System.EventHandler(this.excluirCadastroToolStripMenuItem_Click);
             // 
@@ -255,7 +255,7 @@
             // 
             // nudFiltroGrupo
             // 
-            this.nudFiltroGrupo.Location = new System.Drawing.Point(532, 8);
+            this.nudFiltroGrupo.Location = new System.Drawing.Point(438, 10);
             this.nudFiltroGrupo.Name = "nudFiltroGrupo";
             this.nudFiltroGrupo.Size = new System.Drawing.Size(55, 20);
             this.nudFiltroGrupo.TabIndex = 7;
@@ -264,7 +264,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(449, 10);
+            this.label23.Location = new System.Drawing.Point(355, 12);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(80, 13);
             this.label23.TabIndex = 6;
@@ -287,7 +287,7 @@
             this.cmbAluno.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbAluno.FormattingEnabled = true;
             this.cmbAluno.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cmbAluno.Location = new System.Drawing.Point(285, 7);
+            this.cmbAluno.Location = new System.Drawing.Point(191, 9);
             this.cmbAluno.Name = "cmbAluno";
             this.cmbAluno.Size = new System.Drawing.Size(152, 21);
             this.cmbAluno.TabIndex = 4;
@@ -296,7 +296,7 @@
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(35, 7);
+            this.btnAtualizar.Location = new System.Drawing.Point(514, 8);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizar.TabIndex = 2;
@@ -954,7 +954,7 @@
             "anteriores",
             "futuras",
             "todas"});
-            this.cmbFiltroDatas.Location = new System.Drawing.Point(125, 7);
+            this.cmbFiltroDatas.Location = new System.Drawing.Point(31, 9);
             this.cmbFiltroDatas.Name = "cmbFiltroDatas";
             this.cmbFiltroDatas.Size = new System.Drawing.Size(137, 21);
             this.cmbFiltroDatas.TabIndex = 8;

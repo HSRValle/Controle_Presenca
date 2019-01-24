@@ -114,6 +114,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.lblEditarCadastro = new System.Windows.Forms.Label();
             this.cmbEditarUsuarios = new System.Windows.Forms.ComboBox();
+            this.chbFaltas = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -161,14 +162,14 @@
             // datasPassadasToolStripMenuItem
             // 
             this.datasPassadasToolStripMenuItem.Name = "datasPassadasToolStripMenuItem";
-            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.datasPassadasToolStripMenuItem.Text = "Datas Passadas";
             this.datasPassadasToolStripMenuItem.Click += new System.EventHandler(this.datasPassadasToolStripMenuItem_Click);
             // 
             // datasFuturasToolStripMenuItem
             // 
             this.datasFuturasToolStripMenuItem.Name = "datasFuturasToolStripMenuItem";
-            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.datasFuturasToolStripMenuItem.Text = "Datas Futuras";
             this.datasFuturasToolStripMenuItem.Click += new System.EventHandler(this.datasFuturasToolStripMenuItem_Click);
             // 
@@ -243,6 +244,7 @@
             // 
             // pnlPresenca
             // 
+            this.pnlPresenca.Controls.Add(this.chbFaltas);
             this.pnlPresenca.Controls.Add(this.cmbAluno);
             this.pnlPresenca.Controls.Add(this.btnCriar);
             this.pnlPresenca.Controls.Add(this.btnAtualizar);
@@ -929,6 +931,17 @@
             this.cmbEditarUsuarios.TabIndex = 0;
             this.cmbEditarUsuarios.SelectedIndexChanged += new System.EventHandler(this.cmbEditarUsuarios_SelectedIndexChanged);
             // 
+            // chbFaltas
+            // 
+            this.chbFaltas.AutoSize = true;
+            this.chbFaltas.Location = new System.Drawing.Point(374, 9);
+            this.chbFaltas.Name = "chbFaltas";
+            this.chbFaltas.Size = new System.Drawing.Size(90, 17);
+            this.chbFaltas.TabIndex = 5;
+            this.chbFaltas.Text = "Apenas faltas";
+            this.chbFaltas.UseVisualStyleBackColor = true;
+            this.chbFaltas.CheckedChanged += new System.EventHandler(this.chbFaltas_CheckedChanged);
+            // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -951,6 +964,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlPresenca.ResumeLayout(false);
+            this.pnlPresenca.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.pnlCadastroNovo.ResumeLayout(false);
             this.pnlCadastroNovo.PerformLayout();
@@ -1063,5 +1077,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label lblErroEditarOutroUsuario;
         private System.Windows.Forms.NumericUpDown nudId;
+        private System.Windows.Forms.CheckBox chbFaltas;
     }
 }

@@ -145,8 +145,10 @@ namespace WindowsFormsApp1
             this.exibirFuturo = true;
             pnlPresenca.Show();
             pnlPresenca.BringToFront();
-            List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) > 0);
-            preencherDataGridView(filtro);
+            /*List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) > 0);            
+            preencherDataGridView(filtro);*/            
+            listaFiltros["Datas"] = "Futuro";
+            filtrarDatas();
         }
 
         private void datasPassadasToolStripMenuItem_Click(object sender = null, EventArgs e = null)
@@ -154,8 +156,10 @@ namespace WindowsFormsApp1
             this.exibirFuturo = false;
             pnlPresenca.Show();
             pnlPresenca.BringToFront();
-            List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);        
-            preencherDataGridView(filtro);            
+            /*List<Data> filtro = TodasDatas.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);        
+            preencherDataGridView(filtro);            */
+            listaFiltros["Datas"] = "Passado";
+            filtrarDatas();
         }
 
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -233,6 +237,7 @@ namespace WindowsFormsApp1
         }
         private void filtrarDatas()
         {
+            //Verifica a variável listaFiltros e busca datas correspondentes aos diferentes filtros armazenados no dicionário            
             List<Data> resultado = TodasDatas.FindAll(x=> true);
             if (listaFiltros.ContainsKey("Aluno"))
             {
@@ -241,6 +246,17 @@ namespace WindowsFormsApp1
                     Usuario aluno = TodosUsuarios.Find(x => x.getNome() == listaFiltros["Aluno"]);
                     resultado = resultado.FindAll(x => x.Aluno.Equals(aluno));
                 }
+            }
+            if (listaFiltros.ContainsKey("Datas"))
+            {
+                if (listaFiltros["Datas"] == "Futuro")
+                    resultado = resultado.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) > 0);
+                else if (listaFiltros["Datas"] == "Passado")
+                    resultado = resultado.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);
+            }
+            if (listaFiltros.ContainsKey("Faltas"))
+            {
+                resultado = resultado.FindAll(x => !x.presente);
             }
             preencherDataGridView(resultado);
         }
@@ -510,6 +526,15 @@ namespace WindowsFormsApp1
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void chbFaltas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbFaltas.Checked)
+                listaFiltros["Faltas"] = "";
+            else
+                listaFiltros.Remove("Faltas");
+            filtrarDatas();
         }
     }
 }

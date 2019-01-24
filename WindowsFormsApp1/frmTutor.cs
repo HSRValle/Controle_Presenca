@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
         public static List<Usuario> TodosUsuarios;
         public static List<Data> TodasDatas;
         public static Usuario Login;
+        public Dictionary<String, String> listaFiltros = new Dictionary<String, String>();
         private Boolean exibirFuturo;
         private void RefreshForm()
         {
@@ -40,7 +41,7 @@ namespace WindowsFormsApp1
             TodosUsuarios = Consulta.getUsuarios();
             TodasDatas = Consulta.getDatas(TodosUsuarios);
             InitializeComponent();
-            
+            cmbAluno.Items.Add("Todos os alunos");
             foreach (Usuario u in TodosUsuarios)
             {
                 if (!u.tutor)
@@ -223,7 +224,27 @@ namespace WindowsFormsApp1
             }
             return true;
         }
-
+        private void cmbAluno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cmb = (ComboBox)sender;
+            String name = cmb.Items[cmb.SelectedIndex].ToString();            
+            listaFiltros["Aluno"] = name;
+            filtrarDatas();
+        }
+        private void filtrarDatas()
+        {
+            List<Data> resultado = TodasDatas.FindAll(x=> true);
+            if (listaFiltros.ContainsKey("Aluno"))
+            {
+                if (listaFiltros["Aluno"] != "" && listaFiltros["Aluno"] != "Todos os alunos")
+                {
+                    Usuario aluno = TodosUsuarios.Find(x => x.getNome() == listaFiltros["Aluno"]);
+                    resultado = resultado.FindAll(x => x.Aluno.Equals(aluno));
+                }
+            }
+            preencherDataGridView(resultado);
+        }
+        /*
         private void cmbAluno_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cmb = (ComboBox)sender;
@@ -234,6 +255,7 @@ namespace WindowsFormsApp1
                 List<Data> filtro;
                 if (this.exibirFuturo)
                 {
+                    listaFiltros.Add("Aluno", usuarioSelecionado.getNome());
                     filtro = TodasDatas.FindAll(x => x.Aluno.Equals(usuarioSelecionado) && x.getDataEsperada() > DateTime.Now);
                 }
                 else
@@ -243,7 +265,12 @@ namespace WindowsFormsApp1
                 preencherDataGridView(filtro);
 
             }
+            else
+            {
+                Console.WriteLine("OK");
+            }
         }
+        */
 
 
 

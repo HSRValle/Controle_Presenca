@@ -249,9 +249,9 @@ namespace WindowsFormsApp1
             }
             if (listaFiltros.ContainsKey("Datas"))
             {
-                if (listaFiltros["Datas"] == "Futuro")
+                if (listaFiltros["Datas"] == "futuras")
                     resultado = resultado.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) > 0);
-                else if (listaFiltros["Datas"] == "Passado")
+                else if (listaFiltros["Datas"] == "anteriores")
                     resultado = resultado.FindAll(x => x.getDataEsperada().CompareTo(DateTime.Now) < 0);
             }
             if (listaFiltros.ContainsKey("Faltas"))
@@ -549,6 +549,18 @@ namespace WindowsFormsApp1
                 listaFiltros["Grupo"] = nudFiltroGrupo.Value.ToString();
             else
                 listaFiltros.Remove("Grupo");
+            filtrarDatas();
+        }
+
+        private void cmbFiltroDatas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cmb = (ComboBox)sender;
+            String opcao = cmb.Items[cmb.SelectedIndex].ToString();
+
+            if (opcao != "todas")
+                listaFiltros["Datas"] = opcao;
+            else
+                listaFiltros.Remove("Datas");
             filtrarDatas();
         }
     }

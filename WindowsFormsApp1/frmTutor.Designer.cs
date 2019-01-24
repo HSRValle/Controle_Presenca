@@ -44,8 +44,10 @@
             this.editarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlPresenca = new System.Windows.Forms.Panel();
+            this.nudFiltroGrupo = new System.Windows.Forms.NumericUpDown();
+            this.label23 = new System.Windows.Forms.Label();
+            this.chbFaltas = new System.Windows.Forms.CheckBox();
             this.cmbAluno = new System.Windows.Forms.ComboBox();
-            this.btnCriar = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.pnlCadastroNovo = new System.Windows.Forms.Panel();
@@ -114,11 +116,10 @@
             this.label19 = new System.Windows.Forms.Label();
             this.lblEditarCadastro = new System.Windows.Forms.Label();
             this.cmbEditarUsuarios = new System.Windows.Forms.ComboBox();
-            this.chbFaltas = new System.Windows.Forms.CheckBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.nudFiltroGrupo = new System.Windows.Forms.NumericUpDown();
+            this.cmbFiltroDatas = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFiltroGrupo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.pnlCadastroNovo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGrupo)).BeginInit();
@@ -131,7 +132,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).BeginInit();
             this.pnlEditarControles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditarGrupo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudFiltroGrupo)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -247,11 +247,11 @@
             // 
             // pnlPresenca
             // 
+            this.pnlPresenca.Controls.Add(this.cmbFiltroDatas);
             this.pnlPresenca.Controls.Add(this.nudFiltroGrupo);
             this.pnlPresenca.Controls.Add(this.label23);
             this.pnlPresenca.Controls.Add(this.chbFaltas);
             this.pnlPresenca.Controls.Add(this.cmbAluno);
-            this.pnlPresenca.Controls.Add(this.btnCriar);
             this.pnlPresenca.Controls.Add(this.btnAtualizar);
             this.pnlPresenca.Controls.Add(this.dataGridView);
             this.pnlPresenca.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -260,28 +260,46 @@
             this.pnlPresenca.Size = new System.Drawing.Size(879, 489);
             this.pnlPresenca.TabIndex = 1;
             // 
+            // nudFiltroGrupo
+            // 
+            this.nudFiltroGrupo.Location = new System.Drawing.Point(532, 8);
+            this.nudFiltroGrupo.Name = "nudFiltroGrupo";
+            this.nudFiltroGrupo.Size = new System.Drawing.Size(55, 20);
+            this.nudFiltroGrupo.TabIndex = 7;
+            this.nudFiltroGrupo.ValueChanged += new System.EventHandler(this.nudFiltroGrupo_ValueChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(449, 10);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(80, 13);
+            this.label23.TabIndex = 6;
+            this.label23.Text = "Filtrar por grupo";
+            // 
+            // chbFaltas
+            // 
+            this.chbFaltas.AutoSize = true;
+            this.chbFaltas.Location = new System.Drawing.Point(719, 13);
+            this.chbFaltas.Name = "chbFaltas";
+            this.chbFaltas.Size = new System.Drawing.Size(90, 17);
+            this.chbFaltas.TabIndex = 5;
+            this.chbFaltas.Text = "Apenas faltas";
+            this.chbFaltas.UseVisualStyleBackColor = true;
+            this.chbFaltas.CheckedChanged += new System.EventHandler(this.chbFaltas_CheckedChanged);
+            // 
             // cmbAluno
             // 
             this.cmbAluno.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbAluno.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbAluno.FormattingEnabled = true;
             this.cmbAluno.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cmbAluno.Location = new System.Drawing.Point(206, 7);
+            this.cmbAluno.Location = new System.Drawing.Point(285, 7);
             this.cmbAluno.Name = "cmbAluno";
             this.cmbAluno.Size = new System.Drawing.Size(152, 21);
             this.cmbAluno.TabIndex = 4;
             this.cmbAluno.Text = "Filtrar por aluno";
             this.cmbAluno.SelectedIndexChanged += new System.EventHandler(this.cmbAluno_SelectedIndexChanged);
-            // 
-            // btnCriar
-            // 
-            this.btnCriar.Location = new System.Drawing.Point(116, 7);
-            this.btnCriar.Name = "btnCriar";
-            this.btnCriar.Size = new System.Drawing.Size(75, 23);
-            this.btnCriar.TabIndex = 3;
-            this.btnCriar.Text = "Criar datas futuras";
-            this.btnCriar.UseVisualStyleBackColor = true;
-            this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
             // 
             // btnAtualizar
             // 
@@ -936,33 +954,19 @@
             this.cmbEditarUsuarios.TabIndex = 0;
             this.cmbEditarUsuarios.SelectedIndexChanged += new System.EventHandler(this.cmbEditarUsuarios_SelectedIndexChanged);
             // 
-            // chbFaltas
+            // cmbFiltroDatas
             // 
-            this.chbFaltas.AutoSize = true;
-            this.chbFaltas.Location = new System.Drawing.Point(719, 13);
-            this.chbFaltas.Name = "chbFaltas";
-            this.chbFaltas.Size = new System.Drawing.Size(90, 17);
-            this.chbFaltas.TabIndex = 5;
-            this.chbFaltas.Text = "Apenas faltas";
-            this.chbFaltas.UseVisualStyleBackColor = true;
-            this.chbFaltas.CheckedChanged += new System.EventHandler(this.chbFaltas_CheckedChanged);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(365, 9);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(80, 13);
-            this.label23.TabIndex = 6;
-            this.label23.Text = "Filtrar por grupo";
-            // 
-            // nudFiltroGrupo
-            // 
-            this.nudFiltroGrupo.Location = new System.Drawing.Point(446, 7);
-            this.nudFiltroGrupo.Name = "nudFiltroGrupo";
-            this.nudFiltroGrupo.Size = new System.Drawing.Size(55, 20);
-            this.nudFiltroGrupo.TabIndex = 7;
-            this.nudFiltroGrupo.ValueChanged += new System.EventHandler(this.nudFiltroGrupo_ValueChanged);
+            this.cmbFiltroDatas.FormattingEnabled = true;
+            this.cmbFiltroDatas.Items.AddRange(new object[] {
+            "anteriores",
+            "futuras",
+            "todas"});
+            this.cmbFiltroDatas.Location = new System.Drawing.Point(125, 7);
+            this.cmbFiltroDatas.Name = "cmbFiltroDatas";
+            this.cmbFiltroDatas.Size = new System.Drawing.Size(137, 21);
+            this.cmbFiltroDatas.TabIndex = 8;
+            this.cmbFiltroDatas.Text = "Filtrar por datas";
+            this.cmbFiltroDatas.SelectedIndexChanged += new System.EventHandler(this.cmbFiltroDatas_SelectedIndexChanged);
             // 
             // frmTutor
             // 
@@ -987,6 +991,7 @@
             this.menuStrip1.PerformLayout();
             this.pnlPresenca.ResumeLayout(false);
             this.pnlPresenca.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFiltroGrupo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.pnlCadastroNovo.ResumeLayout(false);
             this.pnlCadastroNovo.PerformLayout();
@@ -1007,7 +1012,6 @@
             this.pnlEditarControles.ResumeLayout(false);
             this.pnlEditarControles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditarGrupo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudFiltroGrupo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1061,7 +1065,6 @@
         private System.Windows.Forms.Panel pnlExcluir;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAtualizar;
-        private System.Windows.Forms.Button btnCriar;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.CheckBox chbTutor;
         private System.Windows.Forms.Label lblErroNovo;
@@ -1103,5 +1106,6 @@
         private System.Windows.Forms.CheckBox chbFaltas;
         private System.Windows.Forms.NumericUpDown nudFiltroGrupo;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox cmbFiltroDatas;
     }
 }

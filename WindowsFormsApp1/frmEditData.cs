@@ -54,6 +54,7 @@ namespace WindowsFormsApp1
                         if (chbAtribuir.Checked)
                         {
                             dataAluno.presente = true;
+                            dataAluno.noHorario = true;
                         }
                         else if (chbRemover.Checked)
                         {

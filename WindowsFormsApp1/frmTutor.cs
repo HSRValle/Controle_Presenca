@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
                     cmbAluno.Items.Add(u.getNome());
                 }                
             }
-            datasPassadasToolStripMenuItem_Click();
+            verDatasToolStripMenuItem_Click();
 
         }
         private void preencherDataGridView(List<Data> listaDatas)
@@ -151,7 +151,7 @@ namespace WindowsFormsApp1
             filtrarDatas();
         }
 
-        private void datasPassadasToolStripMenuItem_Click(object sender = null, EventArgs e = null)
+        private void verDatasToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
             this.exibirFuturo = false;
             pnlPresenca.Show();
@@ -180,7 +180,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                datasPassadasToolStripMenuItem_Click(sender, e);
+                verDatasToolStripMenuItem_Click(sender, e);
             }
         }
         private void btnCriar_Click(object sender, EventArgs e)
@@ -563,5 +563,6 @@ namespace WindowsFormsApp1
                 listaFiltros.Remove("Datas");
             filtrarDatas();
         }
+
     }
 }

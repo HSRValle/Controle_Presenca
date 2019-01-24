@@ -32,8 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.presençaDosAlunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.presençaDoAlunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.datasPassadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.datasFuturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verDatasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDosAlunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procurarCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,6 +116,7 @@
             this.lblEditarCadastro = new System.Windows.Forms.Label();
             this.cmbEditarUsuarios = new System.Windows.Forms.ComboBox();
             this.cmbFiltroDatas = new System.Windows.Forms.ComboBox();
+            this.criarDatasFuturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudFiltroGrupo)).BeginInit();
@@ -156,25 +156,18 @@
             // presençaDoAlunosToolStripMenuItem
             // 
             this.presençaDoAlunosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.datasPassadasToolStripMenuItem,
-            this.datasFuturasToolStripMenuItem});
+            this.verDatasToolStripMenuItem,
+            this.criarDatasFuturasToolStripMenuItem});
             this.presençaDoAlunosToolStripMenuItem.Name = "presençaDoAlunosToolStripMenuItem";
             this.presençaDoAlunosToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
             this.presençaDoAlunosToolStripMenuItem.Text = "Presença dos Alunos";
             // 
-            // datasPassadasToolStripMenuItem
+            // verDatasToolStripMenuItem
             // 
-            this.datasPassadasToolStripMenuItem.Name = "datasPassadasToolStripMenuItem";
-            this.datasPassadasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.datasPassadasToolStripMenuItem.Text = "Datas Passadas";
-            this.datasPassadasToolStripMenuItem.Click += new System.EventHandler(this.datasPassadasToolStripMenuItem_Click);
-            // 
-            // datasFuturasToolStripMenuItem
-            // 
-            this.datasFuturasToolStripMenuItem.Name = "datasFuturasToolStripMenuItem";
-            this.datasFuturasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.datasFuturasToolStripMenuItem.Text = "Datas Futuras";
-            this.datasFuturasToolStripMenuItem.Click += new System.EventHandler(this.datasFuturasToolStripMenuItem_Click);
+            this.verDatasToolStripMenuItem.Name = "verDatasToolStripMenuItem";
+            this.verDatasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verDatasToolStripMenuItem.Text = "Ver Datas";
+            this.verDatasToolStripMenuItem.Click += new System.EventHandler(this.verDatasToolStripMenuItem_Click);
             // 
             // cadastroDosAlunosToolStripMenuItem
             // 
@@ -968,6 +961,12 @@
             this.cmbFiltroDatas.Text = "Filtrar por datas";
             this.cmbFiltroDatas.SelectedIndexChanged += new System.EventHandler(this.cmbFiltroDatas_SelectedIndexChanged);
             // 
+            // criarDatasFuturasToolStripMenuItem
+            // 
+            this.criarDatasFuturasToolStripMenuItem.Name = "criarDatasFuturasToolStripMenuItem";
+            this.criarDatasFuturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.criarDatasFuturasToolStripMenuItem.Text = "Criar Datas Futuras";
+            // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1033,8 +1032,7 @@
         private System.Windows.Forms.ToolStripMenuItem presençaDoAlunosToolStripMenuItem;
         private System.Windows.Forms.Panel pnlPresenca;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.ToolStripMenuItem datasPassadasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem datasFuturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verDatasToolStripMenuItem;
         private System.Windows.Forms.Panel pnlCadastroNovo;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSalvar;
@@ -1107,5 +1105,6 @@
         private System.Windows.Forms.NumericUpDown nudFiltroGrupo;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ComboBox cmbFiltroDatas;
+        private System.Windows.Forms.ToolStripMenuItem criarDatasFuturasToolStripMenuItem;
     }
 }

@@ -257,7 +257,13 @@ namespace WindowsFormsApp1
             if (listaFiltros.ContainsKey("Faltas"))
             {
                 resultado = resultado.FindAll(x => !x.presente);
+            }            
+            if (listaFiltros.ContainsKey("Grupo"))
+            {
+                resultado = resultado.FindAll(x => x.Aluno.grupo.ToString() == listaFiltros["Grupo"]);
             }
+
+
             preencherDataGridView(resultado);
         }
         /*
@@ -534,6 +540,15 @@ namespace WindowsFormsApp1
                 listaFiltros["Faltas"] = "";
             else
                 listaFiltros.Remove("Faltas");
+            filtrarDatas();
+        }
+
+        private void nudFiltroGrupo_ValueChanged(object sender, EventArgs e)
+        {            
+            if (nudFiltroGrupo.Value > 0)
+                listaFiltros["Grupo"] = nudFiltroGrupo.Value.ToString();
+            else
+                listaFiltros.Remove("Grupo");
             filtrarDatas();
         }
     }

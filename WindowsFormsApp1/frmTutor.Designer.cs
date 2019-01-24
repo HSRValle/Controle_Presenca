@@ -115,6 +115,8 @@
             this.lblEditarCadastro = new System.Windows.Forms.Label();
             this.cmbEditarUsuarios = new System.Windows.Forms.ComboBox();
             this.chbFaltas = new System.Windows.Forms.CheckBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.nudFiltroGrupo = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -129,6 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).BeginInit();
             this.pnlEditarControles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditarGrupo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFiltroGrupo)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -244,6 +247,8 @@
             // 
             // pnlPresenca
             // 
+            this.pnlPresenca.Controls.Add(this.nudFiltroGrupo);
+            this.pnlPresenca.Controls.Add(this.label23);
             this.pnlPresenca.Controls.Add(this.chbFaltas);
             this.pnlPresenca.Controls.Add(this.cmbAluno);
             this.pnlPresenca.Controls.Add(this.btnCriar);
@@ -263,7 +268,7 @@
             this.cmbAluno.ImeMode = System.Windows.Forms.ImeMode.On;
             this.cmbAluno.Location = new System.Drawing.Point(206, 7);
             this.cmbAluno.Name = "cmbAluno";
-            this.cmbAluno.Size = new System.Drawing.Size(162, 21);
+            this.cmbAluno.Size = new System.Drawing.Size(152, 21);
             this.cmbAluno.TabIndex = 4;
             this.cmbAluno.Text = "Filtrar por aluno";
             this.cmbAluno.SelectedIndexChanged += new System.EventHandler(this.cmbAluno_SelectedIndexChanged);
@@ -934,13 +939,30 @@
             // chbFaltas
             // 
             this.chbFaltas.AutoSize = true;
-            this.chbFaltas.Location = new System.Drawing.Point(374, 9);
+            this.chbFaltas.Location = new System.Drawing.Point(719, 13);
             this.chbFaltas.Name = "chbFaltas";
             this.chbFaltas.Size = new System.Drawing.Size(90, 17);
             this.chbFaltas.TabIndex = 5;
             this.chbFaltas.Text = "Apenas faltas";
             this.chbFaltas.UseVisualStyleBackColor = true;
             this.chbFaltas.CheckedChanged += new System.EventHandler(this.chbFaltas_CheckedChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(365, 9);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(80, 13);
+            this.label23.TabIndex = 6;
+            this.label23.Text = "Filtrar por grupo";
+            // 
+            // nudFiltroGrupo
+            // 
+            this.nudFiltroGrupo.Location = new System.Drawing.Point(446, 7);
+            this.nudFiltroGrupo.Name = "nudFiltroGrupo";
+            this.nudFiltroGrupo.Size = new System.Drawing.Size(55, 20);
+            this.nudFiltroGrupo.TabIndex = 7;
+            this.nudFiltroGrupo.ValueChanged += new System.EventHandler(this.nudFiltroGrupo_ValueChanged);
             // 
             // frmTutor
             // 
@@ -985,6 +1007,7 @@
             this.pnlEditarControles.ResumeLayout(false);
             this.pnlEditarControles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditarGrupo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFiltroGrupo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1078,5 +1101,7 @@
         private System.Windows.Forms.Label lblErroEditarOutroUsuario;
         private System.Windows.Forms.NumericUpDown nudId;
         private System.Windows.Forms.CheckBox chbFaltas;
+        private System.Windows.Forms.NumericUpDown nudFiltroGrupo;
+        private System.Windows.Forms.Label label23;
     }
 }

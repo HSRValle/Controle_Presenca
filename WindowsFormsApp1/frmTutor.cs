@@ -159,7 +159,9 @@ namespace WindowsFormsApp1
 
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
+            int index = e.RowIndex;            
+            if (index == -1)
+                return;
             int id = int.Parse(dataGridView.Rows[index].Cells[0].Value.ToString());
             Data d = TodasDatas.Find(x => x.getId() == id);            
             frmEditData frmEditData = new frmEditData(d);

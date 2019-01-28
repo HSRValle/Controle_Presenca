@@ -538,7 +538,9 @@ namespace WindowsFormsApp1
 
         private void criarDatasFuturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            createNextDatas();
+            frmAddData frmAddData = new frmAddData();
+            frmAddData.Show();
+
         }
     }
 }

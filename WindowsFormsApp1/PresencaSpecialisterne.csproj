@@ -73,6 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Consulta.cs" />
+    <Compile Include="frmAddData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddData.Designer.cs">
+      <DependentUpon>frmAddData.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEditData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,7 +90,7 @@
     </Compile>
     <Compile Include="frmAluno.Designer.cs">
       <DependentUpon>frmAluno.cs</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="frmTutor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddData.resx">
+      <DependentUpon>frmAddData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditData.resx">
       <DependentUpon>frmEditData.cs</DependentUpon>
     </EmbeddedResource>

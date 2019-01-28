@@ -21,8 +21,7 @@ namespace WindowsFormsApp1
         public static List<Usuario> TodosUsuarios;
         public static List<Data> TodasDatas;
         public static Usuario Login;
-        public Dictionary<String, String> listaFiltros = new Dictionary<String, String>();
-        private Boolean exibirFuturo;
+        public Dictionary<String, String> listaFiltros = new Dictionary<String, String>();        
         private void RefreshForm()
         {
             //esconder todos os painéis
@@ -147,8 +146,7 @@ namespace WindowsFormsApp1
 
 
         private void verDatasToolStripMenuItem_Click(object sender = null, EventArgs e = null)
-        {
-            this.exibirFuturo = false;
+        {            
             pnlPresenca.Show();
             pnlPresenca.BringToFront();           
             listaFiltros["Datas"] = "Passado";

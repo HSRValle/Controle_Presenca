@@ -535,6 +535,10 @@ namespace WindowsFormsApp1
         {
             System.Windows.Forms.Application.Exit();
         }
-       
+
+        private void criarDatasFuturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            createNextDatas();
+        }
     }
 }

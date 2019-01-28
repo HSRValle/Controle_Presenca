@@ -166,15 +166,16 @@
             // verDatasToolStripMenuItem
             // 
             this.verDatasToolStripMenuItem.Name = "verDatasToolStripMenuItem";
-            this.verDatasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.verDatasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verDatasToolStripMenuItem.Text = "Ver Datas";
             this.verDatasToolStripMenuItem.Click += new System.EventHandler(this.verDatasToolStripMenuItem_Click);
             // 
             // criarDatasFuturasToolStripMenuItem
             // 
             this.criarDatasFuturasToolStripMenuItem.Name = "criarDatasFuturasToolStripMenuItem";
-            this.criarDatasFuturasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.criarDatasFuturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.criarDatasFuturasToolStripMenuItem.Text = "Criar Datas Futuras";
+            this.criarDatasFuturasToolStripMenuItem.Click += new System.EventHandler(this.criarDatasFuturasToolStripMenuItem_Click);
             // 
             // cadastroDosAlunosToolStripMenuItem
             // 

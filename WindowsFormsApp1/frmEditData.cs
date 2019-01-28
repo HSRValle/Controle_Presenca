@@ -59,6 +59,7 @@ namespace WindowsFormsApp1
                         else if (chbRemover.Checked)
                         {
                             dataAluno.presente = false;
+                            dataAluno.noHorario = false;
                         }
                         if (!dataAluno.updateData())
                         {
@@ -75,10 +76,13 @@ namespace WindowsFormsApp1
                 if (chbAtribuir.Checked)
                 {
                     this.data.presente = true;
+                    this.data.noHorario = true;
+
                 }
                 else if (chbRemover.Checked)
                 {
                     this.data.presente = false;
+                    this.data.noHorario = false;
                 }
                 if (!this.data.updateData())
                 {

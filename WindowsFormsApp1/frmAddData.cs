@@ -17,6 +17,15 @@ namespace WindowsFormsApp1
             InitializeComponent();
             calFim.MinDate = DateTime.Now;
             calFim.SelectionStart = DateTime.Now;
+
+            foreach (Usuario aluno in frmTutor.TodosUsuarios)
+            {
+                if (!aluno.tutor)
+                {
+                    int i = lbxAlunos.Items.Add(aluno.getNome());
+                    lbxAlunos.SetSelected(i, true);
+                }                    
+            }            
         }
 
         private void calInicio_DateChanged(object sender, DateRangeEventArgs e)

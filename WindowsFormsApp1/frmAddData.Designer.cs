@@ -32,11 +32,13 @@
             this.calFim = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbxAlunos = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // calInicio
             // 
-            this.calInicio.Location = new System.Drawing.Point(89, 139);
+            this.calInicio.Location = new System.Drawing.Point(155, 72);
             this.calInicio.MaxSelectionCount = 1;
             this.calInicio.Name = "calInicio";
             this.calInicio.TabIndex = 2;
@@ -44,7 +46,7 @@
             // 
             // calFim
             // 
-            this.calFim.Location = new System.Drawing.Point(466, 139);
+            this.calFim.Location = new System.Drawing.Point(449, 72);
             this.calFim.MaxSelectionCount = 1;
             this.calFim.MinDate = new System.DateTime(2019, 1, 10, 0, 0, 0, 0);
             this.calFim.Name = "calFim";
@@ -53,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(162, 117);
+            this.label1.Location = new System.Drawing.Point(239, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 4;
@@ -62,17 +64,37 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(571, 117);
+            this.label2.Location = new System.Drawing.Point(557, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Até";
+            // 
+            // lbxAlunos
+            // 
+            this.lbxAlunos.FormattingEnabled = true;
+            this.lbxAlunos.Location = new System.Drawing.Point(155, 276);
+            this.lbxAlunos.Name = "lbxAlunos";
+            this.lbxAlunos.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lbxAlunos.Size = new System.Drawing.Size(95, 95);
+            this.lbxAlunos.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(152, 243);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Alunos";
             // 
             // frmAddData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbxAlunos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.calFim);
@@ -90,5 +112,7 @@
         private System.Windows.Forms.MonthCalendar calFim;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox lbxAlunos;
+        private System.Windows.Forms.Label label3;
     }
 }

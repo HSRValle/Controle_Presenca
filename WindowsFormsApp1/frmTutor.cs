@@ -368,6 +368,10 @@ namespace WindowsFormsApp1
             Login.updateUsuario(txtNomeEditar.Text, txtEmailEditar.Text);
             MessageBox.Show("Usuário alterado");
         }
+        private void btnLimparEdicao_Click(object sender, EventArgs e)
+        {
+            editarCadastroToolStripMenuItem1_Click(sender, e);
+        }
 
 
 
@@ -504,5 +508,6 @@ namespace WindowsFormsApp1
             frmAddData.Show();
 
         }
+        
     }
 }

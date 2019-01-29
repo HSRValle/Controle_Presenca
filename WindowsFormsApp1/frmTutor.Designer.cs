@@ -93,7 +93,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmbExcluirUsuario = new System.Windows.Forms.ComboBox();
             this.pnlEditarCadastro = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLimparEdicao = new System.Windows.Forms.Button();
             this.btnSalvarEditar = new System.Windows.Forms.Button();
             this.txtEmailEditar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -166,14 +166,14 @@
             // verDatasToolStripMenuItem
             // 
             this.verDatasToolStripMenuItem.Name = "verDatasToolStripMenuItem";
-            this.verDatasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verDatasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.verDatasToolStripMenuItem.Text = "Ver Datas";
             this.verDatasToolStripMenuItem.Click += new System.EventHandler(this.verDatasToolStripMenuItem_Click);
             // 
             // criarDatasFuturasToolStripMenuItem
             // 
             this.criarDatasFuturasToolStripMenuItem.Name = "criarDatasFuturasToolStripMenuItem";
-            this.criarDatasFuturasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.criarDatasFuturasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.criarDatasFuturasToolStripMenuItem.Text = "Criar Datas Futuras";
             this.criarDatasFuturasToolStripMenuItem.Click += new System.EventHandler(this.criarDatasFuturasToolStripMenuItem_Click);
             // 
@@ -735,7 +735,7 @@
             // 
             // pnlEditarCadastro
             // 
-            this.pnlEditarCadastro.Controls.Add(this.button1);
+            this.pnlEditarCadastro.Controls.Add(this.btnLimparEdicao);
             this.pnlEditarCadastro.Controls.Add(this.btnSalvarEditar);
             this.pnlEditarCadastro.Controls.Add(this.txtEmailEditar);
             this.pnlEditarCadastro.Controls.Add(this.label14);
@@ -748,14 +748,15 @@
             this.pnlEditarCadastro.Size = new System.Drawing.Size(879, 489);
             this.pnlEditarCadastro.TabIndex = 31;
             // 
-            // button1
+            // btnLimparEdicao
             // 
-            this.button1.Location = new System.Drawing.Point(514, 260);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Limpar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLimparEdicao.Location = new System.Drawing.Point(514, 260);
+            this.btnLimparEdicao.Name = "btnLimparEdicao";
+            this.btnLimparEdicao.Size = new System.Drawing.Size(75, 23);
+            this.btnLimparEdicao.TabIndex = 39;
+            this.btnLimparEdicao.Text = "Limpar";
+            this.btnLimparEdicao.UseVisualStyleBackColor = true;
+            this.btnLimparEdicao.Click += new System.EventHandler(this.btnLimparEdicao_Click);
             // 
             // btnSalvarEditar
             // 
@@ -985,11 +986,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 513);
+            this.Controls.Add(this.pnlEditarCadastro);
             this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlEditarOutroCadastro);
             this.Controls.Add(this.pnlCadastroNovo);
-            this.Controls.Add(this.pnlEditarCadastro);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlMudarSenha);
             this.Controls.Add(this.pnlCadastroPesquisa);
@@ -1080,7 +1081,7 @@
         private System.Windows.Forms.CheckBox chbTutor;
         private System.Windows.Forms.Label lblErroNovo;
         private System.Windows.Forms.Panel pnlEditarCadastro;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLimparEdicao;
         private System.Windows.Forms.Button btnSalvarEditar;
         private System.Windows.Forms.TextBox txtEmailEditar;
         private System.Windows.Forms.Label label14;

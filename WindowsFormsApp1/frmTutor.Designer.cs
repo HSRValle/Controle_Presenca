@@ -998,7 +998,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmTutor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Especialisterne - Tutor";
+            this.Text = "Specialisterne - Tutor";
             this.Load += new System.EventHandler(this.frmTutor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

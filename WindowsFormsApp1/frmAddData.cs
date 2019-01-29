@@ -38,6 +38,7 @@ namespace WindowsFormsApp1
         private void btnCriarDatas_Click(object sender, EventArgs e)
         {
             createNextDatas(calInicio.SelectionRange.Start, calFim.SelectionRange.End);
+            MessageBox.Show("Datas criadas com sucesso");
         }
         public Boolean createNextDatas(DateTime inicio, DateTime fim)
         {

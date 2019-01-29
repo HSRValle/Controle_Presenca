@@ -402,7 +402,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmAluno";
-            this.Text = "Especialisterne - Consultor";
+            this.Text = "Specialisterne - Consultor";
             this.Load += new System.EventHandler(this.frmAluno_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

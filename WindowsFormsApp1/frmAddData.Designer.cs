@@ -49,7 +49,7 @@
             // 
             this.calFim.Location = new System.Drawing.Point(449, 72);
             this.calFim.MaxSelectionCount = 1;
-            this.calFim.MinDate = new System.DateTime(2019, 1, 10, 0, 0, 0, 0);
+            this.calFim.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
             this.calFim.Name = "calFim";
             this.calFim.TabIndex = 3;
             // 

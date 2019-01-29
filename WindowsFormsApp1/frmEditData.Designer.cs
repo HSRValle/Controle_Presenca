@@ -39,8 +39,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.chbAtribuir = new System.Windows.Forms.CheckBox();
             this.chbRemover = new System.Windows.Forms.CheckBox();
+            this.chbAtribuir = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -147,17 +147,6 @@
             this.panel2.Size = new System.Drawing.Size(331, 23);
             this.panel2.TabIndex = 13;
             // 
-            // chbAtribuir
-            // 
-            this.chbAtribuir.AutoSize = true;
-            this.chbAtribuir.Location = new System.Drawing.Point(0, 4);
-            this.chbAtribuir.Name = "chbAtribuir";
-            this.chbAtribuir.Size = new System.Drawing.Size(106, 17);
-            this.chbAtribuir.TabIndex = 0;
-            this.chbAtribuir.Text = "Atribuir Presença";
-            this.chbAtribuir.UseVisualStyleBackColor = true;
-            this.chbAtribuir.CheckedChanged += new System.EventHandler(this.chbAtribuir_CheckedChanged);
-            // 
             // chbRemover
             // 
             this.chbRemover.AutoSize = true;
@@ -168,6 +157,17 @@
             this.chbRemover.Text = "Remover Presença";
             this.chbRemover.UseVisualStyleBackColor = true;
             this.chbRemover.CheckedChanged += new System.EventHandler(this.chbRemover_CheckedChanged);
+            // 
+            // chbAtribuir
+            // 
+            this.chbAtribuir.AutoSize = true;
+            this.chbAtribuir.Location = new System.Drawing.Point(0, 4);
+            this.chbAtribuir.Name = "chbAtribuir";
+            this.chbAtribuir.Size = new System.Drawing.Size(106, 17);
+            this.chbAtribuir.TabIndex = 0;
+            this.chbAtribuir.Text = "Atribuir Presença";
+            this.chbAtribuir.UseVisualStyleBackColor = true;
+            this.chbAtribuir.CheckedChanged += new System.EventHandler(this.chbAtribuir_CheckedChanged);
             // 
             // frmEditData
             // 
@@ -184,7 +184,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtJustificativa);
             this.Name = "frmEditData";
-            this.Text = "frmEditData";
+            this.Text = "Modificar uma data";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -112,7 +112,7 @@
             this.Controls.Add(this.calFim);
             this.Controls.Add(this.calInicio);
             this.Name = "frmAddData";
-            this.Text = "frmAddData";
+            this.Text = "Adicionar novas datas";
             this.ResumeLayout(false);
             this.PerformLayout();
 

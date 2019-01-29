@@ -426,10 +426,11 @@ namespace WindowsFormsApp1
             RefreshForm();
             pnlEditarOutroCadastro.Show();
             pnlEditarOutroCadastro.BringToFront();
-            foreach (Usuario usuario in TodosUsuarios)
-            {
-                cmbEditarUsuarios.Items.Add(usuario.getNome());
-            }            
+            if(cmbEditarUsuarios.Items.Count == 0)
+                foreach (Usuario usuario in TodosUsuarios)
+                {
+                    cmbEditarUsuarios.Items.Add(usuario.getNome());
+                }            
         }
 
         private void cmbEditarUsuarios_SelectedIndexChanged(object sender, EventArgs e)

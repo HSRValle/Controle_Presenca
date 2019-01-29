@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbxAlunos = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnCriarDatas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // calInicio
@@ -82,17 +83,28 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(152, 243);
+            this.label3.Location = new System.Drawing.Point(152, 255);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Alunos";
+            // 
+            // btnCriarDatas
+            // 
+            this.btnCriarDatas.Location = new System.Drawing.Point(287, 348);
+            this.btnCriarDatas.Name = "btnCriarDatas";
+            this.btnCriarDatas.Size = new System.Drawing.Size(75, 23);
+            this.btnCriarDatas.TabIndex = 8;
+            this.btnCriarDatas.Text = "Criar datas";
+            this.btnCriarDatas.UseVisualStyleBackColor = true;
+            this.btnCriarDatas.Click += new System.EventHandler(this.btnCriarDatas_Click);
             // 
             // frmAddData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCriarDatas);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbxAlunos);
             this.Controls.Add(this.label2);
@@ -114,5 +126,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox lbxAlunos;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCriarDatas;
     }
 }

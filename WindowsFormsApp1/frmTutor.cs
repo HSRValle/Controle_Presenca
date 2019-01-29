@@ -165,53 +165,14 @@ namespace WindowsFormsApp1
         }
 
         private void btnCriar_Click(object sender, EventArgs e)
-        {
-            createNextDatas();
+        {            
             System.Threading.Thread.Sleep(100);
             listaFiltros.Clear();
             listaFiltros["Datas"] = "Futuras";
             filtrarDatas();
 
         }
-        public Boolean createNextDatas(int dias = 7)
-        {
-            List<Data> novasDatas = new List<Data>();
 
-
-            DateTime hoje = DateTime.Now;
-            TimeSpan manha = new TimeSpan(9, 0, 0);
-            TimeSpan tarde = new TimeSpan(13, 30, 0);
-            for (int i = 1; i <= dias; i++)
-            {
-                DateTime novaData = hoje.AddDays(i);
-                novaData = novaData.Date + manha;
-                if (novaData.DayOfWeek != DayOfWeek.Saturday && novaData.DayOfWeek != DayOfWeek.Sunday)
-                {
-                    foreach (Usuario usuario in TodosUsuarios)
-                    {
-                        if (!usuario.tutor)
-                        {
-                            //Se é aluno
-                            Data insert = new Data(novaData.Date + manha, usuario);
-                            if (insert.insertNewData())
-                                TodasDatas.Add(insert);
-                            if (novaData.DayOfWeek != DayOfWeek.Monday && novaData.DayOfWeek != DayOfWeek.Friday)
-                            {
-                                insert = new Data(novaData.Date + tarde, usuario);
-                                if (insert.insertNewData())
-                                    TodasDatas.Add(insert);
-
-
-                            }
-
-                        }
-                        // Else com horários para tutores?
-                    }
-                }
-
-            }
-            return true;
-        }
         private void cmbAluno_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cmb = (ComboBox)sender;

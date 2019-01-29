@@ -118,6 +118,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.lblEditarCadastro = new System.Windows.Forms.Label();
             this.cmbEditarUsuarios = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudFiltroGrupo)).BeginInit();
@@ -191,28 +192,28 @@
             // procurarCadastroToolStripMenuItem
             // 
             this.procurarCadastroToolStripMenuItem.Name = "procurarCadastroToolStripMenuItem";
-            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.procurarCadastroToolStripMenuItem.Text = "Procurar Cadastro";
             this.procurarCadastroToolStripMenuItem.Click += new System.EventHandler(this.procurarCadastroToolStripMenuItem_Click);
             // 
             // novoCadastroToolStripMenuItem
             // 
             this.novoCadastroToolStripMenuItem.Name = "novoCadastroToolStripMenuItem";
-            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoCadastroToolStripMenuItem.Text = "Novo Cadastro";
             this.novoCadastroToolStripMenuItem.Click += new System.EventHandler(this.novoCadastroToolStripMenuItem_Click);
             // 
             // editarCadastroToolStripMenuItem
             // 
             this.editarCadastroToolStripMenuItem.Name = "editarCadastroToolStripMenuItem";
-            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editarCadastroToolStripMenuItem.Text = "Editar Cadastro";
             this.editarCadastroToolStripMenuItem.Click += new System.EventHandler(this.editarCadastroToolStripMenuItem_Click);
             // 
             // excluirCadastroToolStripMenuItem
             // 
             this.excluirCadastroToolStripMenuItem.Name = "excluirCadastroToolStripMenuItem";
-            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.excluirCadastroToolStripMenuItem.Text = "Excluir Cadastro";
             this.excluirCadastroToolStripMenuItem.Click += new System.EventHandler(this.excluirCadastroToolStripMenuItem_Click);
             // 
@@ -349,6 +350,7 @@
             // 
             // pnlCadastroNovo
             // 
+            this.pnlCadastroNovo.Controls.Add(this.label24);
             this.pnlCadastroNovo.Controls.Add(this.label15);
             this.pnlCadastroNovo.Controls.Add(this.nudGrupo);
             this.pnlCadastroNovo.Controls.Add(this.lblErroNovo);
@@ -373,7 +375,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(403, 168);
+            this.label15.Location = new System.Drawing.Point(320, 169);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(39, 13);
             this.label15.TabIndex = 30;
@@ -381,10 +383,15 @@
             // 
             // nudGrupo
             // 
-            this.nudGrupo.Location = new System.Drawing.Point(455, 166);
+            this.nudGrupo.Location = new System.Drawing.Point(386, 167);
             this.nudGrupo.Name = "nudGrupo";
             this.nudGrupo.Size = new System.Drawing.Size(57, 20);
             this.nudGrupo.TabIndex = 29;
+            this.nudGrupo.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblErroNovo
             // 
@@ -397,12 +404,13 @@
             // chbTutor
             // 
             this.chbTutor.AutoSize = true;
-            this.chbTutor.Location = new System.Drawing.Point(421, 313);
+            this.chbTutor.Location = new System.Drawing.Point(510, 169);
             this.chbTutor.Name = "chbTutor";
             this.chbTutor.Size = new System.Drawing.Size(51, 17);
             this.chbTutor.TabIndex = 27;
             this.chbTutor.Text = "Tutor";
             this.chbTutor.UseVisualStyleBackColor = true;
+            this.chbTutor.CheckedChanged += new System.EventHandler(this.chbTutor_CheckedChanged);
             // 
             // btnLimpar
             // 
@@ -981,16 +989,25 @@
             this.cmbEditarUsuarios.TabIndex = 0;
             this.cmbEditarUsuarios.SelectedIndexChanged += new System.EventHandler(this.cmbEditarUsuarios_SelectedIndexChanged);
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(469, 169);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(19, 13);
+            this.label24.TabIndex = 31;
+            this.label24.Text = "ou";
+            // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 513);
+            this.Controls.Add(this.pnlCadastroNovo);
             this.Controls.Add(this.pnlEditarCadastro);
             this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlEditarOutroCadastro);
-            this.Controls.Add(this.pnlCadastroNovo);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlMudarSenha);
             this.Controls.Add(this.pnlCadastroPesquisa);
@@ -1121,5 +1138,6 @@
         private System.Windows.Forms.ComboBox cmbFiltroDatas;
         private System.Windows.Forms.ToolStripMenuItem criarDatasFuturasToolStripMenuItem;
         private System.Windows.Forms.Button btnLimparFiltros;
+        private System.Windows.Forms.Label label24;
     }
 }

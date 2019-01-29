@@ -267,6 +267,16 @@ namespace WindowsFormsApp1
             pnlCadastroNovo.Show();
             pnlCadastroNovo.BringToFront();
         }
+        private void chbTutor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbTutor.Checked)
+            {
+                nudGrupo.Value = 0;
+                nudGrupo.Enabled = false;
+            }
+            else
+                nudGrupo.Enabled = true;
+        }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             String nome = txtNome.Text;
@@ -509,6 +519,7 @@ namespace WindowsFormsApp1
             frmAddData.Show();
 
         }
+
         
     }
 }

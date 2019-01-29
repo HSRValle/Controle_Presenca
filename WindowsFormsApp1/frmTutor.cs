@@ -433,7 +433,8 @@ namespace WindowsFormsApp1
             if(cmbEditarUsuarios.Items.Count == 0)
                 foreach (Usuario usuario in TodosUsuarios)
                 {
-                    cmbEditarUsuarios.Items.Add(usuario.getNome());
+                    if(!usuario.tutor)
+                        cmbEditarUsuarios.Items.Add(usuario.getNome());
                 }            
         }
 

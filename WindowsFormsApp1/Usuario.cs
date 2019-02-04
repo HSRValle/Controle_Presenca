@@ -86,6 +86,7 @@ namespace WindowsFormsApp1
 
             }
             // O que fazer quando nao encontra data?
+            MessageBox.Show("Data não encontrada para hoje.\nVerifique com seu tutor.");
             return false;
 
         }

@@ -50,25 +50,26 @@
             this.pnlPresenca = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.pnlJustificativa = new System.Windows.Forms.Panel();
+            this.dateTimePickerTime = new System.Windows.Forms.DateTimePicker();
+            this.nudIdData = new System.Windows.Forms.NumericUpDown();
             this.btnSalvarJust = new System.Windows.Forms.Button();
             this.txtJustificativa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
             this.pnlCorrecao = new System.Windows.Forms.Panel();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.nudIdData = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             this.pnlMudarSenha.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.pnlJustificativa.SuspendLayout();
-            this.pnlCorrecao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudIdData)).BeginInit();
+            this.pnlCorrecao.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -127,13 +128,13 @@
             // consultarCadastroToolStripMenuItem
             // 
             this.consultarCadastroToolStripMenuItem.Name = "consultarCadastroToolStripMenuItem";
-            this.consultarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarCadastroToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.consultarCadastroToolStripMenuItem.Text = "Consultar Cadastro";
             // 
             // mudarSenhaToolStripMenuItem
             // 
             this.mudarSenhaToolStripMenuItem.Name = "mudarSenhaToolStripMenuItem";
-            this.mudarSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mudarSenhaToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.mudarSenhaToolStripMenuItem.Text = "Mudar Senha";
             this.mudarSenhaToolStripMenuItem.Click += new System.EventHandler(this.mudarSenhaToolStripMenuItem_Click);
             // 
@@ -250,21 +251,44 @@
             // 
             // pnlJustificativa
             // 
+            this.pnlJustificativa.Controls.Add(this.dateTimePickerTime);
             this.pnlJustificativa.Controls.Add(this.nudIdData);
             this.pnlJustificativa.Controls.Add(this.btnSalvarJust);
             this.pnlJustificativa.Controls.Add(this.txtJustificativa);
             this.pnlJustificativa.Controls.Add(this.label2);
             this.pnlJustificativa.Controls.Add(this.label1);
-            this.pnlJustificativa.Controls.Add(this.dateTimePicker1);
+            this.pnlJustificativa.Controls.Add(this.dateTimePickerDate);
             this.pnlJustificativa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlJustificativa.Location = new System.Drawing.Point(0, 0);
             this.pnlJustificativa.Name = "pnlJustificativa";
             this.pnlJustificativa.Size = new System.Drawing.Size(729, 354);
             this.pnlJustificativa.TabIndex = 11;
             // 
+            // dateTimePickerTime
+            // 
+            this.dateTimePickerTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerTime.Location = new System.Drawing.Point(442, 59);
+            this.dateTimePickerTime.Name = "dateTimePickerTime";
+            this.dateTimePickerTime.ShowUpDown = true;
+            this.dateTimePickerTime.Size = new System.Drawing.Size(79, 20);
+            this.dateTimePickerTime.TabIndex = 9;
+            // 
+            // nudIdData
+            // 
+            this.nudIdData.Location = new System.Drawing.Point(316, 322);
+            this.nudIdData.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudIdData.Name = "nudIdData";
+            this.nudIdData.Size = new System.Drawing.Size(120, 20);
+            this.nudIdData.TabIndex = 6;
+            this.nudIdData.Visible = false;
+            // 
             // btnSalvarJust
             // 
-            this.btnSalvarJust.Location = new System.Drawing.Point(380, 207);
+            this.btnSalvarJust.Location = new System.Drawing.Point(334, 251);
             this.btnSalvarJust.Name = "btnSalvarJust";
             this.btnSalvarJust.Size = new System.Drawing.Size(75, 23);
             this.btnSalvarJust.TabIndex = 5;
@@ -274,16 +298,16 @@
             // 
             // txtJustificativa
             // 
-            this.txtJustificativa.Location = new System.Drawing.Point(220, 134);
+            this.txtJustificativa.Location = new System.Drawing.Point(231, 125);
             this.txtJustificativa.Multiline = true;
             this.txtJustificativa.Name = "txtJustificativa";
-            this.txtJustificativa.Size = new System.Drawing.Size(235, 53);
+            this.txtJustificativa.Size = new System.Drawing.Size(290, 87);
             this.txtJustificativa.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(188, 114);
+            this.label2.Location = new System.Drawing.Point(199, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 3;
@@ -292,18 +316,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(149, 137);
+            this.label1.Location = new System.Drawing.Point(160, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Justificativa:";
             // 
-            // dateTimePicker1
+            // dateTimePickerDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(220, 108);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(235, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePickerDate.Location = new System.Drawing.Point(231, 59);
+            this.dateTimePickerDate.Name = "dateTimePickerDate";
+            this.dateTimePickerDate.Size = new System.Drawing.Size(205, 20);
+            this.dateTimePickerDate.TabIndex = 0;
             // 
             // pnlCorrecao
             // 
@@ -360,19 +384,6 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(235, 20);
             this.dateTimePicker2.TabIndex = 4;
             // 
-            // nudIdData
-            // 
-            this.nudIdData.Location = new System.Drawing.Point(273, 70);
-            this.nudIdData.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nudIdData.Name = "nudIdData";
-            this.nudIdData.Size = new System.Drawing.Size(120, 20);
-            this.nudIdData.TabIndex = 6;
-            this.nudIdData.Visible = false;
-            // 
             // frmAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,9 +407,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.pnlJustificativa.ResumeLayout(false);
             this.pnlJustificativa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIdData)).EndInit();
             this.pnlCorrecao.ResumeLayout(false);
             this.pnlCorrecao.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudIdData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,7 +442,7 @@
         private System.Windows.Forms.TextBox txtJustificativa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDate;
         private System.Windows.Forms.Panel pnlCorrecao;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.TextBox textBox2;
@@ -439,5 +450,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.NumericUpDown nudIdData;
+        private System.Windows.Forms.DateTimePicker dateTimePickerTime;
     }
 }

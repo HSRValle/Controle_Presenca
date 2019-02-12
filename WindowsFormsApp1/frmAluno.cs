@@ -169,7 +169,8 @@ namespace WindowsFormsApp1
             nudIdData.Value = id;
             pnlJustificativa.Show();
             pnlJustificativa.BringToFront();
-            dateTimePicker1.Value = d.getDataEsperada();
+            dateTimePickerDate.Value = d.getDataEsperada();
+            dateTimePickerTime.Value = d.getDataEsperada();
         }
 
         private void btnSalvarJust_Click(object sender, EventArgs e)

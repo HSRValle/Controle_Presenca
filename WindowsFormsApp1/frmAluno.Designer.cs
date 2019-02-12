@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAluno));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.presençaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarHistóricoDePresençaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.justificarAusênciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.solicitarCorreçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mudarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +60,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.pnlCadastro = new System.Windows.Forms.Panel();
+            this.btnLimparEdicao = new System.Windows.Forms.Button();
+            this.btnSalvarEditar = new System.Windows.Forms.Button();
+            this.txtEmailEditar = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtNomeEditar = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.consultarHistóricoDePresençaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlMudarSenha.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
@@ -70,6 +75,7 @@
             this.pnlJustificativa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudIdData)).BeginInit();
             this.pnlCorrecao.SuspendLayout();
+            this.pnlCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -88,33 +94,10 @@
             // presençaToolStripMenuItem
             // 
             this.presençaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultarHistóricoDePresençaToolStripMenuItem,
-            this.justificarAusênciaToolStripMenuItem,
-            this.solicitarCorreçãoToolStripMenuItem});
+            this.consultarHistóricoDePresençaToolStripMenuItem});
             this.presençaToolStripMenuItem.Name = "presençaToolStripMenuItem";
             this.presençaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.presençaToolStripMenuItem.Text = "Presença";
-            // 
-            // consultarHistóricoDePresençaToolStripMenuItem
-            // 
-            this.consultarHistóricoDePresençaToolStripMenuItem.Name = "consultarHistóricoDePresençaToolStripMenuItem";
-            this.consultarHistóricoDePresençaToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.consultarHistóricoDePresençaToolStripMenuItem.Text = "Consultar Histórico de Presença";
-            this.consultarHistóricoDePresençaToolStripMenuItem.Click += new System.EventHandler(this.consultarHistóricoDePresençaToolStripMenuItem_Click);
-            // 
-            // justificarAusênciaToolStripMenuItem
-            // 
-            this.justificarAusênciaToolStripMenuItem.Name = "justificarAusênciaToolStripMenuItem";
-            this.justificarAusênciaToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.justificarAusênciaToolStripMenuItem.Text = "Justificar Ausência";
-            this.justificarAusênciaToolStripMenuItem.Click += new System.EventHandler(this.justificarAusênciaToolStripMenuItem_Click);
-            // 
-            // solicitarCorreçãoToolStripMenuItem
-            // 
-            this.solicitarCorreçãoToolStripMenuItem.Name = "solicitarCorreçãoToolStripMenuItem";
-            this.solicitarCorreçãoToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.solicitarCorreçãoToolStripMenuItem.Text = "Solicitar Correção";
-            this.solicitarCorreçãoToolStripMenuItem.Click += new System.EventHandler(this.solicitarCorreçãoToolStripMenuItem_Click);
+            this.presençaToolStripMenuItem.Text = "Presença";            
             // 
             // cadastroToolStripMenuItem
             // 
@@ -128,13 +111,14 @@
             // consultarCadastroToolStripMenuItem
             // 
             this.consultarCadastroToolStripMenuItem.Name = "consultarCadastroToolStripMenuItem";
-            this.consultarCadastroToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.consultarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarCadastroToolStripMenuItem.Text = "Consultar Cadastro";
+            this.consultarCadastroToolStripMenuItem.Click += new System.EventHandler(this.consultarCadastroToolStripMenuItem_Click);
             // 
             // mudarSenhaToolStripMenuItem
             // 
             this.mudarSenhaToolStripMenuItem.Name = "mudarSenhaToolStripMenuItem";
-            this.mudarSenhaToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.mudarSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mudarSenhaToolStripMenuItem.Text = "Mudar Senha";
             this.mudarSenhaToolStripMenuItem.Click += new System.EventHandler(this.mudarSenhaToolStripMenuItem_Click);
             // 
@@ -384,15 +368,89 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(235, 20);
             this.dateTimePicker2.TabIndex = 4;
             // 
+            // pnlCadastro
+            // 
+            this.pnlCadastro.Controls.Add(this.btnLimparEdicao);
+            this.pnlCadastro.Controls.Add(this.btnSalvarEditar);
+            this.pnlCadastro.Controls.Add(this.txtEmailEditar);
+            this.pnlCadastro.Controls.Add(this.label14);
+            this.pnlCadastro.Controls.Add(this.txtNomeEditar);
+            this.pnlCadastro.Controls.Add(this.label17);
+            this.pnlCadastro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCadastro.Location = new System.Drawing.Point(0, 0);
+            this.pnlCadastro.Name = "pnlCadastro";
+            this.pnlCadastro.Size = new System.Drawing.Size(729, 354);
+            this.pnlCadastro.TabIndex = 13;
+            // 
+            // btnLimparEdicao
+            // 
+            this.btnLimparEdicao.Location = new System.Drawing.Point(418, 216);
+            this.btnLimparEdicao.Name = "btnLimparEdicao";
+            this.btnLimparEdicao.Size = new System.Drawing.Size(75, 23);
+            this.btnLimparEdicao.TabIndex = 46;
+            this.btnLimparEdicao.Text = "Limpar";
+            this.btnLimparEdicao.UseVisualStyleBackColor = true;
+            this.btnLimparEdicao.Click += new System.EventHandler(this.btnLimparEdicao_Click);
+            // 
+            // btnSalvarEditar
+            // 
+            this.btnSalvarEditar.Location = new System.Drawing.Point(260, 216);
+            this.btnSalvarEditar.Name = "btnSalvarEditar";
+            this.btnSalvarEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvarEditar.TabIndex = 45;
+            this.btnSalvarEditar.Text = "Salvar";
+            this.btnSalvarEditar.UseVisualStyleBackColor = true;
+            this.btnSalvarEditar.Click += new System.EventHandler(this.btnSalvarEditar_Click);
+            // 
+            // txtEmailEditar
+            // 
+            this.txtEmailEditar.Location = new System.Drawing.Point(310, 149);
+            this.txtEmailEditar.Name = "txtEmailEditar";
+            this.txtEmailEditar.Size = new System.Drawing.Size(172, 20);
+            this.txtEmailEditar.TabIndex = 44;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(244, 152);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 13);
+            this.label14.TabIndex = 43;
+            this.label14.Text = "E-mail:";
+            // 
+            // txtNomeEditar
+            // 
+            this.txtNomeEditar.Location = new System.Drawing.Point(310, 108);
+            this.txtNomeEditar.Name = "txtNomeEditar";
+            this.txtNomeEditar.Size = new System.Drawing.Size(172, 20);
+            this.txtNomeEditar.TabIndex = 42;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(244, 111);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(38, 13);
+            this.label17.TabIndex = 41;
+            this.label17.Text = "Nome:";
+            // 
+            // consultarHistóricoDePresençaToolStripMenuItem
+            // 
+            this.consultarHistóricoDePresençaToolStripMenuItem.Name = "consultarHistóricoDePresençaToolStripMenuItem";
+            this.consultarHistóricoDePresençaToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.consultarHistóricoDePresençaToolStripMenuItem.Text = "Consultar Histórico de Presença";
+            this.consultarHistóricoDePresençaToolStripMenuItem.Click += new System.EventHandler(this.consultarHistóricoDePresençaToolStripMenuItem_Click);
+            // 
             // frmAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 354);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnlJustificativa);
+            this.Controls.Add(this.pnlCadastro);
             this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.pnlMudarSenha);
+            this.Controls.Add(this.pnlJustificativa);
             this.Controls.Add(this.pnlCorrecao);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -410,6 +468,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudIdData)).EndInit();
             this.pnlCorrecao.ResumeLayout(false);
             this.pnlCorrecao.PerformLayout();
+            this.pnlCadastro.ResumeLayout(false);
+            this.pnlCadastro.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,9 +479,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem presençaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultarHistóricoDePresençaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem justificarAusênciaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem solicitarCorreçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarCadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mudarSenhaToolStripMenuItem;
@@ -451,5 +508,13 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.NumericUpDown nudIdData;
         private System.Windows.Forms.DateTimePicker dateTimePickerTime;
+        private System.Windows.Forms.Panel pnlCadastro;
+        private System.Windows.Forms.Button btnLimparEdicao;
+        private System.Windows.Forms.Button btnSalvarEditar;
+        private System.Windows.Forms.TextBox txtEmailEditar;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtNomeEditar;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ToolStripMenuItem consultarHistóricoDePresençaToolStripMenuItem;
     }
 }

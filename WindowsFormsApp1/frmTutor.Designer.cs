@@ -1003,9 +1003,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 513);
+            this.Controls.Add(this.pnlEditarCadastro);
             this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.pnlCadastroNovo);
-            this.Controls.Add(this.pnlEditarCadastro);
             this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlEditarOutroCadastro);
             this.Controls.Add(this.menuStrip1);

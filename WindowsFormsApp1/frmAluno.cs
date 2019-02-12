@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
             pnlPresenca.Hide();
             pnlCorrecao.Hide();
             pnlJustificativa.Hide();
+            pnlCadastro.Hide();
         }
 
         public frmAluno(Usuario aluno)
@@ -186,5 +187,28 @@ namespace WindowsFormsApp1
             }
            
         }
+
+        private void consultarCadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlCadastro.Show();
+            pnlCadastro.BringToFront();
+
+            txtNomeEditar.Text = this.Aluno.getNome();
+            txtEmailEditar.Text = this.Aluno.getEmail();
+        }
+
+        private void btnLimparEdicao_Click(object sender, EventArgs e)
+        {
+
+            txtNomeEditar.Text = this.Aluno.getNome();
+            txtEmailEditar.Text = this.Aluno.getEmail();
+        }
+
+        private void btnSalvarEditar_Click(object sender, EventArgs e)
+        {
+            this.Aluno.updateUsuario(txtNomeEditar.Text, txtEmailEditar.Text);
+            MessageBox.Show("Usuário alterado");
+        }
+
     }
 }

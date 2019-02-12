@@ -117,7 +117,9 @@ namespace WindowsFormsApp1
                     if (usuario.marcaPresenca(datas))
                     {
                         MessageBox.Show("Presença confirmada!\n" + DateTime.Now.ToString());
-                    }                    
+                    }
+                    frmAluno frmAluno = new frmAluno(usuario);
+                    frmAluno.Show();
 
 
                 }

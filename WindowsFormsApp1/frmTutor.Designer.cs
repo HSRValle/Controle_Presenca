@@ -53,6 +53,7 @@
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.pnlCadastroNovo = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.nudGrupo = new System.Windows.Forms.NumericUpDown();
             this.lblErroNovo = new System.Windows.Forms.Label();
@@ -118,7 +119,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.lblEditarCadastro = new System.Windows.Forms.Label();
             this.cmbEditarUsuarios = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudFiltroGrupo)).BeginInit();
@@ -192,28 +192,28 @@
             // procurarCadastroToolStripMenuItem
             // 
             this.procurarCadastroToolStripMenuItem.Name = "procurarCadastroToolStripMenuItem";
-            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.procurarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.procurarCadastroToolStripMenuItem.Text = "Procurar Cadastro";
             this.procurarCadastroToolStripMenuItem.Click += new System.EventHandler(this.procurarCadastroToolStripMenuItem_Click);
             // 
             // novoCadastroToolStripMenuItem
             // 
             this.novoCadastroToolStripMenuItem.Name = "novoCadastroToolStripMenuItem";
-            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.novoCadastroToolStripMenuItem.Text = "Novo Cadastro";
             this.novoCadastroToolStripMenuItem.Click += new System.EventHandler(this.novoCadastroToolStripMenuItem_Click);
             // 
             // editarCadastroToolStripMenuItem
             // 
             this.editarCadastroToolStripMenuItem.Name = "editarCadastroToolStripMenuItem";
-            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.editarCadastroToolStripMenuItem.Text = "Editar Cadastro";
             this.editarCadastroToolStripMenuItem.Click += new System.EventHandler(this.editarCadastroToolStripMenuItem_Click);
             // 
             // excluirCadastroToolStripMenuItem
             // 
             this.excluirCadastroToolStripMenuItem.Name = "excluirCadastroToolStripMenuItem";
-            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirCadastroToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.excluirCadastroToolStripMenuItem.Text = "Excluir Cadastro";
             this.excluirCadastroToolStripMenuItem.Click += new System.EventHandler(this.excluirCadastroToolStripMenuItem_Click);
             // 
@@ -371,6 +371,15 @@
             this.pnlCadastroNovo.Name = "pnlCadastroNovo";
             this.pnlCadastroNovo.Size = new System.Drawing.Size(879, 489);
             this.pnlCadastroNovo.TabIndex = 3;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(469, 169);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(19, 13);
+            this.label24.TabIndex = 31;
+            this.label24.Text = "ou";
             // 
             // label15
             // 
@@ -989,23 +998,14 @@
             this.cmbEditarUsuarios.TabIndex = 0;
             this.cmbEditarUsuarios.SelectedIndexChanged += new System.EventHandler(this.cmbEditarUsuarios_SelectedIndexChanged);
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(469, 169);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(19, 13);
-            this.label24.TabIndex = 31;
-            this.label24.Text = "ou";
-            // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 513);
+            this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.pnlCadastroNovo);
             this.Controls.Add(this.pnlEditarCadastro);
-            this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlEditarOutroCadastro);
             this.Controls.Add(this.menuStrip1);

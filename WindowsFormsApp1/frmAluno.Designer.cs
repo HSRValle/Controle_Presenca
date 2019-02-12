@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAluno));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.presençaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarHistóricoDePresençaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mudarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,7 +40,7 @@
             this.txtConfSenha = new System.Windows.Forms.TextBox();
             this.txtNovaSenha = new System.Windows.Forms.TextBox();
             this.txtSenhaAntiga = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMudarSenha = new System.Windows.Forms.Button();
             this.lblErro = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -67,7 +68,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtNomeEditar = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.consultarHistóricoDePresençaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlMudarSenha.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
@@ -97,7 +97,14 @@
             this.consultarHistóricoDePresençaToolStripMenuItem});
             this.presençaToolStripMenuItem.Name = "presençaToolStripMenuItem";
             this.presençaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.presençaToolStripMenuItem.Text = "Presença";            
+            this.presençaToolStripMenuItem.Text = "Presença";
+            // 
+            // consultarHistóricoDePresençaToolStripMenuItem
+            // 
+            this.consultarHistóricoDePresençaToolStripMenuItem.Name = "consultarHistóricoDePresençaToolStripMenuItem";
+            this.consultarHistóricoDePresençaToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.consultarHistóricoDePresençaToolStripMenuItem.Text = "Consultar Histórico de Presença";
+            this.consultarHistóricoDePresençaToolStripMenuItem.Click += new System.EventHandler(this.consultarHistóricoDePresençaToolStripMenuItem_Click);
             // 
             // cadastroToolStripMenuItem
             // 
@@ -111,14 +118,14 @@
             // consultarCadastroToolStripMenuItem
             // 
             this.consultarCadastroToolStripMenuItem.Name = "consultarCadastroToolStripMenuItem";
-            this.consultarCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarCadastroToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.consultarCadastroToolStripMenuItem.Text = "Consultar Cadastro";
             this.consultarCadastroToolStripMenuItem.Click += new System.EventHandler(this.consultarCadastroToolStripMenuItem_Click);
             // 
             // mudarSenhaToolStripMenuItem
             // 
             this.mudarSenhaToolStripMenuItem.Name = "mudarSenhaToolStripMenuItem";
-            this.mudarSenhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mudarSenhaToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.mudarSenhaToolStripMenuItem.Text = "Mudar Senha";
             this.mudarSenhaToolStripMenuItem.Click += new System.EventHandler(this.mudarSenhaToolStripMenuItem_Click);
             // 
@@ -134,7 +141,7 @@
             this.pnlMudarSenha.Controls.Add(this.txtConfSenha);
             this.pnlMudarSenha.Controls.Add(this.txtNovaSenha);
             this.pnlMudarSenha.Controls.Add(this.txtSenhaAntiga);
-            this.pnlMudarSenha.Controls.Add(this.button1);
+            this.pnlMudarSenha.Controls.Add(this.btnMudarSenha);
             this.pnlMudarSenha.Controls.Add(this.lblErro);
             this.pnlMudarSenha.Controls.Add(this.label11);
             this.pnlMudarSenha.Controls.Add(this.label12);
@@ -170,14 +177,15 @@
             this.txtSenhaAntiga.Size = new System.Drawing.Size(134, 20);
             this.txtSenhaAntiga.TabIndex = 13;
             // 
-            // button1
+            // btnMudarSenha
             // 
-            this.button1.Location = new System.Drawing.Point(350, 236);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMudarSenha.Location = new System.Drawing.Point(331, 245);
+            this.btnMudarSenha.Name = "btnMudarSenha";
+            this.btnMudarSenha.Size = new System.Drawing.Size(75, 23);
+            this.btnMudarSenha.TabIndex = 12;
+            this.btnMudarSenha.Text = "Salvar";
+            this.btnMudarSenha.UseVisualStyleBackColor = true;
+            this.btnMudarSenha.Click += new System.EventHandler(this.btnMudarSenha_Click);
             // 
             // lblErro
             // 
@@ -434,22 +442,15 @@
             this.label17.TabIndex = 41;
             this.label17.Text = "Nome:";
             // 
-            // consultarHistóricoDePresençaToolStripMenuItem
-            // 
-            this.consultarHistóricoDePresençaToolStripMenuItem.Name = "consultarHistóricoDePresençaToolStripMenuItem";
-            this.consultarHistóricoDePresençaToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.consultarHistóricoDePresençaToolStripMenuItem.Text = "Consultar Histórico de Presença";
-            this.consultarHistóricoDePresençaToolStripMenuItem.Click += new System.EventHandler(this.consultarHistóricoDePresençaToolStripMenuItem_Click);
-            // 
             // frmAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 354);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pnlMudarSenha);
             this.Controls.Add(this.pnlCadastro);
             this.Controls.Add(this.pnlPresenca);
-            this.Controls.Add(this.pnlMudarSenha);
             this.Controls.Add(this.pnlJustificativa);
             this.Controls.Add(this.pnlCorrecao);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -486,7 +487,7 @@
         private System.Windows.Forms.TextBox txtConfSenha;
         private System.Windows.Forms.TextBox txtNovaSenha;
         private System.Windows.Forms.TextBox txtSenhaAntiga;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMudarSenha;
         private System.Windows.Forms.Label lblErro;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;

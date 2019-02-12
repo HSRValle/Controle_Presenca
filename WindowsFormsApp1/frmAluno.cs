@@ -40,6 +40,31 @@ namespace WindowsFormsApp1
             {
                 lblErro.Text = "Senhas não correspondem.";
             }
+            else
+            {
+                lblErro.Text = "";
+            }
+
+        }
+        private void btnMudarSenha_Click(object sender, EventArgs e)
+        {
+            string SenhaAntiga = txtSenhaAntiga.ToString();
+            string NovaSenha = txtNovaSenha.ToString();
+            string ConfSenha = txtConfSenha.ToString();
+            if (NovaSenha != ConfSenha)
+            {
+                lblErro.Text = "Senhas não correspondem.";
+                return;
+            }
+            if (this.Aluno.comparaSenha(SenhaAntiga))
+            {
+                this.Aluno.mudaSenha(NovaSenha);
+            }
+            else
+            {
+                lblErro.Text = "Senha incorreta";
+            }
+
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)

@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
     public partial class frmAluno : Form
     {
         private Usuario Aluno;
+        private List<Data> TodasDatas;
         private void RefreshForm()
         {
             //esconder todos os painéis
@@ -27,6 +28,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.Aluno = aluno;
+            this.TodasDatas = Consulta.getDatas(Consulta.getUsuarios(), this.Aluno);
         }
 
         private void txtConfSenha_TextChanged(object sender, EventArgs e)
@@ -62,7 +64,7 @@ namespace WindowsFormsApp1
             pnlPresenca.Show();
             pnlPresenca.BringToFront();
 
-            List<Data> listaDatas = Consulta.getDatas(Consulta.getUsuarios(), this.Aluno);
+            
 
             dataGridView.Rows.Clear();
             dataGridView.Refresh();
@@ -97,7 +99,7 @@ namespace WindowsFormsApp1
             dataGridView.Columns[6].Name = "Tutor";
             dataGridView.Columns[6].FillWeight = 13;
 
-            foreach (Data data in listaDatas)
+            foreach (Data data in this.TodasDatas)
             {
                 int index = dataGridView.Rows.Add();
 
@@ -157,6 +159,31 @@ namespace WindowsFormsApp1
             pnlCorrecao.BringToFront();
         }
 
-        
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {            
+            int index = e.RowIndex;
+            if (index == -1)
+                return;
+            int id = int.Parse(dataGridView.Rows[index].Cells[0].Value.ToString());
+            Data d = this.TodasDatas.Find(x => x.getId() == id);
+            nudIdData.Value = id;
+            pnlJustificativa.Show();
+            pnlJustificativa.BringToFront();
+            dateTimePicker1.Value = d.getDataEsperada();
+        }
+
+        private void btnSalvarJust_Click(object sender, EventArgs e)
+        {
+            if (txtJustificativa.Text.Trim().Length <= 0)
+                return;
+            Data d = this.TodasDatas.Find(x => x.getId() == nudIdData.Value);
+            d.adicionaJustificativa(txtJustificativa.Text, Aluno);
+            if (d.updateData())
+            {                
+                    MessageBox.Show("Alteração concluída com sucesso");
+                    this.Close();                
+            }
+           
+        }
     }
 }

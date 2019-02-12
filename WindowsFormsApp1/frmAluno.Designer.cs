@@ -50,11 +50,8 @@
             this.pnlPresenca = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.pnlJustificativa = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbtnAtraso = new System.Windows.Forms.RadioButton();
-            this.rbtnFalta = new System.Windows.Forms.RadioButton();
             this.btnSalvarJust = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtJustificativa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -64,13 +61,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.nudIdData = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             this.pnlMudarSenha.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.pnlJustificativa.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.pnlCorrecao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIdData)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -164,23 +162,26 @@
             // 
             // txtConfSenha
             // 
-            this.txtConfSenha.Location = new System.Drawing.Point(291, 184);
+            this.txtConfSenha.Location = new System.Drawing.Point(331, 183);
             this.txtConfSenha.Name = "txtConfSenha";
+            this.txtConfSenha.PasswordChar = '•';
             this.txtConfSenha.Size = new System.Drawing.Size(134, 20);
             this.txtConfSenha.TabIndex = 15;
             this.txtConfSenha.TextChanged += new System.EventHandler(this.txtConfSenha_TextChanged);
             // 
             // txtNovaSenha
             // 
-            this.txtNovaSenha.Location = new System.Drawing.Point(291, 150);
+            this.txtNovaSenha.Location = new System.Drawing.Point(331, 149);
             this.txtNovaSenha.Name = "txtNovaSenha";
+            this.txtNovaSenha.PasswordChar = '•';
             this.txtNovaSenha.Size = new System.Drawing.Size(134, 20);
             this.txtNovaSenha.TabIndex = 14;
             // 
             // txtSenhaAntiga
             // 
-            this.txtSenhaAntiga.Location = new System.Drawing.Point(291, 112);
+            this.txtSenhaAntiga.Location = new System.Drawing.Point(331, 111);
             this.txtSenhaAntiga.Name = "txtSenhaAntiga";
+            this.txtSenhaAntiga.PasswordChar = '•';
             this.txtSenhaAntiga.Size = new System.Drawing.Size(134, 20);
             this.txtSenhaAntiga.TabIndex = 13;
             // 
@@ -196,7 +197,7 @@
             // lblErro
             // 
             this.lblErro.AutoSize = true;
-            this.lblErro.Location = new System.Drawing.Point(347, 207);
+            this.lblErro.Location = new System.Drawing.Point(331, 217);
             this.lblErro.Name = "lblErro";
             this.lblErro.Size = new System.Drawing.Size(0, 13);
             this.lblErro.TabIndex = 11;
@@ -204,7 +205,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(199, 187);
+            this.label11.Location = new System.Drawing.Point(239, 186);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(86, 13);
             this.label11.TabIndex = 10;
@@ -213,7 +214,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(217, 153);
+            this.label12.Location = new System.Drawing.Point(257, 152);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(68, 13);
             this.label12.TabIndex = 9;
@@ -222,7 +223,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(244, 115);
+            this.label13.Location = new System.Drawing.Point(284, 114);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(41, 13);
             this.label13.TabIndex = 8;
@@ -245,12 +246,13 @@
             this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(636, 258);
             this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
             // pnlJustificativa
             // 
-            this.pnlJustificativa.Controls.Add(this.groupBox1);
+            this.pnlJustificativa.Controls.Add(this.nudIdData);
             this.pnlJustificativa.Controls.Add(this.btnSalvarJust);
-            this.pnlJustificativa.Controls.Add(this.textBox1);
+            this.pnlJustificativa.Controls.Add(this.txtJustificativa);
             this.pnlJustificativa.Controls.Add(this.label2);
             this.pnlJustificativa.Controls.Add(this.label1);
             this.pnlJustificativa.Controls.Add(this.dateTimePicker1);
@@ -260,39 +262,6 @@
             this.pnlJustificativa.Size = new System.Drawing.Size(729, 354);
             this.pnlJustificativa.TabIndex = 11;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbtnAtraso);
-            this.groupBox1.Controls.Add(this.rbtnFalta);
-            this.groupBox1.Location = new System.Drawing.Point(220, 34);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(235, 68);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Justificar:";
-            // 
-            // rbtnAtraso
-            // 
-            this.rbtnAtraso.AutoSize = true;
-            this.rbtnAtraso.Location = new System.Drawing.Point(6, 42);
-            this.rbtnAtraso.Name = "rbtnAtraso";
-            this.rbtnAtraso.Size = new System.Drawing.Size(55, 17);
-            this.rbtnAtraso.TabIndex = 1;
-            this.rbtnAtraso.TabStop = true;
-            this.rbtnAtraso.Text = "Atraso";
-            this.rbtnAtraso.UseVisualStyleBackColor = true;
-            // 
-            // rbtnFalta
-            // 
-            this.rbtnFalta.AutoSize = true;
-            this.rbtnFalta.Location = new System.Drawing.Point(6, 19);
-            this.rbtnFalta.Name = "rbtnFalta";
-            this.rbtnFalta.Size = new System.Drawing.Size(48, 17);
-            this.rbtnFalta.TabIndex = 0;
-            this.rbtnFalta.TabStop = true;
-            this.rbtnFalta.Text = "Falta";
-            this.rbtnFalta.UseVisualStyleBackColor = true;
-            // 
             // btnSalvarJust
             // 
             this.btnSalvarJust.Location = new System.Drawing.Point(380, 207);
@@ -301,14 +270,15 @@
             this.btnSalvarJust.TabIndex = 5;
             this.btnSalvarJust.Text = "Enviar";
             this.btnSalvarJust.UseVisualStyleBackColor = true;
+            this.btnSalvarJust.Click += new System.EventHandler(this.btnSalvarJust_Click);
             // 
-            // textBox1
+            // txtJustificativa
             // 
-            this.textBox1.Location = new System.Drawing.Point(220, 134);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(235, 53);
-            this.textBox1.TabIndex = 4;
+            this.txtJustificativa.Location = new System.Drawing.Point(220, 134);
+            this.txtJustificativa.Multiline = true;
+            this.txtJustificativa.Name = "txtJustificativa";
+            this.txtJustificativa.Size = new System.Drawing.Size(235, 53);
+            this.txtJustificativa.TabIndex = 4;
             // 
             // label2
             // 
@@ -390,15 +360,28 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(235, 20);
             this.dateTimePicker2.TabIndex = 4;
             // 
+            // nudIdData
+            // 
+            this.nudIdData.Location = new System.Drawing.Point(273, 70);
+            this.nudIdData.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudIdData.Name = "nudIdData";
+            this.nudIdData.Size = new System.Drawing.Size(120, 20);
+            this.nudIdData.TabIndex = 6;
+            this.nudIdData.Visible = false;
+            // 
             // frmAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 354);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnlMudarSenha);
             this.Controls.Add(this.pnlJustificativa);
             this.Controls.Add(this.pnlPresenca);
+            this.Controls.Add(this.pnlMudarSenha);
             this.Controls.Add(this.pnlCorrecao);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -413,10 +396,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.pnlJustificativa.ResumeLayout(false);
             this.pnlJustificativa.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.pnlCorrecao.ResumeLayout(false);
             this.pnlCorrecao.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIdData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,7 +428,7 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Panel pnlJustificativa;
         private System.Windows.Forms.Button btnSalvarJust;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtJustificativa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -456,8 +438,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbtnAtraso;
-        private System.Windows.Forms.RadioButton rbtnFalta;
+        private System.Windows.Forms.NumericUpDown nudIdData;
     }
 }

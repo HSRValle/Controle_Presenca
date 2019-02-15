@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
-                Console.Write(ex);
+                Console.Write(ex);                
                 return retorno;
             }
         }

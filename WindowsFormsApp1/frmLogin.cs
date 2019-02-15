@@ -47,8 +47,8 @@ namespace WindowsFormsApp1
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
-                Console.Write(ex);
-                return retorno;
+                MessageBox.Show("Erro ao conectar com o banco de dados");
+                throw ex;
             }
         }        
         public Boolean createNextDatas(List<Data> listaData, List<Usuario> listaUsuarios, int dias = 7)
@@ -98,9 +98,17 @@ namespace WindowsFormsApp1
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
-        {         
-            MySqlConnection sqlcon = new MySqlConnection(Sql.Conection());
-            Usuario usuario = getUsuario(txtNome.Text.Trim());
+        {
+            Usuario usuario = null;
+            try
+            {
+                MySqlConnection sqlcon = new MySqlConnection(Sql.Conection());
+                 usuario = getUsuario(txtNome.Text.Trim());
+            }
+            catch
+            {
+                return;
+            }
             if (usuario != null && usuario.comparaSenha(txtSenha.Text.Trim()))
             {
                 

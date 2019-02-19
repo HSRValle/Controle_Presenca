@@ -285,10 +285,18 @@ namespace WindowsFormsApp1
             String confirmarSenha = txtConfirmSenha.Text;
             String email = txtEmail.Text;
             if (senha == confirmarSenha)
-            {
-                Usuario novoUsuario = new Usuario(nome, grupo, email, senha, chbTutor.Checked);
-                novoUsuario.insertNewUsuario();
-                TodosUsuarios.Add(novoUsuario);
+            {                
+                try
+                {
+                    Usuario novoUsuario = new Usuario(nome, grupo, email, senha, chbTutor.Checked);
+                    novoUsuario.insertNewUsuario();
+                    TodosUsuarios.Add(novoUsuario);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Já existe um(a) usuário(a) chamado(a) "+ nome);
+                    //Talvez possa acontecer outro erro? Avaliar a variável ex?
+                }
                 MessageBox.Show("Usuário cadastrado");
                 btnLimpar_Click(sender, e);
             }

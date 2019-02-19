@@ -156,7 +156,7 @@ namespace WindowsFormsApp1
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
-                Console.WriteLine(ex);
+                throw ex;
             }
         }
         public void deleteUsuario()

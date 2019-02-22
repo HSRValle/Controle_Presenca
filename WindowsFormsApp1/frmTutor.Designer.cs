@@ -71,7 +71,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlCadastroPesquisa = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblResultado = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTopoResultado = new System.Windows.Forms.Label();
             this.btnProcurar = new System.Windows.Forms.Button();
             this.txtProcNome = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -119,6 +120,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.lblEditarCadastro = new System.Windows.Forms.Label();
             this.cmbEditarUsuarios = new System.Windows.Forms.ComboBox();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudFiltroGrupo)).BeginInit();
@@ -127,6 +129,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudGrupo)).BeginInit();
             this.pnlCadastroPesquisa.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.pnlMudarSenha.SuspendLayout();
             this.pnlExcluir.SuspendLayout();
             this.pnlEditarCadastro.SuspendLayout();
@@ -525,28 +528,38 @@
             this.pnlCadastroPesquisa.Controls.Add(this.label9);
             this.pnlCadastroPesquisa.Controls.Add(this.label7);
             this.pnlCadastroPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCadastroPesquisa.Location = new System.Drawing.Point(0, 0);
+            this.pnlCadastroPesquisa.Location = new System.Drawing.Point(0, 24);
             this.pnlCadastroPesquisa.Name = "pnlCadastroPesquisa";
-            this.pnlCadastroPesquisa.Size = new System.Drawing.Size(879, 513);
+            this.pnlCadastroPesquisa.Size = new System.Drawing.Size(879, 489);
             this.pnlCadastroPesquisa.TabIndex = 27;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblResultado);
+            this.groupBox1.Controls.Add(this.lblTopoResultado);
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Location = new System.Drawing.Point(292, 256);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(356, 178);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
-            // lblResultado
+            // panel1
             // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(15, 24);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(58, 13);
-            this.lblResultado.TabIndex = 0;
-            this.lblResultado.Text = "Resultado:";
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.lblResultado);
+            this.panel1.Location = new System.Drawing.Point(6, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(341, 142);
+            this.panel1.TabIndex = 55;
+            // 
+            // lblTopoResultado
+            // 
+            this.lblTopoResultado.AutoSize = true;
+            this.lblTopoResultado.Location = new System.Drawing.Point(6, 9);
+            this.lblTopoResultado.Name = "lblTopoResultado";
+            this.lblTopoResultado.Size = new System.Drawing.Size(58, 13);
+            this.lblTopoResultado.TabIndex = 0;
+            this.lblTopoResultado.Text = "Resultado:";
             // 
             // btnProcurar
             // 
@@ -998,19 +1011,27 @@
             this.cmbEditarUsuarios.TabIndex = 0;
             this.cmbEditarUsuarios.SelectedIndexChanged += new System.EventHandler(this.cmbEditarUsuarios_SelectedIndexChanged);
             // 
+            // lblResultado
+            // 
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Location = new System.Drawing.Point(4, 8);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(0, 13);
+            this.lblResultado.TabIndex = 0;
+            // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 513);
+            this.Controls.Add(this.pnlCadastroPesquisa);
+            this.Controls.Add(this.pnlCadastroNovo);
             this.Controls.Add(this.pnlEditarCadastro);
             this.Controls.Add(this.pnlPresenca);
-            this.Controls.Add(this.pnlCadastroNovo);
             this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlEditarOutroCadastro);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlMudarSenha);
-            this.Controls.Add(this.pnlCadastroPesquisa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmTutor";
@@ -1030,6 +1051,8 @@
             this.pnlCadastroPesquisa.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.pnlMudarSenha.ResumeLayout(false);
             this.pnlMudarSenha.PerformLayout();
             this.pnlExcluir.ResumeLayout(false);
@@ -1094,7 +1117,7 @@
         private System.Windows.Forms.Panel pnlExcluir;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAtualizar;
-        private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.Label lblTopoResultado;
         private System.Windows.Forms.CheckBox chbTutor;
         private System.Windows.Forms.Label lblErroNovo;
         private System.Windows.Forms.Panel pnlEditarCadastro;
@@ -1139,5 +1162,7 @@
         private System.Windows.Forms.ToolStripMenuItem criarDatasFuturasToolStripMenuItem;
         private System.Windows.Forms.Button btnLimparFiltros;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblResultado;
     }
 }

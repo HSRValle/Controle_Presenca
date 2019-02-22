@@ -353,21 +353,23 @@ namespace WindowsFormsApp1
         }
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-            lblResultado.Text = "Resultado:";
+            lblResultado.Text = "";
             String nome = txtProcNome.Text;
             List<Usuario> resultado = TodosUsuarios.FindAll(x => x.getNome().Contains(nome) );
             if(resultado.Count > 0)
             {
                 foreach (Usuario usuario in resultado)
                 {
-                    lblResultado.Text += "\n" + usuario.getNome();
+                    lblResultado.Text += usuario.getNome();
                     if(!usuario.tutor)
                         lblResultado.Text += " (G"+usuario.grupo+")";
+                    lblResultado.Text += "\n";
                 }
+                panel1.AutoScroll = true;                
             }
             else
             {
-                lblResultado.Text += "\nNenhum usuário encontrado";
+                lblTopoResultado.Text += "\nNenhum usuário encontrado";
             }
         }
 

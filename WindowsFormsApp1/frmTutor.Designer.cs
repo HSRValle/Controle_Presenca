@@ -270,7 +270,7 @@
             // 
             // btnExportar
             // 
-            this.btnExportar.Location = new System.Drawing.Point(606, 9);
+            this.btnExportar.Location = new System.Drawing.Point(606, 7);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 23);
             this.btnExportar.TabIndex = 10;
@@ -280,7 +280,7 @@
             // 
             // btnLimparFiltros
             // 
-            this.btnLimparFiltros.Location = new System.Drawing.Point(687, 9);
+            this.btnLimparFiltros.Location = new System.Drawing.Point(687, 7);
             this.btnLimparFiltros.Name = "btnLimparFiltros";
             this.btnLimparFiltros.Size = new System.Drawing.Size(75, 23);
             this.btnLimparFiltros.TabIndex = 9;
@@ -304,16 +304,16 @@
             // 
             // nudFiltroGrupo
             // 
-            this.nudFiltroGrupo.Location = new System.Drawing.Point(436, 12);
+            this.nudFiltroGrupo.Location = new System.Drawing.Point(436, 10);
             this.nudFiltroGrupo.Name = "nudFiltroGrupo";
-            this.nudFiltroGrupo.Size = new System.Drawing.Size(55, 20);
+            this.nudFiltroGrupo.Size = new System.Drawing.Size(52, 20);
             this.nudFiltroGrupo.TabIndex = 7;
             this.nudFiltroGrupo.ValueChanged += new System.EventHandler(this.nudFiltroGrupo_ValueChanged);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(353, 14);
+            this.label23.Location = new System.Drawing.Point(356, 12);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(80, 13);
             this.label23.TabIndex = 6;
@@ -322,7 +322,7 @@
             // chbFaltas
             // 
             this.chbFaltas.AutoSize = true;
-            this.chbFaltas.Location = new System.Drawing.Point(514, 13);
+            this.chbFaltas.Location = new System.Drawing.Point(507, 11);
             this.chbFaltas.Name = "chbFaltas";
             this.chbFaltas.Size = new System.Drawing.Size(90, 17);
             this.chbFaltas.TabIndex = 5;
@@ -345,7 +345,7 @@
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(768, 9);
+            this.btnAtualizar.Location = new System.Drawing.Point(768, 7);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizar.TabIndex = 2;

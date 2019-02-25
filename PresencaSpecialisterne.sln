@@ -50,12 +50,6 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Default = Debug|Default
-		Release|Any CPU = Release|Any CPU
-		Release|Default = Release|Default
-	EndGlobalSection
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Debug|Default = Debug|Default
 		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
 		Release|Default = Release|Default
@@ -66,5 +60,13 @@ Global
 		Debug|Default = Debug|Default
 		Release|Any CPU = Release|Any CPU
 		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Default = Debug|Default
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Default = Release|Default
+		Release|x86 = Release|x86
 	EndGlobalSection
 EndGlobal

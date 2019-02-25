@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Excel = Microsoft.Office.Interop.Excel;
+
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -255,6 +257,43 @@ namespace WindowsFormsApp1
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             filtrarDatas();
+        }
+
+
+        //Exportar para Excel
+        private void exportar(DataGridView tabela)
+        {
+            btnExportar.Text = "Exportando...";
+            btnExportar.Enabled = false;
+            var excelApp = new Excel.Application();            
+            //excelApp.Workbooks.Add();
+
+            Excel._Worksheet workSheet = excelApp.ActiveSheet;
+            int row = 1;            
+            foreach (DataGridViewRow linha in tabela.Rows)
+            {                
+                for (int column = 1; column < tabela.ColumnCount; column++ )
+                {      
+                    if(linha.Cells[column].Value != null)
+                        workSheet.Cells[row, column] = linha.Cells[column].Value.ToString();
+                }                
+                row++;
+            }
+
+            // Define a largura das colunas automaticamente
+            Excel.Range aRange = workSheet.get_Range("A1", "H"+ tabela.RowCount);
+            Console.WriteLine("A1 " + " H" + tabela.RowCount);
+            aRange.Columns.AutoFit();
+
+            btnExportar.Text = "Exportar";
+            btnExportar.Enabled = true;
+
+            excelApp.Visible = true;
+
+        }
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            exportar(dataGridView);
         }
 
 
@@ -530,6 +569,6 @@ namespace WindowsFormsApp1
 
         }
 
-        
+
     }
 }

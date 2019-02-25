@@ -44,6 +44,7 @@
             this.editarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlPresenca = new System.Windows.Forms.Panel();
+            this.btnExportar = new System.Windows.Forms.Button();
             this.btnLimparFiltros = new System.Windows.Forms.Button();
             this.cmbFiltroDatas = new System.Windows.Forms.ComboBox();
             this.nudFiltroGrupo = new System.Windows.Forms.NumericUpDown();
@@ -71,8 +72,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlCadastroPesquisa = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lblTopoResultado = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.btnProcurar = new System.Windows.Forms.Button();
             this.txtProcNome = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -120,7 +122,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.lblEditarCadastro = new System.Windows.Forms.Label();
             this.cmbEditarUsuarios = new System.Windows.Forms.ComboBox();
-            this.lblResultado = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlPresenca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudFiltroGrupo)).BeginInit();
@@ -252,6 +253,7 @@
             // 
             // pnlPresenca
             // 
+            this.pnlPresenca.Controls.Add(this.btnExportar);
             this.pnlPresenca.Controls.Add(this.btnLimparFiltros);
             this.pnlPresenca.Controls.Add(this.cmbFiltroDatas);
             this.pnlPresenca.Controls.Add(this.nudFiltroGrupo);
@@ -266,9 +268,19 @@
             this.pnlPresenca.Size = new System.Drawing.Size(879, 489);
             this.pnlPresenca.TabIndex = 1;
             // 
+            // btnExportar
+            // 
+            this.btnExportar.Location = new System.Drawing.Point(606, 9);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(75, 23);
+            this.btnExportar.TabIndex = 10;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
             // btnLimparFiltros
             // 
-            this.btnLimparFiltros.Location = new System.Drawing.Point(676, 9);
+            this.btnLimparFiltros.Location = new System.Drawing.Point(687, 9);
             this.btnLimparFiltros.Name = "btnLimparFiltros";
             this.btnLimparFiltros.Size = new System.Drawing.Size(75, 23);
             this.btnLimparFiltros.TabIndex = 9;
@@ -543,6 +555,15 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
+            // lblTopoResultado
+            // 
+            this.lblTopoResultado.AutoSize = true;
+            this.lblTopoResultado.Location = new System.Drawing.Point(6, 9);
+            this.lblTopoResultado.Name = "lblTopoResultado";
+            this.lblTopoResultado.Size = new System.Drawing.Size(58, 13);
+            this.lblTopoResultado.TabIndex = 0;
+            this.lblTopoResultado.Text = "Resultado:";
+            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
@@ -552,14 +573,13 @@
             this.panel1.Size = new System.Drawing.Size(341, 142);
             this.panel1.TabIndex = 55;
             // 
-            // lblTopoResultado
+            // lblResultado
             // 
-            this.lblTopoResultado.AutoSize = true;
-            this.lblTopoResultado.Location = new System.Drawing.Point(6, 9);
-            this.lblTopoResultado.Name = "lblTopoResultado";
-            this.lblTopoResultado.Size = new System.Drawing.Size(58, 13);
-            this.lblTopoResultado.TabIndex = 0;
-            this.lblTopoResultado.Text = "Resultado:";
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Location = new System.Drawing.Point(4, 8);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(0, 13);
+            this.lblResultado.TabIndex = 0;
             // 
             // btnProcurar
             // 
@@ -1011,23 +1031,15 @@
             this.cmbEditarUsuarios.TabIndex = 0;
             this.cmbEditarUsuarios.SelectedIndexChanged += new System.EventHandler(this.cmbEditarUsuarios_SelectedIndexChanged);
             // 
-            // lblResultado
-            // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(4, 8);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 13);
-            this.lblResultado.TabIndex = 0;
-            // 
             // frmTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 513);
+            this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.pnlCadastroPesquisa);
             this.Controls.Add(this.pnlCadastroNovo);
             this.Controls.Add(this.pnlEditarCadastro);
-            this.Controls.Add(this.pnlPresenca);
             this.Controls.Add(this.pnlExcluir);
             this.Controls.Add(this.pnlEditarOutroCadastro);
             this.Controls.Add(this.menuStrip1);
@@ -1164,5 +1176,6 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.Button btnExportar;
     }
 }

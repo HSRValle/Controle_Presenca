@@ -87,10 +87,10 @@ namespace WindowsFormsApp1
 
             dataGridView.Columns[7].Name = "Justificativa";
             dataGridView.Columns[7].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            dataGridView.Columns[7].FillWeight = 26;
+            dataGridView.Columns[7].FillWeight = 24;
 
-            dataGridView.Columns[8].Name = "Tutor";
-            dataGridView.Columns[8].FillWeight = 13;
+            dataGridView.Columns[8].Name = "Ultima alteração";
+            dataGridView.Columns[8].FillWeight = 15;
 
             foreach (Data data in listaDatas)
             {

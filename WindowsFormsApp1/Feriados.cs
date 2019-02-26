@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
             new DateTime(2019, 04, 21), // Tiradentes
             new DateTime(2019, 05, 01), // Dia do trabalho
             new DateTime(2019, 06, 20), // Corpus Christi
+            new DateTime(2019, 07, 09), // Dia da revolução constitucionalista
             new DateTime(2019, 09, 07), // Independência
             new DateTime(2019, 10, 12), // Nossa Senhora Aparecida
             new DateTime(2019, 11, 02), // Finados

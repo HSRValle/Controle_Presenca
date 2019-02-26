@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0476B206-577B-48F3-BDBA-F5529758F79E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>PresencaSpecialisterne</RootNamespace>
     <AssemblyName>PresencaSpecialisterne</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>

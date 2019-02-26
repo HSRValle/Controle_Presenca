@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace WindowsFormsApp1
 {
     public partial class frmAddData : Form
@@ -37,11 +39,18 @@ namespace WindowsFormsApp1
 
         private void btnCriarDatas_Click(object sender, EventArgs e)
         {
+            btnCriarDatas.Text = "Criando...";
+            btnCriarDatas.Enabled = false;
+
             createNextDatas(calInicio.SelectionRange.Start, calFim.SelectionRange.End);
+
+            btnCriarDatas.Text = "Criar datas";
+            btnCriarDatas.Enabled = true;
             MessageBox.Show("Datas criadas com sucesso");
         }
         public Boolean createNextDatas(DateTime inicio, DateTime fim)
-        {
+        {           
+            
             List<Data> novasDatas = new List<Data>();            
 
             DateTime atual = inicio;
@@ -53,7 +62,7 @@ namespace WindowsFormsApp1
 
             while (atual <= fim)
             {                
-                if (atual.DayOfWeek != DayOfWeek.Saturday && atual.DayOfWeek != DayOfWeek.Sunday)
+                if (atual.DayOfWeek != DayOfWeek.Saturday && atual.DayOfWeek != DayOfWeek.Sunday && !Feriados.verificar(atual))
                 {
                     List<Usuario> usuariosSelecionados = frmTutor.TodosUsuarios.FindAll(x => lbxAlunos.SelectedItems.Contains(x.getNome()));
                     foreach (Usuario usuario in usuariosSelecionados)

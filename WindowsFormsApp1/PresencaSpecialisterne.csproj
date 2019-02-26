@@ -111,6 +111,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Feriados.cs" />
     <Compile Include="Consulta.cs" />
     <Compile Include="frmAddData.cs">
       <SubType>Form</SubType>
